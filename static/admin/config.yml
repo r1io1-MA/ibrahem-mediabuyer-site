@@ -60,6 +60,28 @@ collections:
         i18n: true
         required: false
         hint: "لو سبته فاضي هيتكتب: العنوان | إبراهيم محمد"
+      - label: "صورة الغلاف · Cover"
+        name: cover
+        widget: select
+        i18n: duplicate
+        required: false
+        hint: "اختار رسمة جاهزة، أو ارفع صورتك في الخانة اللي بعدها"
+        options:
+          - { label: "تعليم · Education", value: edtech }
+          - { label: "تجارة إلكترونية · E-commerce", value: ecommerce }
+          - { label: "B2B · Funnel", value: b2b }
+          - { label: "صفقات · Deals & CRM", value: deal }
+          - { label: "مواسم · Seasons", value: seasonal }
+          - { label: "منصات · Platforms", value: platforms }
+          - { label: "مراجعة حساب · Audit", value: audit }
+          - { label: "الدفع عند الاستلام · COD", value: cod }
+          - { label: "توسع · Scaling", value: scaling }
+          - { label: "حاسبات · Tools", value: tools }
+      - label: "أو صورة من عندك · Or your own image"
+        name: image
+        widget: image
+        i18n: duplicate
+        required: false
       - label: "التاريخ · Date"
         name: date
         widget: datetime
@@ -91,3 +113,18 @@ collections:
         name: body
         widget: markdown
         i18n: true
+
+  - name: settings
+    label: "الإعدادات · Settings"
+    files:
+      - name: tracking
+        label: "التتبع وجوجل · Tracking & Google"
+        file: content/settings.json
+        format: json
+        description: "حط الـIDs هنا. أي خانة فاضية مش هتضيف حاجة للموقع."
+        fields:
+          - { label: "Google Analytics 4 (G-XXXXXXX)", name: ga4_id, widget: string, required: false }
+          - { label: "Meta Pixel ID", name: meta_pixel_id, widget: string, required: false }
+          - { label: "Snap Pixel ID", name: snap_pixel_id, widget: string, required: false }
+          - { label: "TikTok Pixel ID", name: tiktok_pixel_id, widget: string, required: false }
+          - { label: "Google Search Console verification (content فقط)", name: google_site_verification, widget: string, required: false }

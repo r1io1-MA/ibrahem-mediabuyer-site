@@ -1,9 +1,10 @@
 ---
 title: 'Snapchat or TikTok: where should a new store in Saudi Arabia start advertising?'
 url: snapchat-vs-tiktok-new-store
-meta_title: Snapchat or TikTok ads for a new store in Saudi Arabia? How to choose | Ibrahem Muhamed
-description: 'A practical comparison of Snapchat and TikTok ads for a new store in Saudi Arabia: when to start with each, how to split the first budget, and what to measure in the first 30 days.'
+meta_title: "Snapchat or TikTok for a new Saudi store? | Ibrahem Muhamed"
+description: "Snapchat or TikTok for a new store in Saudi Arabia: when to start with each, how to split the first budget, and what to measure in 30 days."
 card: When to start with Snapchat, when to start with TikTok, and how to split the first budget.
+cover: platforms
 date: '2026-10-16'
 read: 7
 faq:

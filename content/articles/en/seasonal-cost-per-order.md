@@ -1,9 +1,10 @@
 ---
 title: Why cost per order rises in peak seasons, and how to prepare your store
 url: seasonal-cost-per-order
-meta_title: 'Why ad costs rise in Ramadan and peak seasons: a guide for Saudi stores | Ibrahem Muhamed'
+meta_title: "Why ad costs rise in peak seasons | Ibrahem Muhamed"
 description: Why ads get more expensive in Ramadan, White Friday, National Day and back-to-school, and a 6-step plan that protects your store's profit during the season.
 card: The auction gets crowded in Ramadan and White Friday. Here is how to prepare weeks ahead.
+cover: seasonal
 date: '2026-10-16'
 read: 6
 faq:

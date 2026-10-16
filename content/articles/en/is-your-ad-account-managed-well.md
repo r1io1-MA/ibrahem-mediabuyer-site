@@ -1,9 +1,10 @@
 ---
 title: How do you know your ad account is managed well? 7 questions to ask whoever runs your ads
 url: is-your-ad-account-managed-well
-meta_title: Is your ad account managed well? 7 questions for store owners | Ibrahem Muhamed
-description: 'Seven questions a store owner can ask a media buyer or agency to check whether the ad account is run properly: tracking, MER, brand campaigns, audience overlap and creative testing.'
+meta_title: "7 questions to audit your ad account | Ibrahem Muhamed"
+description: "Seven questions to check whether your ad account is run properly: tracking, MER, brand campaigns, audience overlap and creative testing."
 card: Simple questions that show whether your account runs on real numbers.
+cover: audit
 date: '2026-10-16'
 read: 6
 faq:

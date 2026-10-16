@@ -1,9 +1,10 @@
 ---
 title: "Cash on delivery is lying to your ROAS: how to calculate the real return for a Saudi store"
 url: cod-true-roas
-meta_title: "Cash on delivery and true ROAS: a guide for Saudi stores | Ibrahem Muhamed"
-description: "Why ad-platform ROAS is inflated when many of your orders are cash on delivery, how to calculate the real return after refused orders, and 5 steps that cut refusals and train the algorithm on real buyers."
+meta_title: "Cash on delivery and true ROAS | Ibrahem Muhamed"
+description: "Why ad-platform ROAS is inflated when many orders are cash on delivery, how to calculate the real return, and 5 steps to cut refused orders."
 card: "The platform counts the order at checkout. A cash-on-delivery order only becomes a sale at the door."
+cover: cod
 date: 2026-10-16
 read: 7
 faq:

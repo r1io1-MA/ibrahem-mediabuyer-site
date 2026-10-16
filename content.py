@@ -51,6 +51,8 @@ def load():
                 'body': html,
                 'faq': faq,
             }
+            if fm.get('cover'): entry.setdefault('cover', str(fm['cover']))
+            if fm.get('image'): entry.setdefault('image', str(fm['image']))
             entry.setdefault('date', _date(fm.get('date')))
             entry.setdefault('read', int(fm.get('read') or _minutes(html)))
     # newest first

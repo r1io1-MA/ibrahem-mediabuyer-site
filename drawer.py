@@ -6,10 +6,10 @@ from tools_reg import TOOLS
 
 L = {
  'en': {'menu': 'Menu', 'close': 'Close menu', 'home': 'Home', 'port': 'Portfolio', 'about': 'About me', 'proof': 'Proof from the ad accounts',
-        'check': 'Free 60-second check', 'contact': 'Contact', 'cases': 'Case studies', 'tools': 'Free tools', 'guides': 'Guides',
+        'check': 'Free 60-second check', 'contact': 'Contact', 'form': 'Send your details', 'cases': 'Case studies', 'tools': 'Free tools', 'guides': 'Guides',
         'all': 'All cases, tools & guides', 'audit': 'Book the free 25-min audit', 'lang': 'العربية'},
  'ar': {'menu': 'القائمة', 'close': 'إغلاق القائمة', 'home': 'الرئيسية', 'port': 'البورتفوليو', 'about': 'نبذة عني', 'proof': 'إثباتات من الحسابات الإعلانية',
-        'check': 'فحص مجاني في 60 ثانية', 'contact': 'تواصل معي', 'cases': 'دراسات الحالة', 'tools': 'أدوات مجانية', 'guides': 'المقالات',
+        'check': 'فحص مجاني في 60 ثانية', 'contact': 'تواصل معي', 'form': 'أرسل بياناتك', 'cases': 'دراسات الحالة', 'tools': 'أدوات مجانية', 'guides': 'المقالات',
         'all': 'كل دراسات الحالة والأدوات والمقالات', 'audit': 'احجز المراجعة المجانية (25 دقيقة)', 'lang': 'English'},
 }
 SHORT = {'en': {'edtech-251-percent-of-target': ('<bdi>251%</bdi> of target', 'EdTech'), 'ecommerce-882-orders': ('<bdi>882 / 500</bdi> orders', 'E-commerce'), 'b2b-snapchat-leads': ('<bdi>70%</bdi> of leads closed', 'B2B')},
@@ -22,7 +22,7 @@ def links(lang, cur_path, wa_url, alt_url):
         return f'<a class="dw-a{cls}" href="{href}"{on}>{txt}</a>'
     h = (f'<div class="dw-g"><span class="dw-h">{l["port"]}</span>'
          + a(home, l['home']) + a(home + '#about', l['about']) + a(home + '#proof', l['proof'])
-         + a(home + '#check', l['check']) + a(home + '#contact', l['contact']) + '</div>')
+         + a(home + '#check', l['check']) + a(home + '#contact', l['contact']) + a(pre + '/contact/', l['form']) + '</div>')
     h += (f'<div class="dw-g"><span class="dw-h">{l["cases"]}</span>'
           + ''.join(a(f'{pre}/cases/{c["slug"]}/', f'<span>{SHORT[lang][c["slug"]][0]}</span><small>{SHORT[lang][c["slug"]][1]}</small>') for c in CASES) + '</div>')
     h += (f'<div class="dw-g"><span class="dw-h">{l["tools"]}</span>' + ''.join(a(f'{pre}/tools/{tl["slug"]}/', tl['T'][lang]['title']) for tl in TOOLS) + '</div>')

@@ -131,3 +131,9 @@ bdi{unicode-bidi:isolate;direction:ltr}
 .sf nav{display:flex;gap:16px;flex-wrap:wrap}
 .next{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 0 20px}
 .next a{color:var(--muted);text-decoration:none;font-size:15px}.next a:hover{color:var(--fg)}
+
+/* covers and card thumbnails */
+.cover{margin:0 0 40px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#0b0d16}
+.cover img{width:100%;height:auto;aspect-ratio:16/9;max-height:440px;object-fit:cover}
+article .cover{max-width:760px}
+.card .thumb{height:auto;width:calc(100% + 40px);margin:-20px -20px 4px;aspect-ratio:16/9;object-fit:cover;border-radius:15px 15px 0 0;border-bottom:1px solid var(--line);max-width:none}

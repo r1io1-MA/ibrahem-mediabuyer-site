@@ -24,7 +24,7 @@ CASES = [
    'kicker': 'Case 01 · EdTech · digital product · KSA',
    'card': 'SAR 1.1M delivered against a SAR 444K monthly target, Snapchat-led.',
    'title': '251% of the monthly revenue target for an online English-learning brand',
-   'meta_title': 'EdTech case study: 251% of revenue target in Saudi Arabia | Ibrahem Muhamed',
+   'meta_title': 'EdTech case study: 251% of revenue target | Ibrahem Muhamed',
    'desc': 'How a Snapchat-led plan delivered about SAR 1.1M against a SAR 444K monthly target for an online English-learning brand in KSA, at 4.49x ROAS on $66.2K.',
    'lead': 'Online English courses for Saudi families and adults, sold through a web checkout. The month stacked two seasons, back-to-school and Saudi National Day, against a revenue target of SAR 444,000.',
    'body': lambda: (
@@ -56,7 +56,7 @@ CASES = [
    'kicker': 'دراسة حالة 01 · تعليم إلكتروني · منتج رقمي · السعودية',
    'card': 'نحو 1.1 مليون ريال مقابل مستهدف شهري 444 ألف ريال، بقيادة سناب شات.',
    'title': 'تحقيق 251% من المستهدف الشهري لمنصة تعليم إنجليزي عبر الإنترنت',
-   'meta_title': 'دراسة حالة: تحقيق 251% من المستهدف لمنصة تعليمية في السعودية | إبراهيم محمد',
+   'meta_title': 'دراسة حالة: 251% من المستهدف لمنصة تعليمية | إبراهيم محمد',
    'desc': 'كيف حققت خطة يقودها سناب شات نحو 1.1 مليون ريال مقابل مستهدف شهري 444 ألف ريال لمنصة تعليم إنجليزي في السعودية، بعائد 4.49x على إنفاق 66.2 ألف دولار.',
    'lead': 'دورات إنجليزي عبر الإنترنت للأسر والبالغين في السعودية، تُباع من خلال صفحة دفع على الموقع. جمع الشهر موسمين معًا: العودة إلى المدارس واليوم الوطني، والمستهدف 444,000 ريال.',
    'body': lambda: (
@@ -91,7 +91,7 @@ CASES = [
    'kicker': 'Case 02 · Fragrance · e-commerce · KSA',
    'card': '882 orders against a 500-order target on $11.5K of paid media.',
    'title': '882 orders against a 500-order target, on $11.5K of paid media',
-   'meta_title': 'E-commerce case study: 176% of order target for a Saudi store | Ibrahem Muhamed',
+   'meta_title': 'E-commerce case study: 882 orders vs 500 | Ibrahem Muhamed',
    'desc': 'A Saudi perfume store hit 882 orders against a 500 target with 8.6x MER. Tracking rebuilt first, Snapchat for volume, one Instagram campaign at 12.38x ROAS.',
    'lead': 'A Saudi perfume store. I rebuilt tracking from scratch (GTM, GA4, Snapchat and Meta pixels) before buying media, so every platform number could be checked against the store\'s own orders.',
    'body': lambda: (
@@ -117,7 +117,7 @@ CASES = [
    'kicker': 'دراسة حالة 02 · عطور · تجارة إلكترونية · السعودية',
    'card': '882 طلبًا مقابل مستهدف 500 طلب بإنفاق إعلاني 11.5 ألف دولار.',
    'title': '882 طلبًا مقابل مستهدف 500 طلب، بإنفاق إعلاني 11.5 ألف دولار',
-   'meta_title': 'دراسة حالة: تحقيق 176% من مستهدف الطلبات لمتجر سعودي | إبراهيم محمد',
+   'meta_title': 'دراسة حالة: 882 طلبًا مقابل مستهدف 500 | إبراهيم محمد',
    'desc': 'متجر عطور سعودي حقق 882 طلبًا مقابل مستهدف 500 بمعدل MER يبلغ 8.6x: إعادة بناء التتبع أولًا، وسناب شات للحجم، وحملة إنستجرام واحدة بعائد 12.38x.',
    'lead': 'متجر عطور سعودي. أعدت بناء التتبع من الصفر (GTM وGA4 وبكسل سناب شات وميتا) قبل أي إنفاق، حتى يمكن مطابقة كل رقم في المنصات مع طلبات المتجر نفسه.',
    'body': lambda: (
@@ -146,7 +146,7 @@ CASES = [
    'kicker': 'Case 03 · B2B lead generation · Snapchat · KSA',
    'card': '636 leads, 70% closed by sales, SAR 260K from $1.1K in media.',
    'title': '636 leads, 70% closed by sales, SAR 260K in revenue from $1.1K in media',
-   'meta_title': 'B2B lead generation case study on Snapchat in Saudi Arabia | Ibrahem Muhamed',
+   'meta_title': 'B2B Snapchat leads case study | Ibrahem Muhamed',
    'desc': 'Snapchat lead forms for a Saudi B2B sales team: 636 leads at $1.73, 70% closed in the CRM, SAR 260K revenue on $1.1K in media.',
    'lead': 'Snapchat lead-form campaigns feeding a sales team. Success was measured on deals closed in the CRM, not on lead volume or cost per lead.',
    'body': lambda: (
@@ -168,7 +168,7 @@ CASES = [
    'kicker': 'دراسة حالة 03 · عملاء محتملون B2B · سناب شات · السعودية',
    'card': '636 عميلًا محتملًا، أُغلق 70% منهم، و260 ألف ريال من إنفاق 1.1 ألف دولار.',
    'title': '636 عميلًا محتملًا، 70% منهم تحولوا إلى صفقات، و260 ألف ريال من إنفاق 1.1 ألف دولار',
-   'meta_title': 'دراسة حالة: توليد عملاء محتملين B2B عبر سناب شات في السعودية | إبراهيم محمد',
+   'meta_title': 'دراسة حالة: عملاء B2B عبر سناب شات | إبراهيم محمد',
    'desc': 'نماذج عملاء سناب شات لفريق مبيعات B2B في السعودية: 636 عميلًا محتملًا بتكلفة 1.73 دولار، وإغلاق 70% في نظام CRM، و260 ألف ريال إيرادات من إنفاق 1.1 ألف دولار.',
    'lead': 'حملات نماذج عملاء على سناب شات تغذّي فريق مبيعات. وقِيس النجاح بالصفقات المغلقة في نظام CRM، لا بعدد العملاء المحتملين ولا بتكلفتهم.',
    'body': lambda: (

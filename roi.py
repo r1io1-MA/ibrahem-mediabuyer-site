@@ -4,8 +4,8 @@ SLUG = 'roi-calculator'
 
 T = {
  'en': {
-  'meta_title': 'Ad campaign ROI calculator: real profit after ads and fees | Ibrahem Muhamed',
-  'desc': 'Free ROI calculator for paid ads: enter ad spend, management and creative costs, revenue and margin to see real profit, ROI, ROAS and the revenue you need to break even.',
+  'meta_title': 'Ad ROI calculator: profit after ads | Ibrahem Muhamed',
+  'desc': 'Free ROI calculator for paid ads: enter spend, fees, revenue and margin to see real profit, ROI, ROAS and the revenue you need to break even.',
   'kicker': 'Free tool',
   'title': 'Ad campaign ROI calculator',
   'card': 'Real profit after ad spend, fees and product costs, not just ROAS.',
@@ -28,8 +28,8 @@ T = {
           ('What if customers buy again later?', 'This calculator looks at one period. If you have strong repeat purchases, a first-month ROI near zero can still be a good deal. Compare it with how much a customer spends with you over a year.')],
  },
  'ar': {
-  'meta_title': 'حاسبة العائد على الاستثمار (ROI) للحملات الإعلانية | إبراهيم محمد',
-  'desc': 'حاسبة ROI مجانية للإعلانات الممولة: أدخل الإنفاق الإعلاني وتكلفة الإدارة والمحتوى والإيراد وهامش الربح، واعرف ربحك الحقيقي والعائد على الاستثمار والإيراد المطلوب للتعادل.',
+  'meta_title': 'حاسبة العائد على الاستثمار ROI | إبراهيم محمد',
+  'desc': 'حاسبة ROI مجانية: أدخل الإنفاق والرسوم والإيراد وهامش الربح، واعرف ربحك الحقيقي والعائد على الاستثمار والإيراد المطلوب للتعادل.',
   'kicker': 'أداة مجانية',
   'title': 'حاسبة العائد على الاستثمار (ROI)',
   'card': 'ربحك الحقيقي بعد الإعلانات والرسوم وتكلفة المنتج، وليس ROAS فقط.',

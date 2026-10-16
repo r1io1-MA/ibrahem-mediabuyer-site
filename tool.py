@@ -3,7 +3,7 @@ TOOL_SLUG = 'break-even-roas'
 
 T = {
  'en': {
-  'meta_title': 'Break-even ROAS calculator for Saudi e-commerce stores | Ibrahem Muhamed',
+  'meta_title': 'Break-even ROAS calculator | Ibrahem Muhamed',
   'desc': 'Free calculator: find the minimum ROAS and the maximum cost per order your store can afford on Snapchat, TikTok, Meta or Google before ads start losing money.',
   'kicker': 'Free tool',
   'title': 'Break-even ROAS calculator',
@@ -31,7 +31,7 @@ T = {
           ('What about returns and cancelled orders?', 'If, for example, 10% of orders are returned or cancelled, lower the order value by 10% before you calculate, or add the cost of returns to shipping.')],
  },
  'ar': {
-  'meta_title': 'حاسبة ROAS التعادل لمتاجر التجارة الإلكترونية في السعودية | إبراهيم محمد',
+  'meta_title': 'حاسبة ROAS التعادل للمتاجر | إبراهيم محمد',
   'desc': 'حاسبة مجانية تعرف بها أقل عائد إعلاني (ROAS) وأعلى تكلفة للطلب يتحملها متجرك على سناب شات وتيك توك وميتا وجوجل قبل أن تبدأ الإعلانات بالخسارة.',
   'kicker': 'أداة مجانية',
   'title': 'حاسبة ROAS التعادل',

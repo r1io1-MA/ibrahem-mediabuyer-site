@@ -1,0 +1,184 @@
+[
+ {
+  "key": "en-case-edtech-251-percent-of-target",
+  "topic": "edtech",
+  "title": "251% of the monthly revenue target for an online English-learning brand",
+  "kicker": "Case 01 · EdTech",
+  "lang": "en"
+ },
+ {
+  "key": "ar-case-edtech-251-percent-of-target",
+  "topic": "edtech",
+  "title": "تحقيق 251% من المستهدف الشهري لمنصة تعليم إنجليزي عبر الإنترنت",
+  "kicker": "دراسة حالة 01 · تعليم إلكتروني",
+  "lang": "ar"
+ },
+ {
+  "key": "en-case-ecommerce-882-orders",
+  "topic": "ecommerce",
+  "title": "882 orders against a 500-order target, on $11.5K of paid media",
+  "kicker": "Case 02 · Fragrance",
+  "lang": "en"
+ },
+ {
+  "key": "ar-case-ecommerce-882-orders",
+  "topic": "ecommerce",
+  "title": "882 طلبًا مقابل مستهدف 500 طلب، بإنفاق إعلاني 11.5 ألف دولار",
+  "kicker": "دراسة حالة 02 · عطور",
+  "lang": "ar"
+ },
+ {
+  "key": "en-case-b2b-snapchat-leads",
+  "topic": "b2b",
+  "title": "636 leads, 70% closed by sales, SAR 260K in revenue from $1.1K in media",
+  "kicker": "Case 03 · B2B lead generation",
+  "lang": "en"
+ },
+ {
+  "key": "ar-case-b2b-snapchat-leads",
+  "topic": "b2b",
+  "title": "636 عميلًا محتملًا، 70% منهم تحولوا إلى صفقات، و260 ألف ريال من إنفاق 1.1 ألف دولار",
+  "kicker": "دراسة حالة 03 · عملاء محتملون B2B",
+  "lang": "ar"
+ },
+ {
+  "key": "en-tool-break-even-roas",
+  "topic": "tools",
+  "title": "Break-even ROAS calculator",
+  "kicker": "Free tool",
+  "lang": "en"
+ },
+ {
+  "key": "ar-tool-break-even-roas",
+  "topic": "tools",
+  "title": "حاسبة ROAS التعادل",
+  "kicker": "أداة مجانية",
+  "lang": "ar"
+ },
+ {
+  "key": "en-tool-roi-calculator",
+  "topic": "tools",
+  "title": "Ad campaign ROI calculator",
+  "kicker": "Free tool",
+  "lang": "en"
+ },
+ {
+  "key": "ar-tool-roi-calculator",
+  "topic": "tools",
+  "title": "حاسبة العائد على الاستثمار (ROI)",
+  "kicker": "أداة مجانية",
+  "lang": "ar"
+ },
+ {
+  "key": "en-tool-cod-roas-calculator",
+  "topic": "cod",
+  "title": "Cash on delivery ROAS calculator",
+  "kicker": "Free tool",
+  "lang": "en"
+ },
+ {
+  "key": "ar-tool-cod-roas-calculator",
+  "topic": "cod",
+  "title": "حاسبة ROAS الدفع عند الاستلام",
+  "kicker": "أداة مجانية",
+  "lang": "ar"
+ },
+ {
+  "key": "en-article-b2b-cost-per-closed-deal",
+  "topic": "deal",
+  "title": "Cost per lead is not enough: measure cost per closed deal in B2B ads",
+  "kicker": "Guide",
+  "lang": "en"
+ },
+ {
+  "key": "ar-article-b2b-cost-per-closed-deal",
+  "topic": "deal",
+  "title": "تكلفة العميل المحتمل لا تكفي: احسب تكلفة الصفقة المغلقة في إعلانات B2B",
+  "kicker": "مقال",
+  "lang": "ar"
+ },
+ {
+  "key": "en-article-cod-true-roas",
+  "topic": "cod",
+  "title": "Cash on delivery is lying to your ROAS: how to calculate the real return for a Saudi store",
+  "kicker": "Guide",
+  "lang": "en"
+ },
+ {
+  "key": "ar-article-cod-true-roas",
+  "topic": "cod",
+  "title": "الدفع عند الاستلام يخدعك: كيف تحسب ROAS الحقيقي لمتجرك في السعودية",
+  "kicker": "مقال",
+  "lang": "ar"
+ },
+ {
+  "key": "en-article-is-your-ad-account-managed-well",
+  "topic": "audit",
+  "title": "How do you know your ad account is managed well? 7 questions to ask whoever runs your ads",
+  "kicker": "Guide",
+  "lang": "en"
+ },
+ {
+  "key": "ar-article-is-your-ad-account-managed-well",
+  "topic": "audit",
+  "title": "كيف تعرف أن حسابك الإعلاني يُدار بشكل صحيح؟ 7 أسئلة تسألها لمن يدير إعلاناتك",
+  "kicker": "مقال",
+  "lang": "ar"
+ },
+ {
+  "key": "en-article-scale-budget-without-breaking-campaigns",
+  "topic": "scaling",
+  "title": "How to raise your ad budget without breaking a winning campaign",
+  "kicker": "Guide",
+  "lang": "en"
+ },
+ {
+  "key": "ar-article-scale-budget-without-breaking-campaigns",
+  "topic": "scaling",
+  "title": "كيف ترفع ميزانية الإعلانات دون أن تكسر الحملة الرابحة",
+  "kicker": "مقال",
+  "lang": "ar"
+ },
+ {
+  "key": "en-article-seasonal-cost-per-order",
+  "topic": "seasonal",
+  "title": "Why cost per order rises in peak seasons, and how to prepare your store",
+  "kicker": "Guide",
+  "lang": "en"
+ },
+ {
+  "key": "ar-article-seasonal-cost-per-order",
+  "topic": "seasonal",
+  "title": "لماذا ترتفع تكلفة الطلب في المواسم؟ وكيف يستعد متجرك لها",
+  "kicker": "مقال",
+  "lang": "ar"
+ },
+ {
+  "key": "en-article-snapchat-vs-tiktok-new-store",
+  "topic": "platforms",
+  "title": "Snapchat or TikTok: where should a new store in Saudi Arabia start advertising?",
+  "kicker": "Guide",
+  "lang": "en"
+ },
+ {
+  "key": "ar-article-snapchat-vs-tiktok-new-store",
+  "topic": "platforms",
+  "title": "سناب شات أم تيك توك: من أين تبدأ إعلانات متجرك الجديد في السعودية؟",
+  "kicker": "مقال",
+  "lang": "ar"
+ },
+ {
+  "key": "en-resources",
+  "topic": "tools",
+  "title": "Cases, tools & guides",
+  "kicker": "Resources",
+  "lang": "en"
+ },
+ {
+  "key": "ar-resources",
+  "topic": "tools",
+  "title": "دراسات حالة، أدوات، ومقالات",
+  "kicker": "المصادر",
+  "lang": "ar"
+ }
+]

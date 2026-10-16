@@ -6,6 +6,9 @@ from cases import CASES
 from tools_reg import TOOLS
 from content import ARTICLES
 from drawer import drawer, BTN
+from prerender import prerender_ar, AR_BOOT
+from settings import head_tags
+HEAD_TAGS = head_tags()
 
 S = os.path.join(ROOT, 'site'); D = 'https://ibrahem-mediabuyer.com'
 TODAY = datetime.date.today().isoformat()   # used for sitemap lastmod
@@ -19,6 +22,33 @@ shutil.copytree(os.path.join(ROOT, 'static'), S)
 
 src = open(os.path.join(ROOT, 'src', 'home.html'), encoding='utf-8').read()
 src = re.sub(r'img/([\w-]+)\.jpg', r'img/\1.webp', src)
+_today = datetime.date.today()
+_MEN = ['January','February','March','April','May','June','July','August','September','October','November','December']
+_MAR = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر']
+src = (src.replace('Updated October 2026', f'Updated {_MEN[_today.month-1]} {_today.year}')
+          .replace('أكتوبر <bdi>2026.</bdi>', f'{_MAR[_today.month-1]} <bdi>{_today.year}.</bdi>')
+          .replace('آخر تحديث: أكتوبر 2026', f'آخر تحديث: {_MAR[_today.month-1]} {_today.year}'))
+# contact-form button next to the WhatsApp button
+_ci = src.index('id="contact"')
+src = src[:_ci] + src[_ci:].replace('<button class="btn ghost" type="button" data-cv>', '<a class="btn" href="contact/">Send your details <i>→</i></a><button class="btn ghost" type="button" data-cv>', 1)
+
+OG_JOBS = []
+def og_for(key, topic, title, kicker, lang):
+    """Share image for a page: static/og/<key>.jpg if it was generated, else the default."""
+    OG_JOBS.append({'key': key, 'topic': topic, 'title': title, 'kicker': kicker, 'lang': lang})
+    return f'/og/{key}.jpg' if os.path.exists(os.path.join(ROOT, 'static', 'og', key + '.jpg')) else '/og.jpg'
+
+def cover_src(topic=None, image=None):
+    if image: return image
+    if topic and os.path.exists(os.path.join(ROOT, 'static', 'img', 'covers', topic + '.webp')):
+        return f'/img/covers/{topic}.webp'
+    return None
+
+def cover_fig(src, alt=''):
+    return f'<figure class="cover"><img src="{src}" alt="{alt}" width="1280" height="720"></figure>' if src else ''
+
+def thumb(src):
+    return f'<img class="thumb" src="{src}" alt="" loading="lazy" width="1280" height="720">' if src else ''
 
 def arts(lang):
     return [a for a in ARTICLES if lang in a]
@@ -53,7 +83,7 @@ def crumbs_ld(items):
 def faq_ld(faq):
     return {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}
 
-def head(lang, path, title, desc, alts, og_type='website', extra=''):
+def head(lang, path, title, desc, alts, og_type='website', extra='', og='/og.jpg'):
     ar = lang == 'ar'
     alt = ''.join(f'<link rel="alternate" hreflang="{l}" href="{D}{u}">' for l, u in alts)
     if alts and any(l == 'en' for l, _ in alts):
@@ -79,13 +109,14 @@ def head(lang, path, title, desc, alts, og_type='website', extra=''):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{D}{path}">
-<meta property="og:image" content="{D}/og.jpg">
+<meta property="og:image" content="{D}{og}">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:locale" content="{'ar_SA' if ar else 'en_US'}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{desc}">
-<meta name="twitter:image" content="{D}/og.jpg">
+<meta name="twitter:image" content="{D}{og}">
+{HEAD_TAGS}
 {extra}
 '''
 
@@ -107,7 +138,7 @@ def wa(lang, msg=None):
     from urllib.parse import quote
     return WA + '?text=' + quote(msg or UI[lang]['wa'])
 
-def shell(lang, path, title, desc, alts, main, schema, cur=None, og_type='article', lang_link=None):
+def shell(lang, path, title, desc, alts, main, schema, cur=None, og_type='article', lang_link=None, og='/og.jpg'):
     u = UI[lang]; ar = lang == 'ar'
     res = '/ar/resources/' if ar else '/resources/'
     tool = res + '#tools'
@@ -117,7 +148,7 @@ def shell(lang, path, title, desc, alts, main, schema, cur=None, og_type='articl
     if lang_link is None:
         lang_link = dict(alts).get('en' if ar else 'ar', '/' if ar else '/ar/')
     lang_lab = 'EN' if ar else 'ع'
-    return head(lang, path, title, desc, alts, og_type, FONTS + '<link rel="stylesheet" href="/assets/site.css">' + ld(*schema)) + f'''</head>
+    return head(lang, path, title, desc, alts, og_type, FONTS + '<link rel="stylesheet" href="/assets/site.css">' + ld(*schema), og) + f'''</head>
 <body>
 <header class="sh"><div class="w">
   {BTN[lang]}
@@ -151,6 +182,9 @@ def crumbs_html(items):
     return '<nav class="crumbs w" aria-label="Breadcrumb">' + ' <span>/</span> '.join(
         (f'<a href="{u}">{n}</a>' if i < len(items) - 1 else f'<span aria-current="page">{n}</span>') for i, (n, u) in enumerate(items)) + '</nav>'
 
+CASE_COVER = {'edtech-251-percent-of-target': 'edtech', 'ecommerce-882-orders': 'ecommerce', 'b2b-snapchat-leads': 'b2b'}
+def art_cover(a): return cover_src(a.get('cover'), a.get('image'))
+
 # ---------- case pages ----------
 for i, c in enumerate(CASES):
     alts = [('en', f'/cases/{c["slug"]}/'), ('ar', f'/ar/cases/{c["slug"]}/')]
@@ -162,7 +196,7 @@ for i, c in enumerate(CASES):
         main = (crumbs_html(cr) +
                 f'<div class="w"><header class="ph"><span class="label">{t["kicker"]}</span><h1>{t["title"]}</h1><p class="lead">{t["lead"]}</p>'
                 f'<p class="meta-line"><span>{UI[lang]["by"]}</span><span>{UI[lang]["upd"]} <bdi>{CASES_UPDATED}</bdi></span></p></header>'
-                + t['body']() +
+                + cover_fig(cover_src(CASE_COVER.get(c['slug'])), t['title']) + t['body']() +
                 f'<div class="next narrow"><a href="{res}#cases">{"→ " if ar else "← "}{UI[lang]["cases"]}</a>'
                 f'<a href="{("/ar" if ar else "")}/cases/{nxt["slug"]}/">{nxt[lang]["title"][:60]}… {"←" if ar else "→"}</a></div></div>')
         first_img = re.search(r'/img/[\w-]+\.webp', t['body']()).group(0)
@@ -170,7 +204,8 @@ for i, c in enumerate(CASES):
                    "author": AUTHOR, "publisher": AUTHOR, "image": D + first_img,
                    "mainEntityOfPage": D + path, "about": ["Media buying", "Performance marketing", "Case study"]},
                   crumbs_ld(cr)]
-        write(path, shell(lang, path, t['meta_title'], t['desc'], alts, main, schema, cur='cases'))
+        og = og_for(f'{lang}-case-{c["slug"]}', CASE_COVER.get(c['slug'], 'tools'), t['title'], t['kicker'].split(' · ')[0] + ' · ' + t['kicker'].split(' · ')[1], lang)
+        write(path, shell(lang, path, t['meta_title'], t['desc'], alts, main, schema, cur='cases', og=og))
     SITEMAP.append(alts)
 
 # ---------- tool pages ----------
@@ -182,14 +217,15 @@ for tl in TOOLS:
         cr = [('الرئيسية' if ar else 'Home', UI[lang]['home']), (UI[lang]['tool'], res + '#tools'), (t['title'], path)]
         others = [o for o in TOOLS if o is not tl]
         more = '<div class="cards" style="grid-template-columns:repeat(2,minmax(0,1fr))">' + ''.join(
-            f'<a class="card" href="{("/ar" if ar else "")}/tools/{o["slug"]}/"><span class="k">{o["T"][lang]["kicker"]}</span><h3>{o["T"][lang]["title"]}</h3><p>{o["T"][lang]["card"]}</p></a>' for o in others) + '</div>'
+            f'<a class="card" href="{("/ar" if ar else "")}/tools/{o["slug"]}/">{thumb(cover_src(o.get("cover")))}<span class="k">{o["T"][lang]["kicker"]}</span><h3>{o["T"][lang]["title"]}</h3><p>{o["T"][lang]["card"]}</p></a>' for o in others) + '</div>'
         main = (crumbs_html(cr) + f'<div class="w"><header class="ph"><span class="label">{t["kicker"]}</span><h1>{t["title"]}</h1><p class="lead">{t["lead"]}</p></header>'
                 + tl['body'](lang) + f'<div class="hub-sec narrow"><h2>{"أدوات أخرى" if ar else "More free tools"}</h2>{more}</div></div>')
         schema = [{"@type": "WebApplication", "name": t['title'], "description": t['desc'], "url": D + path, "inLanguage": lang,
                    "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "isAccessibleForFree": True,
                    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "SAR"}, "author": AUTHOR},
                   faq_ld(t['faq']), crumbs_ld(cr)]
-        write(path, shell(lang, path, t['meta_title'], t['desc'], alts, main, schema, cur='tool', og_type='website'))
+        og = og_for(f'{lang}-tool-{tl["slug"]}', tl.get('cover', 'tools'), t['title'], t['kicker'], lang)
+        write(path, shell(lang, path, t['meta_title'], t['desc'], alts, main, schema, cur='tool', og_type='website', og=og))
     SITEMAP.append(alts)
 
 # ---------- articles (EN + AR) ----------
@@ -203,41 +239,42 @@ for i, a in enumerate(ARTICLES):
         others = [o for o in arts(lang) if o is not a][:4]
         kk = 'مقال' if ar else 'Guide'
         more = '<div class="cards" style="grid-template-columns:repeat(2,minmax(0,1fr))">' + ''.join(
-            f'<a class="card" href="{pre}/articles/{o["slug"]}/"><span class="k">{kk}</span><h3>{o[lang]["title"]}</h3><p>{o[lang]["card"]}</p></a>' for o in others) + '</div>'
+            f'<a class="card" href="{pre}/articles/{o["slug"]}/">{thumb(art_cover(o))}<span class="k">{kk}</span><h3>{o[lang]["title"]}</h3><p>{o[lang]["card"]}</p></a>' for o in others) + '</div>'
         byline = f'{UI["ar"]["by"]}، ميديا باير في الرياض' if ar else 'By Ibrahem Muhamed, media buyer in Riyadh'
         if not others: more = ''
         main = (crumbs_html(cr) + f'<div class="w"><article><header class="ph narrow"><span class="label">{kk} · <bdi>{a["read"]}</bdi> {UI[lang]["read"]}</span><h1>{t["title"]}</h1>'
                 f'<p class="meta-line"><span>{byline}</span><span>{UI[lang]["upd"]} <bdi>{a["date"]}</bdi></span></p></header>'
-                f'<div class="prose narrow">{t["body"]}{("<h2>" + ("أسئلة شائعة" if ar else "Questions") + "</h2>") if faq else ""}</div><div class="faq narrow">{faq}</div></article>'
+                + cover_fig(art_cover(a), t['title']) + f'<div class="prose narrow">{t["body"]}{("<h2>" + ("أسئلة شائعة" if ar else "Questions") + "</h2>") if faq else ""}</div><div class="faq narrow">{faq}</div></article>'
                 + (f'<div class="hub-sec narrow"><h2>{"مقالات أخرى" if ar else "More guides"}</h2>{more}</div>' if more else '') + '</div>')
         schema = [{"@type": "Article", "headline": t['title'], "description": t['desc'], "inLanguage": lang, "datePublished": a['date'], "dateModified": a['date'],
-                   "author": AUTHOR, "publisher": AUTHOR, "image": D + "/og.jpg", "mainEntityOfPage": D + path}] + \
+                   "author": AUTHOR, "publisher": AUTHOR, "image": D + (art_cover(a) or "/og.jpg"), "mainEntityOfPage": D + path}] + \
                   ([faq_ld(t['faq'])] if t['faq'] else []) + [crumbs_ld(cr)]
-        write(path, shell(lang, path, t['meta_title'], t['desc'], alts, main, schema, cur='guides', lang_link=dict(alts).get('ar' if not ar else 'en', '/ar/' if not ar else '/')))
+        og = a.get('image') or og_for(f'{lang}-article-{a["slug"]}', a.get('cover') or 'audit', t['title'], ('مقال' if ar else 'Guide'), lang)
+        write(path, shell(lang, path, t['meta_title'], t['desc'], alts, main, schema, cur='guides', og=og, lang_link=dict(alts).get('ar' if not ar else 'en', '/ar/' if not ar else '/')))
     SITEMAP.append(alts)
 
 # ---------- resources hubs ----------
 def case_cards(lang):
     ar = lang == 'ar'
     return '<div class="cards">' + ''.join(
-        f'<a class="card" href="{("/ar" if ar else "")}/cases/{c["slug"]}/"><span class="k">{c[lang]["kicker"].split(" · ")[0]}</span><h3>{c[lang]["title"]}</h3><p>{c[lang]["card"]}</p><span class="go">{"اقرأ دراسة الحالة ←" if ar else "Read the case →"}</span></a>'
+        f'<a class="card" href="{("/ar" if ar else "")}/cases/{c["slug"]}/">{thumb(cover_src(CASE_COVER.get(c["slug"])))}<span class="k">{c[lang]["kicker"].split(" · ")[0]}</span><h3>{c[lang]["title"]}</h3><p>{c[lang]["card"]}</p><span class="go">{"اقرأ دراسة الحالة ←" if ar else "Read the case →"}</span></a>'
         for c in CASES) + '</div>'
 def article_cards(lang):
     ar = lang == 'ar'; pre = '/ar' if ar else ''
     return '<div class="cards">' + ''.join(
-        f'<a class="card" href="{pre}/articles/{a["slug"]}/"><span class="k">{"مقال" if ar else "Guide"} · <bdi>{a["read"]}</bdi> {"دقائق" if ar else "min"}</span><h3>{a[lang]["title"]}</h3><p>{a[lang]["card"]}</p><span class="go">{"اقرأ المقال ←" if ar else "Read the guide →"}</span></a>'
+        f'<a class="card" href="{pre}/articles/{a["slug"]}/">{thumb(art_cover(a))}<span class="k">{"مقال" if ar else "Guide"} · <bdi>{a["read"]}</bdi> {"دقائق" if ar else "min"}</span><h3>{a[lang]["title"]}</h3><p>{a[lang]["card"]}</p><span class="go">{"اقرأ المقال ←" if ar else "Read the guide →"}</span></a>'
         for a in arts(lang)) + '</div>'
 def tool_cards(lang):
     ar = lang == 'ar'; pre = '/ar' if ar else ''
     return '<div class="cards">' + ''.join(
-        f'<a class="card" href="{pre}/tools/{tl["slug"]}/"><span class="k">{tl["T"][lang]["kicker"]}</span><h3>{tl["T"][lang]["title"]}</h3><p>{tl["T"][lang]["card"]}</p><span class="go">{"افتح الحاسبة ←" if ar else "Open the calculator →"}</span></a>'
+        f'<a class="card" href="{pre}/tools/{tl["slug"]}/">{thumb(cover_src(tl.get("cover")))}<span class="k">{tl["T"][lang]["kicker"]}</span><h3>{tl["T"][lang]["title"]}</h3><p>{tl["T"][lang]["card"]}</p><span class="go">{"افتح الحاسبة ←" if ar else "Open the calculator →"}</span></a>'
         for tl in TOOLS) + '</div>'
 alts = [('en', '/resources/'), ('ar', '/ar/resources/')]
 for lang in ['en', 'ar']:
     ar = lang == 'ar'; path = dict(alts)[lang]
-    title = 'دراسات حالة وأدوات ومقالات في الإعلانات الممولة | إبراهيم محمد' if ar else 'Case studies, tools and guides on paid media | Ibrahem Muhamed'
-    desc = ('دراسات حالة بأرقام حقيقية من الحسابات الإعلانية، وحاسبات مجانية لـROAS التعادل والعائد على الاستثمار، ومقالات لأصحاب المتاجر في السعودية عن سناب شات وتيك توك وميتا وجوجل.' if ar else
-            'Case studies with real ad-account numbers, free break-even ROAS and ROI calculators, and guides for Saudi store owners on Snapchat, TikTok, Meta and Google.')
+    title = 'دراسات حالة وأدوات ومقالات | إبراهيم محمد' if ar else 'Cases, tools and guides on paid media | Ibrahem Muhamed'
+    desc = ('دراسات حالة بأرقام حقيقية، وحاسبات مجانية لـROAS والعائد والدفع عند الاستلام، ومقالات لأصحاب المتاجر عن سناب وتيك توك وميتا وجوجل.' if ar else
+            'Case studies with real ad-account numbers, free ROAS, ROI and cash-on-delivery calculators, and guides for Saudi store owners on Snapchat, TikTok, Meta and Google.')
     cr = [('الرئيسية' if ar else 'Home', UI[lang]['home']), (UI[lang]['res'], path)]
     tool_card = tool_cards(lang)
     main = (crumbs_html(cr) + f'<div class="w"><header class="ph"><span class="label">{UI[lang]["res"]}</span><h1>{"دراسات حالة، أدوات، ومقالات" if ar else "Cases, tools & guides"}</h1><p class="lead">{desc}</p></header>'
@@ -245,8 +282,72 @@ for lang in ['en', 'ar']:
             f'<section class="hub-sec" id="tools"><h2>{"الأدوات" if ar else "Tools"}</h2>{tool_card}</section>'
             f'<section class="hub-sec" id="articles"><h2>{"المقالات" if ar else "Guides"}</h2>{article_cards(lang)}</section></div>')
     schema = [{"@type": "CollectionPage", "name": title, "description": desc, "url": D + path, "inLanguage": lang, "author": AUTHOR}, crumbs_ld(cr)]
-    write(path, shell(lang, path, title, desc, alts, main, schema, og_type='website'))
+    og = og_for(f'{lang}-resources', 'tools', 'دراسات حالة، أدوات، ومقالات' if ar else 'Cases, tools & guides', UI[lang]['res'], lang)
+    write(path, shell(lang, path, title, desc, alts, main, schema, og_type='website', og=og))
 SITEMAP.append(alts)
+
+# ---------- contact form (Netlify Forms), thanks page, 404 ----------
+CF = {
+ 'en': {'title': 'Tell me about your brand', 'meta': 'Contact | Ibrahem Muhamed', 'kicker': 'Contact',
+        'desc': 'Send your brand details and I will reply within one working day with how I would start on your account. Free 25-minute audit included.',
+        'lead': 'A few details and I will reply within one working day with how I would start on your account. Prefer WhatsApp? The button is below.',
+        'name': 'Your name', 'brand': 'Brand or store link', 'wa': 'WhatsApp number', 'spend': 'Monthly ad spend', 'pf': 'Platforms you use now',
+        'msg': 'What do you want to fix or grow?', 'send': 'Send', 'opts': ['Not advertising yet', 'Under SAR 10K', 'SAR 10K – 30K', 'SAR 30K – 100K', 'Over SAR 100K'],
+        'thanks_h': 'Thank you, your details arrived.', 'thanks_p': 'I will reply within one working day. If it is urgent, message me on WhatsApp.',
+        'nf_h': 'This page does not exist', 'nf_p': 'The link may be old or mistyped. These pages might help:'},
+ 'ar': {'title': 'أخبرني عن علامتك التجارية', 'meta': 'تواصل معي | إبراهيم محمد', 'kicker': 'تواصل',
+        'desc': 'أرسل بيانات علامتك التجارية وسأرد خلال يوم عمل بالطريقة التي سأبدأ بها في حسابك، مع مراجعة مجانية لمدة 25 دقيقة.',
+        'lead': 'بعض التفاصيل فقط، وسأرد خلال يوم عمل بالطريقة التي سأبدأ بها في حسابك. تفضّل واتساب؟ الزر في الأسفل.',
+        'name': 'الاسم', 'brand': 'اسم العلامة أو رابط المتجر', 'wa': 'رقم الواتساب', 'spend': 'الإنفاق الإعلاني الشهري', 'pf': 'المنصات التي تستخدمها الآن',
+        'msg': 'ما الذي تريد إصلاحه أو تنميته؟', 'send': 'إرسال', 'opts': ['لم أبدأ الإعلانات بعد', 'أقل من 10 آلاف ريال', '10 – 30 ألف ريال', '30 – 100 ألف ريال', 'أكثر من 100 ألف ريال'],
+        'thanks_h': 'شكرًا، وصلتني بياناتك.', 'thanks_p': 'سأرد عليك خلال يوم عمل. وإذا كان الأمر عاجلًا راسلني على واتساب.',
+        'nf_h': 'هذه الصفحة غير موجودة', 'nf_p': 'قد يكون الرابط قديمًا أو به خطأ. هذه الصفحات قد تفيدك:'},
+}
+FORM_CSS = """<style>
+.cform{display:grid;gap:14px;max-width:640px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;margin-bottom:56px}
+.cform label{display:grid;gap:6px;font-size:14.5px;color:#d6d9e4}
+.cform input,.cform select,.cform textarea{background:var(--bg);border:1px solid var(--line);border-radius:10px;color:var(--fg);font:16px var(--f-body);padding:11px 12px;width:100%}
+.cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--acc)}
+.cform .pfs{display:flex;flex-wrap:wrap;gap:8px}
+.cform .pfs label{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+.cform .pfs input{width:auto}
+.cform .hp{display:none}
+.cform .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:600px){.cform .row2{grid-template-columns:1fr}}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 60px}
+</style>"""
+alts = [('en', '/contact/'), ('ar', '/ar/contact/')]
+for lang in ['en', 'ar']:
+    t = CF[lang]; ar = lang == 'ar'; path = dict(alts)[lang]; pre = '/ar' if ar else ''
+    cr = [('الرئيسية' if ar else 'Home', UI[lang]['home']), (t['kicker'], path)]
+    pfs = ''.join(f'<label><input type="checkbox" name="platforms" value="{p}"> {p}</label>' for p in ['Snapchat', 'TikTok', 'Meta', 'Google', 'Salla / Zid', 'Shopify'])
+    opts = ''.join(f'<option>{o}</option>' for o in t['opts'])
+    form = (f'<form class="cform" name="contact" method="POST" action="{pre}/thanks/" data-netlify="true" netlify-honeypot="bot-field">'
+            f'<input type="hidden" name="form-name" value="contact"><input type="hidden" name="lang" value="{lang}">'
+            f'<p class="hp"><label>Leave empty <input name="bot-field"></label></p>'
+            f'<div class="row2"><label>{t["name"]}<input name="name" required autocomplete="name"></label>'
+            f'<label>{t["wa"]}<input name="whatsapp" type="tel" required autocomplete="tel" dir="ltr" placeholder="+966"></label></div>'
+            f'<label>{t["brand"]}<input name="brand" dir="auto"></label>'
+            f'<label>{t["spend"]}<select name="spend">{opts}</select></label>'
+            f'<div><span style="font-size:14.5px;color:#d6d9e4">{t["pf"]}</span><div class="pfs" style="margin-top:8px">{pfs}</div></div>'
+            f'<label>{t["msg"]}<textarea name="message" rows="4"></textarea></label>'
+            f'<button class="btn primary" type="submit" style="justify-self:start">{t["send"]} {"←" if ar else "→"}</button></form>')
+    main = (crumbs_html(cr) + f'<div class="w"><header class="ph"><span class="label">{t["kicker"]}</span><h1>{t["title"]}</h1><p class="lead">{t["lead"]}</p></header>{form}</div>')
+    schema = [{"@type": "ContactPage", "name": t['meta'], "url": D + path, "inLanguage": lang, "about": {"@id": D + "/#service"}}, crumbs_ld(cr)]
+    write(path, shell(lang, path, t['meta'], t['desc'], alts, main, schema, og_type='website').replace('</head>', FORM_CSS + '</head>', 1))
+    SITEMAP_CONTACT = alts
+    # thanks page (not indexed)
+    tp = pre + '/thanks/'
+    main = (f'<div class="w"><header class="ph"><span class="label">{t["kicker"]}</span><h1>{t["thanks_h"]}</h1><p class="lead">{t["thanks_p"]}</p></header>'
+            f'<div class="links"><a class="btn primary" href="{wa(lang)}" target="_blank" rel="noopener">WhatsApp</a><a class="btn" href="{UI[lang]["home"]}">{"الرئيسية" if ar else "Home"}</a>'
+            f'<a class="btn" href="{pre}/resources/">{UI[lang]["res"]}</a></div></div>')
+    write(tp, shell(lang, tp, t['thanks_h'], t['thanks_p'], [(lang, tp)], main, [], og_type='website').replace('index,follow,max-image-preview:large', 'noindex,follow'))
+SITEMAP.append(SITEMAP_CONTACT)
+
+nf_links = ''.join(f'<a class="btn" href="{u}">{n}</a>' for n, u in [('Home', '/'), ('الرئيسية', '/ar/'), ('Cases, tools & guides', '/resources/'), ('دراسات حالة وأدوات ومقالات', '/ar/resources/')])
+main = (f'<div class="w"><header class="ph"><span class="label">404</span><h1>{CF["en"]["nf_h"]}<br><span lang="ar" dir="rtl" style="display:block;font-family:var(--f-body)">{CF["ar"]["nf_h"]}</span></h1>'
+        f'<p class="lead">{CF["en"]["nf_p"]}<br><span lang="ar" dir="rtl" style="display:block">{CF["ar"]["nf_p"]}</span></p></header><div class="links">{nf_links}</div></div>')
+open(f'{S}/404.html', 'w').write(shell('en', '/404.html', '404 | Ibrahem Muhamed', CF['en']['nf_p'], [], main, [], og_type='website').replace('index,follow,max-image-preview:large', 'noindex,follow').replace('<link rel="canonical" href="https://ibrahem-mediabuyer.com/404.html">', ''))
 
 # ---------- homepage ----------
 i = src.index('<div class="progress"')
@@ -261,7 +362,9 @@ RES_CSS = '''<style>
 .res-head h2{font-size:clamp(28px,4vw,40px)}
 .res-head p{color:var(--muted)}
 .res-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.res-grid.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.res-grid.five{grid-template-columns:repeat(3,minmax(0,1fr))}
+.res-card .thumb,.rc .thumb{display:block;height:auto;width:calc(100% + 36px);margin:-18px -18px 2px;aspect-ratio:16/9;object-fit:cover;border-radius:15px 15px 0 0;border-bottom:1px solid var(--line);max-width:none}
+.rc .thumb{width:calc(100% + 40px);margin:-20px -20px 0}
 .res-grid.five .res-card{padding:15px}
 .res-grid.five .res-card h3{font-size:15.5px}
 .res-grid.five .res-card p{display:none}
@@ -282,7 +385,7 @@ RES_CSS = '''<style>
 .rc-head h2{font-size:clamp(28px,4vw,40px)}
 .rc-head p{color:var(--muted)}
 .rc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.rc{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:14px;align-content:start;grid-template-rows:auto auto 1fr auto auto}
+.rc{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:14px;align-content:start;grid-template-rows:auto auto auto 1fr auto auto}
 .rc .tagline{display:flex;gap:10px;flex-wrap:wrap}
 .rc .big{font-family:var(--f-display);font-weight:800;font-size:clamp(44px,5vw,58px);line-height:1;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .rc .big .cu{background:linear-gradient(transparent 62%,var(--hl) 62%);padding:0 3px}
@@ -309,9 +412,9 @@ short = {'edtech-251-percent-of-target': ('Case 01 · EdTech', '251% of the mont
          'ecommerce-882-orders': ('Case 02 · E-commerce', '882 orders against a 500 target'),
          'b2b-snapchat-leads': ('Case 03 · B2B', '70% of leads closed, SAR 260K revenue')}
 cards1 = ''.join(f'<a class="res-card" href="cases/{c["slug"]}/"><span class="k">{short[c["slug"]][0]}</span><h3>{short[c["slug"]][1]}</h3><p>{c["en"]["card"]}</p><span class="go">Read the case →</span></a>' for c in CASES)
-cards2 = ''.join(f'<a class="res-card" href="tools/{tl["slug"]}/"><span class="k">Free tool</span><h3>{tl["T"]["en"]["title"]}</h3><p>{tl["T"]["en"]["card"]}</p><span class="go">Open the calculator →</span></a>' for tl in TOOLS)
-cards3_ar = ''.join(f'<a class="res-card" href="articles/{a["slug"]}/"><span class="k">مقال · <bdi dir="ltr">{a["read"]}</bdi> دقائق</span><h3>{a["ar"]["title"]}</h3><span class="go">اقرأ المقال ←</span></a>' for a in arts('ar')[:3])
-cards3 = ''.join(f'<a class="res-card" href="articles/{a["slug"]}/"><span class="k">Guide · {a["read"]} min</span><h3>{a["en"]["title"]}</h3><span class="go">Read the guide →</span></a>' for a in arts('en')[:3])
+cards2 = ''.join(f'<a class="res-card" href="tools/{tl["slug"]}/">{thumb(cover_src(tl.get("cover")))}<span class="k">Free tool</span><h3>{tl["T"]["en"]["title"]}</h3><p>{tl["T"]["en"]["card"]}</p><span class="go">Open the calculator →</span></a>' for tl in TOOLS)
+cards3_ar = ''.join(f'<a class="res-card" href="articles/{a["slug"]}/">{thumb(art_cover(a))}<span class="k">مقال · <bdi dir="ltr">{a["read"]}</bdi> دقائق</span><h3>{a["ar"]["title"]}</h3><span class="go">اقرأ المقال ←</span></a>' for a in arts('ar')[:3])
+cards3 = ''.join(f'<a class="res-card" href="articles/{a["slug"]}/">{thumb(art_cover(a))}<span class="k">Guide · {a["read"]} min</span><h3>{a["en"]["title"]}</h3><span class="go">Read the guide →</span></a>' for a in arts('en')[:3])
 RES = f'''<section class="res" id="resources">
   <div class="wrap">
     <div class="res-head"><span class="label">Tools &amp; guides</span><h2>Free tools and guides</h2><p>Calculators for your margins and profit, and practical guides for store owners.</p></div>
@@ -342,7 +445,7 @@ for sid, c in zip(['edtech', 'fragrance', 'leads'], CASES):
     big = re.search(r'<div class="big mono">(.*?)</div>', sec).group(1)
     kp = block(sec, 'kpis'); items = re.findall(r'<div class="kpi">.*?</span></div>', kp, re.S)
     k2 = ''.join(items[i] for i in PICK[sid])
-    cards += (f'<article class="rc" id="{"rc-" + sid if sid == "edtech" else sid}"><div class="tagline">{tags}</div>'
+    cards += (f'<article class="rc" id="{"rc-" + sid if sid == "edtech" else sid}">{thumb(cover_src(CASE_COVER.get(c["slug"])))}<div class="tagline">{tags}</div>'
               f'<div class="big mono">{big}</div><h3>{title}</h3><div class="kpis">{k2}</div>'
               f'<a class="btn case-go" href="cases/{c["slug"]}/">Read the full case <i>→</i></a></article>')
     if first is None:
@@ -364,6 +467,7 @@ dct.update({
  'Go deeper before we talk': 'تعرّف على شغلي أكثر قبل أن نتحدث',
  'Every case on its own page, free calculators for your margins and profit, and practical guides for store owners.': 'كل دراسة حالة في صفحة مستقلة، وحاسبات مجانية لهامش ربحك وأرباحك، ومقالات عملية لأصحاب المتاجر.',
  'Read the guide →': 'اقرأ المقال ←',
+ 'Send your details →': 'أرسل بياناتك <i>←</i>',
  'Tools & guides': 'أدوات ومقالات', 'Free tools and guides': 'أدوات ومقالات مجانية',
  'Calculators for your margins and profit, and practical guides for store owners.': 'حاسبات لهامش ربحك وأرباحك، ومقالات عملية لأصحاب المتاجر.',
  'Read the full case →': 'اقرأ دراسة الحالة كاملة <i>←</i>',
@@ -395,14 +499,16 @@ LANG_INIT = "(function(){var l=null;try{l=localStorage.getItem('lang')}catch(e){
 assert LANG_INIT in body
 home_ld = ld(PERSON, WEBSITE, SERVICE)
 H = {'en': ('Ibrahem Muhamed — Media Buyer · Paid media judged on revenue',
-            'I run paid media on Snapchat, TikTok, Meta and Google for Saudi brands. The results here come straight from the ad accounts. Your first account audit is free, 25 minutes.'),
+            'Paid media on Snapchat, TikTok, Meta and Google for Saudi brands, with results straight from the ad accounts. Your first 25-minute account audit is free.'),
      'ar': ('إبراهيم محمد — ميديا باير | إعلانات تُقاس بالمبيعات',
             'أدير إعلانات سناب شات وتيك توك وميتا وجوجل لعلامات سعودية، والنتائج هنا من الحسابات الإعلانية نفسها. أول مراجعة لحسابك مجانية، 25 دقيقة.')}
 home_alts = [('en', '/'), ('ar', '/ar/')]
 en_body = body.replace(LANG_INIT, "(function(){var l=null;try{l=localStorage.getItem('lang')}catch(e){}\n    if(l==='ar')setLang('ar');})();")
 open(f'{S}/index.html', 'w').write(head('en', '/', *H['en'], home_alts, 'profile', home_ld) + head_part + RES_CSS + '</head>\n<body>\n' + en_body + '\n</body>\n</html>\n')
 os.makedirs(f'{S}/ar', exist_ok=True)
-ar_body = body.replace(cards3, cards3_ar).replace('img/', '../img/').replace(LANG_INIT, "setLang('ar');")
+ar_body = re.sub(r'(["(])img/', r'\1../img/', body.replace(cards3, cards3_ar)).replace(LANG_INIT, AR_BOOT)
+ar_body, n_ar = prerender_ar(ar_body)
+print('arabic pre-rendered elements:', n_ar)
 open(f'{S}/ar/index.html', 'w').write(head('ar', '/ar/', *H['ar'], home_alts, 'profile', home_ld) + head_part.replace('img/', '../img/') + RES_CSS + '</head>\n<body>\n' + ar_body + '\n</body>\n</html>\n')
 SITEMAP.insert(0, home_alts)
 
@@ -443,3 +549,7 @@ llms = f'''# Ibrahem Muhamed (إبراهيم محمد)
 ''.join(f'- [دليل: {a["ar"]["title"]}]({D}/ar/articles/{a["slug"]}/)\n' for a in arts('ar'))
 open(f'{S}/llms.txt', 'w').write(llms)
 print('pages:', sum(len(a) for a in SITEMAP))
+
+# list of share images for tools_dev/covers.py (local use only)
+if not os.environ.get('NETLIFY'):
+    json.dump(OG_JOBS, open(os.path.join(ROOT, 'tools_dev', 'og_jobs.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
