@@ -1,0 +1,1562 @@
+<title>Ibrahem Muhamed Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..800&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<style>
+
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.65 var(--f-body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;letter-spacing:-.025em;font-weight:700}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.label{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+a{color:var(--fg);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px;border-radius:4px}
+.hl,.ledger .n,.kpi .v,.target .big .cu,.grid-ledger .n,.cmp.true .x{background:linear-gradient(transparent 62%,var(--hl) 62%);padding:0 3px;margin-left:-3px;justify-self:start}
+
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;flex-wrap:wrap}
+.top nav{display:flex;gap:22px;flex-wrap:wrap}
+.top nav a{color:var(--muted);text-decoration:none;font-size:14px}
+.top nav a:hover{color:var(--fg)}
+.brand{font-family:var(--f-mono);font-size:13px}
+.brand b{color:var(--yellow)}
+
+.hero .wrap{padding-block:72px 56px;display:grid;gap:28px}
+.hero h1{font-size:clamp(30px,8.4vw,92px);line-height:1.02;font-weight:800;white-space:nowrap;justify-self:start}
+.hero h1>span{color:var(--yellow)}
+.hero h1 .ch{display:inline-block;color:var(--fg)}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 3px var(--hl)}
+.hero-row{display:grid;gap:18px;max-width:680px}
+.hero-row>div{display:grid;gap:18px;min-width:0}
+.hero .role{font-size:clamp(19px,2.4vw,23px);line-height:1.45}
+.hero .sub{color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px 14px}
+.chip{font-size:13px;color:var(--muted)}
+.chip+.chip::before{content:"·";margin-right:14px;color:var(--line)}
+
+.ledger{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;border-top:1px solid var(--line);padding-top:28px;margin-top:12px}
+.ledger div{display:grid;gap:8px;align-content:start;min-width:0}
+.ledger .n{font-family:var(--f-display);font-weight:700;font-size:clamp(30px,4vw,44px);line-height:1.05;font-variant-numeric:tabular-nums}
+.ledger .t{font-size:14px;color:var(--muted);line-height:1.45}
+@media (max-width:760px){.ledger{grid-template-columns:1fr 1fr}}
+
+section.case>.wrap{padding-block:88px;display:grid;gap:44px;border-top:1px solid var(--line)}
+.case-head{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end}
+.case-head h2{font-size:clamp(28px,4vw,46px);line-height:1.08}
+.case-head .ctx{color:var(--muted);display:grid;gap:12px}
+.tagline{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.tag{font-family:var(--f-mono);font-size:12px;color:var(--fg);display:inline-flex;align-items:center;gap:8px}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--yellow)}
+.tag.alt{color:var(--muted)}
+.tag.alt::before{display:none}
+@media (max-width:820px){.case-head{grid-template-columns:1fr;gap:20px}}
+
+.target{display:grid;gap:18px}
+.target-top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.target-top .big{font-family:var(--f-display);font-weight:800;font-size:clamp(56px,9vw,104px);line-height:1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.target-top .big small{font-size:18px;color:var(--muted);font-weight:500;font-family:var(--f-body)}
+.bar{position:relative;height:6px;background:var(--panel-2);border-radius:999px}
+.bar i{position:absolute;inset:0 auto 0 0;background:var(--yellow);border-radius:999px}
+.bar .goal{position:absolute;top:-7px;bottom:-7px;width:2px;background:var(--fg)}
+.bar-legend{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.bar-legend b{color:var(--fg);font-weight:600}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.kpi{display:grid;gap:6px;align-content:start;min-width:0;border-top:1px solid var(--line);padding-top:16px}
+.kpi .v{font-family:var(--f-mono);font-weight:500;font-size:24px;font-variant-numeric:tabular-nums}
+.kpi .k{font-size:13.5px;color:var(--muted);line-height:1.45}
+@media (max-width:760px){.kpis{grid-template-columns:1fr 1fr;gap:22px}}
+
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+.panel{background:var(--panel);border-radius:16px;padding:28px;display:grid;gap:18px;align-content:start;min-width:0;box-shadow:0 1px 0 var(--line),0 0 0 1px var(--line)}
+.panel h3{font-size:19px}
+.panel .note{font-size:14px;color:var(--muted)}
+
+.steps{display:grid;gap:18px}
+.step-row{display:grid;gap:8px}
+.step-row .name{display:flex;justify-content:space-between;font-size:14px;font-weight:600}
+.step-row .name span:last-child{font-family:var(--f-mono);color:var(--muted);font-size:12px;font-weight:400}
+.track{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg{display:grid;gap:4px;position:relative;padding-bottom:10px}
+.seg::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;border-radius:4px;background:var(--panel-2)}
+.seg .fill{position:absolute;left:0;bottom:0;height:4px;border-radius:4px;background:var(--yellow);z-index:1}
+.seg.first .fill{background:var(--before)}
+.seg .x{font-family:var(--f-mono);font-weight:500;font-size:19px}
+.seg.first .x{color:var(--muted)}
+.seg .when{font-size:12px;color:var(--muted)}
+
+ul.did{list-style:none;padding:0;margin:0;display:grid;gap:14px;counter-reset:d}
+ul.did li{display:grid;grid-template-columns:28px 1fr;gap:6px;font-size:15px;color:var(--muted)}
+ul.did li::before{counter-increment:d;content:counter(d,decimal-leading-zero);font-family:var(--f-mono);font-size:12px;color:var(--fg);padding-top:3px}
+ul.did b{color:var(--fg);font-weight:600}
+
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cmp{display:grid;gap:6px;align-content:start}
+.cmp .x{font-family:var(--f-mono);font-size:28px;font-weight:500}
+.cmp.flag .x{color:var(--muted);text-decoration:line-through;text-decoration-thickness:2px;text-decoration-color:var(--before)}
+.cmp .k{font-size:13.5px;color:var(--muted);line-height:1.45}
+
+.mix{display:grid;gap:12px}
+.mix-bar{display:flex;height:36px;border-radius:10px;overflow:hidden;gap:3px}
+.mix-bar div{display:flex;align-items:center;padding-left:10px;font-family:var(--f-mono);font-size:12px;font-weight:500;white-space:nowrap;min-width:0;overflow:hidden}
+.mix-legend{display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--muted)}
+.mix-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+.shots-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:820px){.shots{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.shots{grid-template-columns:1fr}}
+.shot{all:unset;cursor:zoom-in;display:grid;gap:10px;min-width:0}
+.shot img{width:100%;aspect-ratio:16/8;object-fit:cover;object-position:top left;border-radius:10px;display:block;background:var(--panel-2);box-shadow:0 0 0 1px var(--line);transition:transform .35s ease,box-shadow .35s ease}
+.shot:hover img{transform:translateY(-3px);box-shadow:0 0 0 1px var(--line),0 12px 28px -14px rgba(0,0,0,.35)}
+.shot:focus-visible img{outline:2px solid var(--fg);outline-offset:3px}
+.shot span{font-size:13px;color:var(--muted)}
+
+dialog{border:0;background:var(--bg);color:var(--fg);padding:14px;border-radius:14px;max-width:min(1400px,96vw);max-height:92vh}
+dialog::backdrop{background:rgba(10,10,8,.8)}
+dialog img{max-width:100%;max-height:78vh;display:block;margin:0 auto;border-radius:8px}
+dialog .bar-d{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:2px 2px 12px}
+dialog button{font:inherit;font-size:14px;background:var(--panel-2);color:var(--fg);border:0;border-radius:8px;padding:6px 14px;cursor:pointer}
+
+.career .wrap{padding-block:88px;display:grid;gap:32px;border-top:1px solid var(--line)}
+.career h2{font-size:clamp(26px,3.6vw,40px)}
+.grid-ledger{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 28px}
+.grid-ledger div{display:grid;gap:6px;align-content:start;min-width:0}
+.grid-ledger .n{font-family:var(--f-mono);font-size:24px;font-weight:500}
+.grid-ledger .t{font-size:14px;color:var(--muted);line-height:1.45}
+@media (max-width:760px){.grid-ledger{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.grid-ledger{grid-template-columns:1fr}}
+
+.contact .wrap{padding-block:88px 96px;display:grid;gap:28px;border-top:1px solid var(--line)}
+.contact h2{font-size:clamp(32px,5vw,58px);line-height:1.05}
+.contact h2 span{background:linear-gradient(transparent 60%,var(--yellow) 60%);color:var(--ink);padding:0 4px}
+.c-rows{display:grid;gap:0;max-width:620px}
+.c-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 0;border-bottom:1px solid var(--line)}
+.c-row:first-child{border-top:1px solid var(--line)}
+.c-row .val{font-family:var(--f-mono);font-size:15px;user-select:all;word-break:break-all}
+.c-row button{font:inherit;font-size:13px;background:var(--panel-2);color:var(--fg);border:0;border-radius:6px;padding:5px 12px;cursor:pointer}
+.c-row button:hover{background:var(--yellow);color:var(--ink)}
+.c-row a{font-size:14px}
+footer{color:var(--muted);font-size:13px}
+
+@keyframes grow{from{width:0}}
+@media (prefers-reduced-motion:no-preference){
+  .hero h1 .ch{animation:rise .6s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*22ms)}
+  @keyframes rise{from{transform:translateY(.35em);opacity:0}}
+  .bar.go i{animation:grow 1.2s cubic-bezier(.2,.8,.2,1) both}
+}
+
+/* ---- buttons & motion ---- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--glass);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+.top.scrolled{border-bottom-color:var(--line)}
+.top .wrap{padding-block:14px}
+.top nav a{position:relative;padding:4px 0}
+.top nav a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.top nav a:hover::after,.top nav a.on::after{transform:scaleX(1)}
+.top nav a.on{color:var(--fg)}
+.hdr-actions{display:flex;gap:10px;align-items:center}
+@media (max-width:860px){.top nav{display:none}}
+@media (max-width:420px){.brand{font-size:12px}.top .wrap{gap:10px}}
+.seg-toggle{display:inline-flex;background:var(--panel-2);border-radius:999px;padding:3px;position:relative}
+.seg-toggle button{all:unset;cursor:pointer;font-family:var(--f-mono);font-size:12px;padding:5px 11px;border-radius:999px;color:var(--muted);transition:background .25s,color .25s}
+.seg-toggle button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.seg-toggle button:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 15px/1 var(--f-body);text-decoration:none;color:var(--fg);padding:14px 20px;border-radius:999px;border:1.5px solid var(--fg);background:transparent;cursor:pointer;transition:transform .2s ease,background .25s,color .25s,box-shadow .25s;position:relative;overflow:hidden}
+.btn i{font-style:normal;display:inline-block;transition:transform .3s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover i{transform:translateX(3px)}
+.btn.primary{background:var(--yellow);border-color:var(--yellow);color:var(--ink);box-shadow:0 8px 22px -12px rgba(255,190,0,.9)}
+.btn.primary:hover{box-shadow:0 14px 30px -12px rgba(255,190,0,1)}
+.btn.primary:hover i.down{transform:translateY(3px)}
+.btn.ghost{border-color:transparent;color:var(--muted)}
+.btn.ghost:hover{color:var(--fg)}
+.btn.small{padding:9px 14px;font-size:13px}
+.btn.primary::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%)}
+.btn.primary:hover::after{transform:translateX(120%);transition:transform .7s ease}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+.progress{position:fixed;left:0;right:0;top:0;height:3px;z-index:30;pointer-events:none}
+.progress i{display:block;height:100%;width:100%;background:var(--yellow);transform-origin:left;transform:scaleX(var(--p,0))}
+.ticker{background:var(--yellow);color:var(--ink);overflow:hidden}
+.ticker-track{display:flex;width:max-content}
+.ticker-track>div>span{font-family:var(--f-display);font-weight:700;font-size:clamp(16px,2vw,20px);padding:13px 0;white-space:nowrap}
+.ticker-track>div>span::after{content:"●";margin:0 22px;font-size:.45em;vertical-align:.35em}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{all:unset;cursor:pointer;font-size:13px;padding:7px 14px;border-radius:999px;background:var(--panel-2);color:var(--muted);transition:background .25s,color .25s,transform .2s}
+.filters button:hover{color:var(--fg);transform:translateY(-1px)}
+.filters button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.filters button:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+.filters b{font-family:var(--f-mono);font-weight:400;opacity:.6;margin-left:4px}
+.shot.hide{display:none}
+.shot.pop{animation:pop .45s cubic-bezier(.2,.8,.2,1) both}
+@keyframes pop{from{transform:translateY(10px) scale(.98)}}
+.next-case{justify-self:end}
+.totop{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:25;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--fg);color:var(--bg);text-decoration:none;font-size:18px;transform:translateY(80px);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.totop{visibility:hidden}
+.totop.show{transform:none;visibility:visible}
+.totop:hover{background:var(--yellow);color:var(--ink)}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,120px);background:var(--fg);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:14px;z-index:40;transition:transform .35s cubic-bezier(.2,.8,.2,1),visibility 0s .35s;pointer-events:none;visibility:hidden}
+.toast.show{transform:translate(-50%,0);visibility:visible;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.hl-anim{background-size:0% 100% !important;background-repeat:no-repeat !important;transition:background-size .9s cubic-bezier(.6,0,.2,1)}
+.hl-anim.on{background-size:100% 100% !important}
+.rv{transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.pre{transform:translateY(28px)}
+.kpi{transition:transform .25s ease}
+.kpi:hover{transform:translateY(-3px)}
+.panel{transition:box-shadow .3s ease,transform .3s ease}
+.panel:hover{box-shadow:0 0 0 1px var(--line),0 18px 40px -26px rgba(0,0,0,.35)}
+@media (prefers-reduced-motion:no-preference){
+  .ticker-track{animation:tick 40s linear infinite}
+  .ticker:hover .ticker-track{animation-play-state:paused}
+  @keyframes tick{to{transform:translateX(-50%)}}
+  .status i{animation:ping 1.8s infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,212,59,.7)}70%{box-shadow:0 0 0 9px rgba(255,212,59,0)}100%{box-shadow:0 0 0 0 rgba(255,212,59,0)}}
+}
+@media (prefers-reduced-motion:reduce){.rv.pre{transform:none}.hl-anim{background-size:100% 100% !important}}
+
+/* Layout: a framed "cover" in the style of a design-portfolio title card (black frame, glossy periwinkle-to-white card with plastic sheen, notched corners with slash marks), then the case files on a dark studio ground. Deliberately dark-only. */
+:root{
+  --yellow:#8d9bff;      /* accent (periwinkle) — kept under the old token name the page already uses */
+  --dot:#4b55e6;
+  --ink:#0b0c14;
+  --frame:#0b0c12;
+  --bg:#07080c;
+  --panel:#10121a;
+  --panel-2:#191c28;
+  --line:#242838;
+  --fg:#f2f3f8;
+  --muted:#9097ab;
+  --up:#f2f3f8;
+  --before:#5c6378;
+  --hl:rgba(118,132,255,.5);
+  --glass:rgba(7,8,12,.78);
+  --f-display:"Archivo", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Schibsted Grotesk", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme:dark;
+}
+h1,h2,h3{font-family:var(--f-display);font-stretch:108%}
+.hero .wrap{padding-block:28px 56px;gap:32px;max-width:1180px}
+.btn.primary{box-shadow:0 10px 26px -12px rgba(110,125,255,.9)}
+.btn.primary:hover{box-shadow:0 16px 34px -12px rgba(110,125,255,1)}
+.ticker{background:linear-gradient(90deg,#7b86f2,#d7dbff 35%,#8b95f3 70%,#cfd3ff)}
+.status i{background:#8d9bff}
+@media (prefers-reduced-motion:no-preference){@keyframes ping{0%{box-shadow:0 0 0 0 rgba(141,155,255,.7)}70%{box-shadow:0 0 0 9px rgba(141,155,255,0)}100%{box-shadow:0 0 0 0 rgba(141,155,255,0)}}}
+.contact h2 span{background:linear-gradient(100deg,#8d9bff,#e3e6ff);color:var(--ink);border-radius:8px}
+.hero-row{max-width:none;grid-template-columns:1.2fr .8fr;align-items:end;gap:28px}
+@media (max-width:860px){.hero-row{grid-template-columns:1fr}}
+.hero-row .ctas{justify-content:flex-end}
+@media (max-width:860px){.hero-row .ctas{justify-content:flex-start}}
+
+/* ---- frame ---- */
+.frame{position:relative;overflow:hidden;background:var(--frame);border:1px solid var(--line);border-radius:28px;padding:clamp(18px,2.6vw,30px) clamp(16px,3.6vw,46px);display:grid;gap:clamp(18px,2.4vw,26px)}
+.frame::before,.frame::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.frame::before{width:70%;aspect-ratio:1;right:-18%;top:-55%;background:radial-gradient(circle at 40% 60%,#18233f,#0d1324 60%,transparent 70%)}
+.frame::after{width:60%;aspect-ratio:1;left:20%;bottom:-62%;background:radial-gradient(circle,#121a30,transparent 68%)}
+.frame>*{position:relative;z-index:1}
+.frame-top,.frame-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:#fff;font-family:var(--f-display);font-stretch:112%}
+.frame-top span{font-size:clamp(12px,1.5vw,18px);font-weight:500;letter-spacing:.03em}
+.frame-top .years{letter-spacing:.42em;font-weight:600}
+.frame-bottom>span:first-child{font-size:clamp(16px,2vw,26px);font-weight:400}
+.frame-bottom b{font-weight:500}
+.frame-bottom .status{color:#c9cde0}
+
+/* ---- cover card ---- */
+.cover{position:relative;overflow:hidden;border-radius:clamp(26px,4vw,46px);min-height:clamp(440px,44vw,540px);color:var(--ink);
+  background:
+    radial-gradient(60% 80% at 40% 20%,rgba(110,124,240,.95),transparent 70%),
+    radial-gradient(50% 60% at 95% 85%,rgba(120,132,245,.9),transparent 70%),
+    linear-gradient(118deg,#f6f7fc 0%,#eceefe 18%,#c3c9fb 40%,#e9ebfd 62%,#f7f8fc 78%,#b6bdf8 100%)}
+.sheen{position:absolute;inset:-20%;pointer-events:none;opacity:.75;mix-blend-mode:soft-light;
+  background:
+    linear-gradient(105deg,transparent 30%,rgba(255,255,255,.95) 34%,transparent 38%),
+    linear-gradient(160deg,transparent 52%,rgba(255,255,255,.9) 55%,transparent 59%),
+    linear-gradient(75deg,transparent 62%,rgba(255,255,255,.7) 64%,transparent 67%),
+    repeating-linear-gradient(130deg,rgba(255,255,255,.18) 0 2px,transparent 2px 22px),
+    radial-gradient(30% 20% at 20% 80%,rgba(255,255,255,.9),transparent 70%);
+  background-size:140% 140%,160% 160%,150% 150%,auto,auto}
+.notch{position:absolute;background:var(--frame);z-index:2;display:flex;align-items:center;justify-content:center}
+.notch::before,.notch::after{content:"";position:absolute;width:40px;height:40px}
+.notch.tr{top:0;right:0;width:clamp(140px,22vw,250px);height:clamp(56px,7vw,82px);border-bottom-left-radius:40px}
+.notch.tr::before{left:-40px;top:0;background:radial-gradient(circle at 0 100%,transparent 39.5px,var(--frame) 40px)}
+.notch.tr::after{right:0;bottom:-40px;background:radial-gradient(circle at 0 100%,transparent 39.5px,var(--frame) 40px)}
+.notch.bl{bottom:0;left:0;width:clamp(130px,20vw,230px);height:clamp(56px,7vw,82px);border-top-right-radius:40px}
+.notch.bl::before{left:0;top:-40px;background:radial-gradient(circle at 100% 0,transparent 39.5px,var(--frame) 40px)}
+.notch.bl::after{right:-40px;bottom:0;background:radial-gradient(circle at 100% 0,transparent 39.5px,var(--frame) 40px)}
+.slashes{font-family:var(--f-display);font-weight:800;font-style:italic;font-size:clamp(26px,3.6vw,44px);letter-spacing:.06em;color:#fff;background:linear-gradient(90deg,#fff 40%,#8d9bff 50%,#fff 60%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+.cover-text{position:relative;z-index:3;padding:clamp(28px,5vw,64px);padding-bottom:clamp(84px,9vw,110px);display:grid;gap:clamp(10px,1.6vw,18px);align-content:center;min-height:inherit}
+.cover-kicker{font:600 clamp(10px,1.1vw,13px)/1.5 var(--f-mono);letter-spacing:.18em;word-spacing:.6em}
+.cover-year{font:400 clamp(18px,2.4vw,30px)/1.1 var(--f-display);font-stretch:105%}
+.title-wrap{position:relative;justify-self:start;max-width:100%;padding-block:clamp(10px,2vw,24px)}
+.cover h1{font-family:var(--f-display);font-stretch:118%;font-weight:800;font-size:clamp(26px,5.4vw,70px);line-height:1;letter-spacing:-.01em;color:var(--ink);white-space:nowrap;position:relative;z-index:1}
+.cover h1>span{color:var(--dot)}
+.cover h1 .ch{color:var(--ink)}
+.orbit{position:absolute;left:46%;top:50%;width:72%;transform:translate(-10%,-55%);overflow:visible;pointer-events:none}
+.spaced{display:flex;justify-content:space-between;width:min(620px,62%);font:500 clamp(15px,2.3vw,28px)/1 var(--f-display);font-stretch:112%;margin-top:clamp(8px,1.4vw,16px)}
+
+/* ---- scene ---- */
+.scene{position:absolute;inset:0;z-index:2;pointer-events:none}
+.scene>*{position:absolute}
+.planet{right:5%;top:25%;width:clamp(80px,10vw,128px);aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.95) 0 7%,transparent 22%),conic-gradient(from 210deg,#5fe2ff,#7c6cff,#ff86e1,#7ff0c9,#6aa8ff,#5fe2ff);
+  box-shadow:inset -14px -20px 34px rgba(30,16,110,.55),inset 8px 10px 20px rgba(255,255,255,.35),0 24px 40px -16px rgba(50,50,170,.55)}
+.planet .ring{position:absolute;left:-38%;right:-38%;top:38%;height:30%;border-radius:50%;border:clamp(5px,.8vw,9px) solid rgba(110,128,255,.85);border-left-color:rgba(200,210,255,.95);border-right-color:rgba(90,100,240,.95);transform:rotate(-16deg);box-shadow:0 0 18px rgba(130,150,255,.5)}
+.planet .moon{position:absolute;right:-14%;top:-6%;width:20%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,#a8b2ff 55%,#5b63e8)}
+.blob{right:-4%;bottom:-6%;width:clamp(180px,26vw,320px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(130,120,255,.85),rgba(110,120,250,.25) 55%,transparent 70%);filter:blur(6px)}
+.bars3d{right:6%;bottom:8%;width:clamp(150px,19vw,220px);height:clamp(140px,16vw,190px);display:flex;align-items:flex-end;gap:10%;padding:0 4%}
+.b3{position:relative;flex:1;height:var(--h);border-radius:14px 14px 8px 8px;transform-origin:bottom;
+  background:linear-gradient(90deg,#dfe3ff 0%,#9aa4ff 30%,#6a74f0 62%,#4a52d8 100%);
+  box-shadow:inset 0 3px 0 rgba(255,255,255,.75),inset -6px 0 12px rgba(30,20,120,.35),0 20px 30px -14px rgba(40,40,160,.6)}
+.b3::before{content:"";position:absolute;left:8%;right:8%;top:6px;height:30%;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,.55),transparent)}
+.b3.hi{background:linear-gradient(90deg,#ffe3fb 0%,#c9a2ff 30%,#7f6cff 60%,#4d4fe0 100%)}
+.b3 span{position:absolute;left:50%;top:-24px;transform:translateX(-50%);font:600 clamp(10px,1.1vw,13px)/1 var(--f-mono);color:var(--ink);white-space:nowrap}
+.bars3d em{position:absolute;left:0;right:0;bottom:-22px;text-align:center;font:500 11px/1 var(--f-mono);font-style:normal;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);opacity:.7}
+.sticker{display:grid;gap:2px;padding:10px 14px;border-radius:16px;background:rgba(255,255,255,.58);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.9);box-shadow:0 16px 30px -14px rgba(40,40,150,.5);color:var(--ink)}
+.sticker b{font:800 clamp(16px,2vw,24px)/1 var(--f-display);font-stretch:110%}
+.sticker b i{font-style:normal;font-weight:500;opacity:.55;font-size:.7em}
+.sticker small{font:500 clamp(9px,1vw,11px)/1.2 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;opacity:.7}
+.s1{right:34%;top:10%;--r:-6deg;transform:rotate(var(--r))}
+.s2{right:31%;bottom:9%;--r:5deg;transform:rotate(var(--r))}
+.coin{right:2.5%;top:40%;width:clamp(38px,4.6vw,54px);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font:800 clamp(16px,2vw,24px)/1 var(--f-display);color:#fff;background:radial-gradient(circle at 30% 28%,#fff 0 8%,transparent 30%),linear-gradient(135deg,#a4adff,#5a63ea);box-shadow:inset -4px -6px 10px rgba(20,10,90,.45),0 12px 22px -10px rgba(40,40,160,.7)}
+.scene [data-depth]{transition:translate .25s ease-out}
+
+@media (max-width:820px){
+  .cover{min-height:0}
+  .cover-text{padding-bottom:24px;padding-top:84px}
+  .scene{position:relative;inset:auto;height:clamp(250px,64vw,320px)}
+  .spaced{width:100%}
+  .s1{right:auto;left:6%;top:8%}
+  .planet{right:auto;left:40%;top:3%}
+  .s2{right:auto;left:8%;bottom:26%}
+  .bars3d{bottom:20%}
+}
+@media (max-width:820px){.notch.bl{display:none}}
+
+@media (prefers-reduced-motion:no-preference){
+  .sheen{animation:sheen 14s ease-in-out infinite alternate}
+  @keyframes sheen{to{background-position:100% 60%,0% 30%,80% 100%,0 0,0 0}}
+  .slashes{animation:shine 3.5s linear infinite}
+  @keyframes shine{from{background-position:100% 0}to{background-position:-200% 0}}
+  .orbit ellipse{stroke-dasharray:1;animation:draw 1.6s .5s cubic-bezier(.6,0,.2,1) both}
+  @keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+  .orbit .star{transform-box:fill-box;transform-origin:center;animation:twinkle 3s 1.6s ease-in-out infinite both}
+  @keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.25) rotate(45deg)}}
+  .spaced span{display:inline-block;animation:drop .7s cubic-bezier(.2,.8,.2,1) both}
+  .spaced span:nth-child(1){animation-delay:.5s}.spaced span:nth-child(2){animation-delay:.56s}.spaced span:nth-child(3){animation-delay:.62s}.spaced span:nth-child(4){animation-delay:.68s}.spaced span:nth-child(5){animation-delay:.74s}.spaced span:nth-child(6){animation-delay:.8s}.spaced span:nth-child(7){animation-delay:.86s}.spaced span:nth-child(8){animation-delay:.92s}.spaced span:nth-child(9){animation-delay:.98s}
+  @keyframes drop{from{transform:translateY(-14px);opacity:0}}
+  .planet{animation:float 6s ease-in-out infinite}
+  .planet .moon{animation:spin 8s linear infinite;transform-origin:-180% 300%}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .sticker{animation:bob 5s ease-in-out infinite}
+  .s2{animation-delay:-2.2s}
+  .coin{animation:bob 4s ease-in-out infinite,flip 6s ease-in-out infinite}
+  @keyframes float{50%{transform:translateY(-12px)}}
+  @keyframes bob{0%,100%{transform:rotate(var(--r,0deg)) translateY(0)}50%{transform:rotate(var(--r,0deg)) translateY(-10px)}}
+  @keyframes flip{0%,80%,100%{scale:1 1}90%{scale:-1 1}}
+  .b3{animation:rise3 1.2s cubic-bezier(.2,.8,.2,1) both}
+  .b3:nth-child(2){animation-delay:.15s}.b3:nth-child(3){animation-delay:.3s}
+  @keyframes rise3{from{transform:scaleY(0)}}
+}
+
+/* ---- method / experience ---- */
+.method .wrap{padding-block:88px 24px;display:grid;gap:36px}
+.method-head{display:grid;gap:12px;max-width:640px}
+.method-head h2{font-size:clamp(28px,4vw,46px);line-height:1.08}
+.method-head p{color:var(--muted)}
+.steps5{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;counter-reset:none}
+.steps5 li{position:relative;display:grid;gap:10px;align-content:start;padding:22px 18px;border-radius:18px;background:var(--panel);border:1px solid var(--line);min-width:0;transition:transform .3s ease,border-color .3s ease}
+.steps5 li:hover{transform:translateY(-4px);border-color:#8d9bff}
+.steps5 li::after{content:"";position:absolute;top:34px;right:-14px;width:14px;height:1px;background:var(--line)}
+.steps5 li:last-child::after{display:none}
+.steps5 .sn{font:600 12px/1 var(--f-mono);color:var(--ink);background:linear-gradient(120deg,#8d9bff,#e3e6ff);justify-self:start;padding:6px 9px;border-radius:999px}
+.steps5 h3{font-size:20px}
+.steps5 p{font-size:14px;color:var(--muted);line-height:1.5}
+.steps5 em{font-style:normal;font:500 12px/1.45 var(--f-mono);color:var(--fg);border-top:1px dashed var(--line);padding-top:10px}
+@media (max-width:980px){.steps5{grid-template-columns:repeat(2,1fr)}.steps5 li::after{display:none}}
+@media (max-width:520px){.steps5{grid-template-columns:1fr}}
+.timeline{list-style:none;margin:0;padding:0;display:grid;border-left:1px solid var(--line);margin-left:6px}
+.timeline li{position:relative;display:grid;grid-template-columns:140px 1fr;gap:20px;padding:0 0 26px 26px}
+.timeline li::before{content:"";position:absolute;left:-6px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid #8d9bff}
+.timeline li:first-child::before{background:#8d9bff;box-shadow:0 0 0 5px rgba(141,155,255,.18)}
+.timeline .when{font:500 13px/1.6 var(--f-mono);color:var(--muted)}
+.timeline h3{font-size:18px;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.timeline h3 small{font:400 13px/1.4 var(--f-body);color:var(--muted)}
+.timeline p{font-size:14.5px;color:var(--muted);margin-top:4px;max-width:66ch}
+.timeline li>div{min-width:0}
+@media (max-width:620px){.timeline li{grid-template-columns:1fr;gap:4px}}
+.certs,.tools{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:22px}
+.certs ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.certs li{font-size:13.5px;color:var(--muted);padding:8px 14px;border-radius:999px;background:var(--panel);border:1px solid var(--line)}
+.certs li b{color:var(--fg);font-weight:600;margin-right:4px}
+.tools p{font:400 13px/1.8 var(--f-mono);color:var(--muted)}
+.cv-pages{display:grid;gap:12px;overflow:auto;max-height:80vh}
+.cv-pages img{max-width:100%;max-height:none;border-radius:6px;display:block;margin:0 auto;background:#fff}
+#cvd{width:min(920px,96vw)}
+.row-act{display:flex;gap:14px;align-items:center}
+.contact-sub{color:var(--muted);max-width:56ch;font-size:16px}
+footer{line-height:1.8}
+
+/* ---- screenshot marquee ---- */
+.shots{display:block !important;overflow:hidden;padding:4px 0 6px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mq-track{display:flex;gap:18px;width:max-content;will-change:transform}
+.mq-track .shot{flex:0 0 340px;width:340px}
+.mq-track .shot img{aspect-ratio:16/9;transition:transform .35s ease,box-shadow .35s ease}
+.mq-track .shot.hide{display:none}
+@media (max-width:620px){.mq-track .shot{flex-basis:250px;width:250px}}
+
+.nda{font-size:12.5px;color:var(--muted);margin:0}
+.mq-track.static{margin:0 auto;transform:none !important}
+.mq-track.static .shot[aria-hidden]{display:none}
+
+.funnel{display:grid;gap:10px}
+.f-row{display:grid;grid-template-columns:110px 1fr 92px;gap:12px;align-items:center}
+.f-k{font-size:13.5px;color:var(--muted)}
+.f-bar{height:12px;border-radius:999px;background:var(--panel-2);position:relative;overflow:hidden}
+.f-bar::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--w);border-radius:999px;background:var(--before)}
+.f-bar.hi::after{background:linear-gradient(90deg,#8d9bff,#d7dbff)}
+.f-v{font-size:14px;text-align:right}
+@media (max-width:420px){.f-row{grid-template-columns:86px 1fr 74px}}
+
+/* ---- about / services / ways ---- */
+.about .wrap{padding-block:88px 24px;display:grid;gap:40px}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:28px}}
+.me{margin:0;justify-self:center;width:min(360px,100%)}
+.me-card{position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;display:grid;place-items:center;
+  background:radial-gradient(60% 50% at 30% 20%,rgba(255,255,255,.9),transparent 60%),linear-gradient(140deg,#eef0ff,#b9c0fb 45%,#7c86f0 80%,#5a63e8);
+  box-shadow:0 30px 60px -30px rgba(80,90,230,.7),0 0 0 1px var(--line)}
+.me-card::after{content:"";position:absolute;inset:14px;border-radius:20px;border:1px solid rgba(255,255,255,.6)}
+.me img{width:100%;height:100%;object-fit:cover;display:block}
+.mono-ini{font:800 clamp(80px,12vw,130px)/1 var(--f-display);font-stretch:120%;color:var(--ink);letter-spacing:-.04em}
+.me-loc{position:absolute;left:24px;bottom:22px;font:600 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+.about-copy{display:grid;gap:18px;min-width:0}
+.about-copy h2{font-size:clamp(28px,4vw,46px);line-height:1.08}
+.about-copy p{color:var(--muted);max-width:62ch}
+.why{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.why li{position:relative;padding-left:26px;color:var(--muted);font-size:15px}
+.why li::before{content:"";position:absolute;left:0;top:.55em;width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#d7dbff,#8d9bff)}
+.why b{color:var(--fg);font-weight:600}
+.inds{display:grid;gap:6px;border-top:1px solid var(--line);padding-top:16px}
+.inds p{font-size:14px;color:var(--fg)}
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:980px){.services{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.services{grid-template-columns:1fr}}
+.svc{display:grid;gap:8px;align-content:start;padding:22px;border-radius:18px;background:var(--panel);border:1px solid var(--line);transition:transform .3s ease,border-color .3s ease;min-width:0}
+.svc:hover{transform:translateY(-4px);border-color:#8d9bff}
+.svc-n{font-size:12px;color:#8d9bff}
+.svc h3{font-size:18px}
+.svc p{font-size:14px;color:var(--muted);line-height:1.5}
+.method .wrap{padding-top:64px}
+details.more{border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden}
+details.more>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:18px 22px;font-weight:600;font-size:15px}
+details.more>summary::-webkit-details-marker{display:none}
+details.more>summary i{font-style:normal;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line);transition:transform .3s ease,background .3s;font-size:18px}
+details.more>summary:hover i{background:#8d9bff;color:var(--ink)}
+details.more[open]>summary i{transform:rotate(45deg)}
+details.more>summary:focus-visible{outline:2px solid #8d9bff;outline-offset:-2px;border-radius:18px}
+.more-body{display:grid;gap:24px;padding:0 22px 22px}
+.more-body .panel{background:var(--bg)}
+@media (prefers-reduced-motion:no-preference){details.more[open] .more-body{animation:fadeup .45s cubic-bezier(.2,.8,.2,1)}@keyframes fadeup{from{transform:translateY(8px);opacity:0}}}
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:900px}
+@media (max-width:760px){.ways{grid-template-columns:1fr}}
+.ways div{display:grid;gap:4px;padding:16px 18px;border-radius:14px;background:var(--panel);border:1px solid var(--line)}
+.ways b{font-size:15px}
+.ways span{font-size:13.5px;color:var(--muted);line-height:1.5}
+
+.trust{color:var(--fg);font-weight:600}
+.offer{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:22px 26px;border-radius:20px;color:var(--ink);
+  background:linear-gradient(110deg,#eef0ff,#c3c9fb 45%,#8d9bff)}
+.offer>div{display:grid;gap:6px;min-width:0;flex:1 1 380px}
+.offer .label{color:#2b2f6b}
+.offer p{font-size:16px;color:#1d2040;max-width:60ch}
+.offer b{color:var(--ink)}
+.offer .btn.primary{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:none}
+.ways .free{border-color:#8d9bff;background:linear-gradient(160deg,rgba(141,155,255,.16),var(--panel))}
+
+/* ---- account health check ---- */
+.check .wrap{padding-block:72px 24px;display:grid;gap:32px}
+.check-head{display:grid;gap:12px;max-width:660px}
+.check-head h2{font-size:clamp(28px,4vw,46px);line-height:1.08}
+.check-head p{color:var(--muted)}
+.check-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:24px;align-items:start}
+@media (max-width:900px){.check-grid{grid-template-columns:1fr}}
+.qs{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.q{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:center;padding:14px 16px;border-radius:16px;background:var(--panel);border:1px solid var(--line);transition:border-color .3s}
+.q.done{border-color:rgba(141,155,255,.55)}
+.q p{font-size:15px;line-height:1.45;min-width:0}
+.qn{font-size:12px;color:#8d9bff}
+.ans{display:flex;background:var(--panel-2);border-radius:999px;padding:3px}
+.ans button{all:unset;cursor:pointer;font-size:13px;padding:7px 12px;border-radius:999px;color:var(--muted);white-space:nowrap;transition:background .2s,color .2s}
+.ans button:hover{color:var(--fg)}
+.ans button:focus-visible{outline:2px solid #8d9bff;outline-offset:1px}
+.ans button[aria-checked="true"][data-v="2"]{background:#8d9bff;color:var(--ink)}
+.ans button[aria-checked="true"][data-v="1"]{background:#d7dbff;color:var(--ink)}
+.ans button[aria-checked="true"][data-v="0"]{background:var(--fg);color:var(--bg)}
+@media (max-width:620px){.q{grid-template-columns:28px 1fr}.ans{grid-column:1/-1;justify-self:start}}
+.result{position:sticky;top:calc(84px + env(safe-area-inset-top,0px));display:grid;gap:18px;padding:24px;border-radius:22px;background:linear-gradient(170deg,rgba(141,155,255,.14),var(--panel) 45%);border:1px solid var(--line)}
+@media (max-width:900px){.result{position:static}}
+.ring-wrap{position:relative;width:132px;height:132px}
+.ring{width:100%;height:100%}
+#ring-fg{transition:stroke-dasharray .7s cubic-bezier(.2,.8,.2,1)}
+.ring-txt{position:absolute;inset:0;display:grid;place-content:center;text-align:center}
+.ring-txt b{font-size:34px;font-weight:600;line-height:1}
+.ring-txt span{font-size:12px;color:var(--muted)}
+.r-copy{display:grid;gap:10px}
+.r-tag{justify-self:start;font:500 11px/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:var(--panel-2);color:var(--muted)}
+.r-tag.good{background:#8d9bff;color:var(--ink)}
+.r-tag.mid{background:#d7dbff;color:var(--ink)}
+.r-tag.low{background:var(--fg);color:var(--bg)}
+.result h3{font-size:19px;line-height:1.3}
+.fixes{margin:0;padding-left:18px;display:grid;gap:8px;font-size:14px;color:var(--muted);line-height:1.5}
+.fixes li::marker{color:#8d9bff;font-family:var(--f-mono)}
+.fixes .ph{list-style:none;margin-left:-18px;font-style:italic}
+.result .btn{justify-content:center}
+.r-note{font-size:12px;color:var(--muted);line-height:1.5}
+@media (max-width:560px){
+  .brand .bt{display:none}
+  .top .wrap{flex-wrap:nowrap;gap:10px}
+  .hdr-actions{gap:8px}
+  .seg-toggle button{padding:5px 9px}
+  .btn.small{padding:8px 12px}
+}
+
+/* ---- Arabic / RTL ---- */
+:root[lang="ar"]{--f-display:"IBM Plex Sans Arabic","Archivo",system-ui,sans-serif;--f-body:"IBM Plex Sans Arabic","Schibsted Grotesk",system-ui,sans-serif}
+:root[lang="ar"] h1,:root[lang="ar"] h2,:root[lang="ar"] h3{letter-spacing:0;font-stretch:100%;line-height:1.3}
+:root[lang="ar"] .label,:root[lang="ar"] .r-tag,:root[lang="ar"] .me-loc{letter-spacing:0;text-transform:none;font-family:var(--f-body);font-size:13px}
+:root[lang="ar"] body{line-height:1.8}
+:root[lang="ar"] .tag{font-family:var(--f-body)}
+.why li{padding-left:0;padding-inline-start:26px}
+.why li::before{left:auto;inset-inline-start:0}
+.timeline{border-left:0;border-inline-start:1px solid var(--line);margin-left:0;margin-inline-start:6px}
+.timeline li{padding-left:0;padding-inline-start:26px}
+.timeline li::before{left:auto;inset-inline-start:-6px}
+.steps5 li::after{right:auto;inset-inline-end:-14px}
+.fixes{padding-left:0;padding-inline-start:18px}
+.fixes .ph{margin-left:0;margin-inline-start:-18px}
+.me-loc{left:auto;inset-inline-start:24px}
+.f-v{text-align:end}
+.bar i{inset:0 auto 0 auto;inset-inline-start:0}
+.seg .fill{left:auto;inset-inline-start:0}
+.f-bar::after{inset:0 auto 0 auto;inset-inline-start:0}
+.hl,.ledger .n,.kpi .v,.target .big .cu,.grid-ledger .n,.cmp.true .x{margin-left:0;margin-inline-start:-3px}
+.car-count{text-align:end}
+@media (max-width:420px){.cur-toggle{display:none}}
+
+bdi{unicode-bidi:isolate;direction:ltr}
+[dir="rtl"] .cur,[dir="rtl"] .ledger .n,[dir="rtl"] .kpi .v,[dir="rtl"] .x,[dir="rtl"] .big .cu,[dir="rtl"] .grid-ledger .n,[dir="rtl"] .f-v,[dir="rtl"] .ring-txt b{unicode-bidi:isolate;direction:ltr}
+.ticker-track>div>span,.frame-bottom .status{unicode-bidi:plaintext}
+@media (max-width:1440px){.brand .bt{display:none}}
+@media (max-width:1180px){.top nav{gap:12px}.top nav a{font-size:13px}}
+@media (max-width:1060px){.top nav{display:none}}
+.top nav{gap:16px}
+[dir="rtl"] .frame-bottom .status{direction:rtl}
+[dir="rtl"] .certs li{direction:ltr;unicode-bidi:isolate}
+.fixes{list-style:none;padding-inline-start:0;counter-reset:fx}
+.fixes li:not(.ph){display:grid;grid-template-columns:20px 1fr;gap:6px;counter-increment:fx}
+.fixes li:not(.ph)::before{content:counter(fx) ".";color:#8d9bff;font-family:var(--f-mono);font-size:13px;padding-top:1px}
+.fixes .ph{margin-inline-start:0}
+
+.scale-note{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding:14px 18px;border-radius:14px;background:var(--panel);border:1px solid var(--line)}
+.scale-note p{font-size:14.5px;color:var(--muted);flex:1 1 420px;min-width:0}
+.sn-tag{font:600 12px/1 var(--f-mono);color:var(--ink);background:linear-gradient(120deg,#8d9bff,#e3e6ff);padding:7px 10px;border-radius:999px;white-space:nowrap}
+:root[lang="ar"] .sn-tag{font-family:var(--f-body)}
+
+/* ---- proof strip ---- */
+.proof .wrap{padding-block:88px 24px;display:grid;gap:22px;border-top:1px solid var(--line)}
+.proof-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.proof-head h2{font-size:clamp(28px,4vw,46px);line-height:1.08}
+.f-sep{width:1px;align-self:stretch;background:var(--line);margin:4px 4px}
+.mq-track .shot{display:grid;gap:10px;padding:10px;border-radius:16px;background:var(--panel);border:1px solid var(--line);flex:0 0 360px;width:360px}
+.mq-track .shot:hover{border-color:#8d9bff}
+.mq-track .shot img{border-radius:10px}
+.meta-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:0 4px}
+.pf,.ind{font:600 11.5px/1 var(--f-mono);padding:6px 9px;border-radius:999px;white-space:nowrap}
+.pf{color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+.pf::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.7}
+.pf-snapchat{background:#fffc00}
+.pf-tiktok{background:#e9eaf2}
+.pf-meta{background:#cfe0ff}
+.pf-google{background:#d7f5df}
+.ind{color:var(--fg);border:1px solid var(--line);background:var(--panel-2)}
+.shot .cap{font-size:13.5px;color:var(--muted);padding:0 4px 4px;line-height:1.45;unicode-bidi:plaintext}
+@media (max-width:620px){.mq-track .shot{flex-basis:270px;width:270px}}
+:root[lang="ar"] .ind,:root[lang="ar"] .filters button{font-family:var(--f-body);letter-spacing:0}
+.filters b{margin-left:0;margin-inline-start:5px}
+
+/* ---- draggable marquee ---- */
+.mq{overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.mq.dragging{cursor:grabbing}
+.mq.dragging .shot{pointer-events:none}
+.mq img{-webkit-user-drag:none;user-drag:none}
+.mq-track{transform:translate3d(0,0,0)}
+/* ---- certificate cards ---- */
+.certs{display:grid;gap:14px;border-top:1px solid var(--line);padding-top:22px}
+.certs-head{display:flex;justify-content:space-between;gap:12px}
+.certs-mq{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);padding:4px 0 8px}
+.cert{flex:0 0 280px;width:280px;display:grid;grid-template-rows:auto auto auto 1fr;gap:6px;padding:20px;border-radius:18px;background:linear-gradient(160deg,var(--panel-2),var(--panel) 60%);border:1px solid var(--line);position:relative;overflow:hidden;min-height:176px;transition:border-color .3s}
+.cert:hover{border-color:#8d9bff}
+.cert::after{content:"";position:absolute;right:-40px;top:-40px;width:120px;height:120px;border-radius:50%;background:var(--glow,rgba(141,155,255,.18));filter:blur(8px)}
+.c-badge{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font:800 17px/1 var(--f-display);margin-bottom:8px;color:#fff}
+.cert-meta{--glow:rgba(24,119,242,.22)}.cert-meta .c-badge{background:#1877f2}
+.cert-google{--glow:rgba(52,168,83,.2)}.cert-google .c-badge{background:conic-gradient(#4285f4 0 25%,#34a853 0 50%,#fbbc05 0 75%,#ea4335 0)}
+.cert-linkedin{--glow:rgba(10,102,194,.22)}.cert-linkedin .c-badge{background:#0a66c2}
+.cert-semrush{--glow:rgba(255,100,45,.2)}.cert-semrush .c-badge{background:#ff642d}
+.c-title{font:600 16px/1.35 var(--f-body);color:var(--fg)}
+.c-iss{font-size:13px;color:#8d9bff;font-weight:500}
+.c-area{font:500 12px/1.4 var(--f-mono);color:var(--muted);align-self:end;padding-top:10px;border-top:1px dashed var(--line);margin-top:6px}
+@media (max-width:620px){.cert{flex-basis:240px;width:240px}}
+.hdr-actions .btn.small{min-width:124px;justify-content:center}
+
+/* ---- stack ---- */
+.tools{display:grid;gap:14px;border-top:1px solid var(--line);padding-top:22px}
+.stk-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media (max-width:1060px){.stk-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:700px){.stk-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:440px){.stk-grid{grid-template-columns:1fr}}
+.stk{display:grid;gap:14px;align-content:start;padding:18px;border-radius:18px;background:linear-gradient(170deg,var(--panel-2),var(--panel) 55%);border:1px solid var(--line);transition:transform .3s ease,border-color .3s ease;min-width:0}
+.stk:hover{transform:translateY(-4px);border-color:#8d9bff}
+.stk-h{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center}
+.stk-ic{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-size:16px;color:var(--ink);background:linear-gradient(135deg,#e3e6ff,#8d9bff)}
+.stk h3{font-size:15px;line-height:1.3}
+.stk-n{font-size:11px;color:var(--muted)}
+.stk ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.stk li{font:500 12.5px/1 var(--f-body);color:var(--fg);padding:7px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line);transition:border-color .2s,color .2s}
+.stk li:hover{border-color:#8d9bff;color:#c9cfff}
+.stk li{direction:ltr;unicode-bidi:isolate}
+
+.stk-mq{display:block !important;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);padding:6px 0 10px}
+.stk-mq .stk{flex:0 0 300px;width:300px}
+.stk-mq .mq-track{gap:14px}
+@media (max-width:620px){.stk-mq .stk{flex-basis:250px;width:250px}}
+[dir="rtl"] .stk{direction:rtl}
+
+/* compact certificate cards */
+.cert{flex:0 0 250px;width:250px;min-height:0;grid-template-columns:34px 1fr;grid-template-rows:auto auto;column-gap:12px;row-gap:10px;padding:14px 16px;align-items:center}
+.cert .c-badge{width:34px;height:34px;border-radius:10px;font-size:14px;margin:0}
+.cert .c-title{font-size:13.5px;line-height:1.35}
+.cert .c-iss{display:none}
+.cert .c-area{grid-column:1/-1;margin:0;padding-top:9px;font-size:11.5px}
+.cert::after{width:80px;height:80px;right:-30px;top:-30px}
+@media (max-width:620px){.cert{flex-basis:220px;width:220px}}
+:root[lang="ar"] .c-area{font-family:var(--f-body);font-size:12.5px}
+[dir="rtl"] .cert{direction:rtl}
+[dir="rtl"] .cert .c-title{direction:ltr;text-align:right;unicode-bidi:plaintext}
+
+/* compact stack cards */
+.stk-mq .stk{flex:0 0 250px;width:250px;padding:14px 16px;gap:10px;border-radius:16px}
+.stk-mq .stk-ic{width:28px;height:28px;border-radius:8px;font-size:13px}
+.stk-mq .stk h3{font-size:13.5px}
+.stk-mq .stk-n{font-size:10.5px}
+.stk-mq .stk ul{gap:5px}
+.stk-mq .stk li{font-size:11.5px;padding:5px 8px}
+@media (max-width:620px){.stk-mq .stk{flex-basis:220px;width:220px}}
+
+/* stack cards: compact v2 */
+.stk-mq .stk{flex:0 0 210px !important;width:210px !important;padding:12px 14px !important;gap:10px !important;border-radius:14px !important}
+.stk-mq .stk-h{grid-template-columns:28px 1fr auto;gap:9px}
+.stk-mq .stk-ic{width:28px !important;height:28px !important;border-radius:8px !important;color:var(--ink)}
+.stk-mq .stk-ic svg{display:block}
+.stk-mq .stk h3{font-size:13px !important;line-height:1.25}
+.stk-mq .stk-n{font-size:10px !important}
+.stk-mq .stk ul{gap:4px !important}
+.stk-mq .stk li{font-size:11px !important;padding:4px 7px !important}
+.stk-mq .mq-track{gap:10px !important}
+@media (max-width:620px){.stk-mq .stk{flex-basis:200px !important;width:200px !important}}
+.stk-mq .mq-track,.certs-mq .mq-track{align-items:flex-start}
+
+/* ---- stack: tool tiles in two counter-moving rows ---- */
+.tools{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:22px}
+.tools-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:4px}
+.tools-title{font-size:clamp(20px,2.4vw,26px)}
+.t-legend{display:flex;gap:14px;flex-wrap:wrap}
+.t-legend span{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--muted)}
+.t-legend span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--tc)}
+.t-ads{--tc:#8d9bff}.t-track{--tc:#5fd3c6}.t-auto{--tc:#f2b85b}.t-shop{--tc:#f08bb4}.t-create{--tc:#b6e36b}
+.tools-mq{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);padding:3px 0}
+.tools-mq .mq-track{gap:10px;align-items:center}
+.tool{flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:9px 16px 9px 9px;border-radius:14px;background:var(--panel);border:1px solid var(--line);transition:border-color .25s,transform .25s}
+.tool:hover{border-color:var(--tc);transform:translateY(-2px)}
+.t-ic{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;color:var(--ink);background:var(--tc)}
+.t-txt{display:grid;gap:2px}
+.t-name{font:600 14px/1.15 var(--f-body);color:var(--fg);white-space:nowrap}
+.t-cat{font:500 11px/1.1 var(--f-mono);color:var(--muted);white-space:nowrap}
+:root[lang="ar"] .t-cat{font-family:var(--f-body)}
+[dir="rtl"] .tool{direction:rtl;padding:9px 9px 9px 16px}
+
+/* ---- contact v2 ---- */
+.contact .wrap{padding-block:88px 40px;display:grid;gap:18px;border-top:1px solid var(--line)}
+.ct-card{position:relative;overflow:hidden;display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:clamp(24px,4vw,48px);border-radius:28px;border:1px solid var(--line);
+  background:radial-gradient(60% 90% at 0% 0%,rgba(141,155,255,.22),transparent 60%),radial-gradient(50% 80% at 100% 100%,rgba(124,134,240,.16),transparent 60%),var(--panel)}
+@media (max-width:900px){.ct-card{grid-template-columns:1fr;gap:28px}}
+.ct-left{display:grid;gap:18px;min-width:0}
+.ct-left .status{justify-self:start;color:var(--muted)}
+.contact h2{font-size:clamp(30px,4.4vw,52px);line-height:1.08}
+.contact h2 span{background:linear-gradient(100deg,#8d9bff,#e3e6ff);color:var(--ink);border-radius:10px;padding:0 .2em;display:inline-block;margin-top:.12em}
+.contact-sub{color:var(--muted);max-width:52ch;font-size:16px}
+.ct-left .ctas{margin-top:4px}
+.ct-right{display:grid;gap:8px;min-width:0}
+.c-row{display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:center;padding:12px 14px;border-radius:16px;background:var(--bg);border:1px solid var(--line);transition:border-color .25s}
+.c-row:first-child{border-top:1px solid var(--line)}
+.c-row:hover{border-color:#8d9bff}
+.c-ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:var(--ink);background:linear-gradient(135deg,#e3e6ff,#8d9bff)}
+.c-txt{display:grid;gap:3px;min-width:0}
+.c-lab{font-size:12px;color:var(--muted)}
+.c-row .val{font:500 14.5px/1.3 var(--f-mono);color:var(--fg);word-break:break-all;direction:ltr;unicode-bidi:isolate;text-align:start}
+.c-row .val.plain{font-family:var(--f-body);word-break:normal}
+.row-act{display:flex;gap:6px;align-items:center}
+.c-row button,.c-row .row-act a{font:500 12.5px/1 var(--f-body);color:var(--fg);background:var(--panel-2);border:1px solid var(--line);border-radius:999px;padding:7px 12px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.c-row button:hover,.c-row .row-act a:hover{background:#8d9bff;color:var(--ink);border-color:#8d9bff}
+@media (max-width:460px){.c-row{grid-template-columns:36px 1fr}.row-act{grid-column:2}.c-ic{width:36px;height:36px}}
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:none}
+@media (max-width:760px){.ways{grid-template-columns:1fr}}
+.ways div{display:grid;grid-template-columns:36px 1fr;column-gap:12px;row-gap:4px;align-items:start;padding:18px;border-radius:18px;background:var(--panel);border:1px solid var(--line)}
+.ways .w-ic{grid-row:1/3;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;color:#8d9bff;background:var(--panel-2)}
+.ways .free{border-color:#8d9bff;background:linear-gradient(160deg,rgba(141,155,255,.18),var(--panel))}
+.ways .free .w-ic{color:var(--ink);background:linear-gradient(135deg,#e3e6ff,#8d9bff)}
+.ways b{font-size:15px}
+.ways div>span:not(.w-ic){font-size:13.5px;color:var(--muted);line-height:1.5}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:8px 20px;flex-wrap:wrap;margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+.foot .f-name{color:var(--fg);font-weight:600}
+.foot .f-note{flex-basis:100%;font-size:12px;opacity:.85}
+#c-phone{white-space:nowrap;word-break:normal}
+.c-row .val{font-size:14px}
+
+/* ---- contact icon buttons ---- */
+.row-act{display:flex;gap:6px;align-items:center;flex-wrap:nowrap}
+.c-row .ib{all:unset;cursor:pointer;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;color:var(--fg);background:var(--panel-2);border:1px solid var(--line);transition:background .2s,color .2s,transform .2s;box-sizing:border-box}
+.c-row .ib:hover{background:#8d9bff;color:var(--ink);border-color:#8d9bff;transform:translateY(-1px)}
+.c-row .ib:focus-visible{outline:2px solid #8d9bff;outline-offset:2px}
+.c-row .ib.wa:hover{background:#25d366;border-color:#25d366;color:#08140d}
+@media (max-width:460px){.c-row{grid-template-columns:36px 1fr auto}.row-act{grid-column:auto}}
+/* ---- collapsible check ---- */
+.check .wrap{border-top:1px solid var(--line);padding-block:72px 40px}
+.check-head{max-width:none;display:grid;gap:12px}
+.check-head p{max-width:640px}
+.check-toggle{justify-self:start;margin-top:6px}
+.check-toggle i{transition:transform .3s ease}
+.check-toggle[aria-expanded="true"] i{transform:rotate(180deg)}
+.check-body{display:grid;gap:24px}
+@media (prefers-reduced-motion:no-preference){.check-body:not([hidden]){animation:fadeup .5s cubic-bezier(.2,.8,.2,1)}}
+.check-body[hidden]{display:none !important}
+@media (max-width:460px){.c-row .val{font-size:12.5px}.c-row{padding:10px 12px;gap:10px}}
+@media (max-width:460px){.ct-card{padding:20px 14px}.c-row .val{font-size:12px}.c-row .ib{width:30px;height:30px}}
+
+/* ---- collapsible experience ---- */
+.exp-teaser{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.exp-co{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.exp-co li{font:500 13px/1 var(--f-body);color:var(--muted);padding:8px 12px;border-radius:999px;background:var(--panel);border:1px solid var(--line)}
+.exp-co li:first-child{color:var(--fg);border-color:#8d9bff}
+.exp-toggle i{transition:transform .3s ease}
+.exp-toggle[aria-expanded="true"] i{transform:rotate(180deg)}
+.exp-body{display:grid;gap:32px}
+.exp-body[hidden]{display:none !important}
+@media (prefers-reduced-motion:no-preference){.exp-body:not([hidden]){animation:fadeup .5s cubic-bezier(.2,.8,.2,1)}}
+.exp-co li{direction:ltr;unicode-bidi:isolate}
+
+/* bounded sliders: fade only on the side that still has content */
+.mq.mq.at-start{-webkit-mask-image:linear-gradient(90deg,#000,#000 94%,transparent);mask-image:linear-gradient(90deg,#000,#000 94%,transparent)}
+.mq.mq.at-end{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000);mask-image:linear-gradient(90deg,transparent,#000 6%,#000)}
+.mq.mq.at-start.at-end{-webkit-mask-image:none;mask-image:none}
+</style>
+
+<div class="progress" aria-hidden="true"><i id="prog"></i></div>
+<header class="top" id="top" dir="ltr">
+  <div class="wrap">
+    <div class="brand"><b>●</b> ibrahem<span class="bt">.muhamed / performance</span></div>
+    <nav aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#method">Process</a>
+      <a href="#edtech">Results</a>
+      <a href="#proof">Proof</a>
+      <a href="#career">Experience</a>
+      <a href="#check">Free check</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hdr-actions">
+      <div class="seg-toggle" role="group" aria-label="Language"><button type="button" id="lang-en" data-lang="en" aria-pressed="true">EN</button><button type="button" id="lang-ar" data-lang="ar" aria-pressed="false">ع</button></div>
+      <div class="seg-toggle cur-toggle" role="group" aria-label="Currency"><button type="button" id="cur-usd" data-cur="usd" aria-pressed="true">USD</button><button type="button" id="cur-sar" data-cur="sar" aria-pressed="false">SAR</button></div>
+      <a class="btn small primary" href="https://wa.me/966530570632?text=Hi%20Ibrahem%2C%20I%27d%20like%20to%20book%20the%20free%2025-minute%20account%20audit%20for%20my%20brand." target="_blank" rel="noopener">Free audit</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="frame" id="frame" dir="ltr">
+      <div class="frame-top">
+        <span>PERFORMANCE BY IBRAHEM MUHAMED</span>
+        <span class="years">2020 — 2026</span>
+      </div>
+
+      <div class="cover">
+        <div class="sheen" aria-hidden="true"></div>
+        <div class="notch tr" aria-hidden="true"><span class="slashes">//////</span></div>
+        <div class="notch bl" aria-hidden="true"><span class="slashes">//////</span></div>
+
+        <div class="cover-text">
+          <div class="cover-kicker">META / SNAPCHAT / TIKTOK / GOOGLE</div>
+          <div class="cover-year">Media buying · 6+ years</div>
+          <div class="title-wrap">
+            <h1 id="name">Ibrahem Muhamed<span>.</span></h1>
+            <svg class="orbit" viewBox="0 0 400 160" aria-hidden="true"><ellipse cx="200" cy="80" rx="190" ry="52" transform="rotate(-14 200 80)" fill="none" stroke="#0b0c14" stroke-width="2.2" pathLength="1"/><path class="star" d="M372 26 L379 44 L398 48 L379 53 L372 72 L366 53 L346 48 L366 44 Z" fill="#0b0c14"/></svg>
+          </div>
+          <div class="spaced" aria-label="Portfolio"><span>P</span><span>O</span><span>R</span><span>T</span><span>F</span><span>O</span><span>L</span><span>I</span><span>O</span></div>
+        </div>
+
+        <div class="scene" id="scene" aria-hidden="true">
+          <div class="planet" data-depth="18"><i class="ring"></i><i class="moon"></i></div>
+          <div class="bars3d" data-depth="10">
+            <div class="b3" style="--h:20%"><span>1.69x</span></div>
+            <div class="b3" style="--h:61%"><span>5.28x</span></div>
+            <div class="b3 hi" style="--h:100%"><span>8.58x</span></div>
+            <em>TikTok ROAS</em>
+          </div>
+          <div class="sticker s1" data-depth="28"><b>251%</b><small>of target</small></div>
+          <div class="sticker s2" data-depth="34"><b>882<i>/500</i></b><small>orders</small></div>
+          <div class="blob" data-depth="12"></div>
+        </div>
+      </div>
+
+      <div class="frame-bottom">
+        <span><b>MEDIA BUYING</b> / ibrahem</span>
+        <span class="status"><i></i>15+ Saudi brands · taking on new ones</span>
+      </div>
+    </div>
+
+    <div class="hero-row">
+      <div>
+        <p class="role">I run paid ads for Saudi and Gulf brands and measure them against one thing: your revenue target.</p>
+        <p class="sub"><b class="trust">Trusted by 15+ Saudi brands.</b> Senior performance marketer and media buyer. 6+ years and $2M+ in media on Snapchat, Meta, TikTok and Google, for e-commerce, digital-product and lead-gen brands across KSA, the GCC and Egypt.</p>
+      </div>
+      <div class="ctas">
+        <a class="btn primary" href="https://wa.me/966530570632?text=Hi%20Ibrahem%2C%20I%27d%20like%20to%20book%20the%20free%2025-minute%20account%20audit%20for%20my%20brand." target="_blank" rel="noopener">Book a free 25-min audit <i>↗</i></a>
+        <a class="btn" href="#edtech">See the results <i class="down">↓</i></a>
+        <button class="btn ghost" type="button" data-cv>View CV <i>↗</i></button>
+      </div>
+    </div>
+    <div class="ledger">
+      <div><span class="n mono">251%</span><span class="t">of the monthly revenue target, EdTech</span></div>
+      <div><span class="n mono">176%</span><span class="t">of the monthly order target, fragrance store</span></div>
+      <div><span class="n mono">15+</span><span class="t">Saudi brands have trusted me with their ad accounts</span></div>
+      <div><span class="n mono cur" data-usd="$2M+" data-sar="SAR 7.5M+">$2M+</span><span class="t">in media managed across 4 ad platforms since 2020</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-label="Headline results" dir="ltr"><div class="ticker-track"><div style="display:flex"><span>251% of revenue target</span><span>882 orders vs 500 target</span><span>12.38x on Instagram</span><span>6.63x on Snapchat</span><span>8.58x TikTok launch week</span><span>4.49x on <span class="cur" data-usd="$66.2K" data-sar="SAR 248.3K">$66.2K</span> in one month</span><span>15+ Saudi brands</span><span>8.6x MER</span><span>TikTok: 2.1x the spend, ROAS up to 4.82x</span><span>70% of leads closed</span><span>SAR 260K from <span class="cur" data-usd="$1.1K" data-sar="SAR 4.1K">$1.1K</span> in lead ads</span><span>6.4M views in 60 days</span><span><span class="cur" data-usd="$2M+" data-sar="SAR 7.5M+">$2M+</span> media managed</span></div><div style="display:flex" aria-hidden="true"><span>251% of revenue target</span><span>882 orders vs 500 target</span><span>12.38x on Instagram</span><span>6.63x on Snapchat</span><span>8.58x TikTok launch week</span><span>4.49x on <span class="cur" data-usd="$66.2K" data-sar="SAR 248.3K">$66.2K</span> in one month</span><span>15+ Saudi brands</span><span>8.6x MER</span><span>TikTok: 2.1x the spend, ROAS up to 4.82x</span><span>70% of leads closed</span><span>SAR 260K from <span class="cur" data-usd="$1.1K" data-sar="SAR 4.1K">$1.1K</span> in lead ads</span><span>6.4M views in 60 days</span><span><span class="cur" data-usd="$2M+" data-sar="SAR 7.5M+">$2M+</span> media managed</span></div></div></div>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <figure class="me" aria-label="Photo of Ibrahem Muhamed (coming soon)">
+        <div class="me-card"><span class="mono-ini">IM</span><span class="me-loc">Riyadh · KSA</span></div>
+      </figure>
+      <div class="about-copy">
+        <span class="label">About</span>
+        <h2>I treat your ad budget like it's my own money.</h2>
+        <p>I'm Ibrahem, a performance marketer based in Riyadh. For more than six years I've run paid media for Saudi, Gulf and Egyptian brands, from the first campaign to <span class="cur" data-usd="$66K" data-sar="SAR 248K">$66K</span> a month on a single channel. I set up the tracking myself, brief Saudi-dialect creative, and report on what reaches your account, not on clicks.</p>
+        <ul class="why">
+          <li><b>Revenue, not vanity metrics.</b> Every report is checked against your store sales or CRM.</li>
+          <li><b>Tracking before spending.</b> GTM, GA4, pixels and Conversions API, so every riyal is measured.</li>
+          <li><b>Built for the Saudi market.</b> Arabic hooks and offers based on real customer objections.</li>
+        </ul>
+        <div class="inds"><span class="label">Industries</span><p>E-commerce · EdTech · Fragrance · Fashion · Home &amp; air care · B2B software · Pharma · Entertainment</p></div>
+      </div>
+    </div>
+
+    <div class="services" id="services">
+      <div class="svc"><span class="svc-n mono">01</span><h3>Paid media management</h3><p>Snapchat, Meta, TikTok and Google run as one plan, with budget moved to whatever is selling.</p></div>
+      <div class="svc"><span class="svc-n mono">02</span><h3>Tracking &amp; attribution</h3><p>GTM, GA4, pixels, CAPI and UTMs, set up so platform numbers match your real orders.</p></div>
+      <div class="svc"><span class="svc-n mono">03</span><h3>Creative strategy</h3><p>Hooks, briefs and creator testing, with weak ads cut within days and winners scaled.</p></div>
+      <div class="svc"><span class="svc-n mono">04</span><h3>Lead-gen systems</h3><p>Lead forms connected to your sheet or CRM, with instant alerts so your sales team calls fast.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="method-head">
+      <span class="label">Process</span>
+      <h2>How I would run your account</h2>
+      <p>The same five steps on every account. Budget grows only after the step before it holds, and the results below show each step in practice.</p>
+    </div>
+    <ol class="steps5">
+      <li><span class="sn">01</span><h3>Audit</h3><p>Read the account against the store backend. Find where platform numbers and real orders disagree.</p><em>Found that a 0.12% site CVR, not ad spend, was the real limit.</em></li>
+      <li><span class="sn">02</span><h3>Track</h3><p>GTM, GA4, pixels and Conversions API, with UTMs on every channel and creator link.</p><em>Unified attribution across 4 data sources before scaling.</em></li>
+      <li><span class="sn">03</span><h3>Structure</h3><p>Separate prospecting, lookalike and retargeting audiences with buyers excluded, so ad sets stop competing.</p><em>Snapchat 1.88x → 3.34x after restructuring.</em></li>
+      <li><span class="sn">04</span><h3>Test creative</h3><p>Saudi-dialect hooks built on real customer objections. One creator per ad set, losers cut within days.</p><em>33 creators tested as ad inventory in one month.</em></li>
+      <li><span class="sn">05</span><h3>Scale</h3><p>Raise budget only on audiences and messages that beat the control. Report against the business target, not platform ROAS.</p><em><span class="cur" data-usd="$66.2K" data-sar="SAR 248.3K">$66.2K</span> in one month at 4.49x, 251% of target.</em></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CASE 1 -->
+<section class="case" id="edtech">
+  <div class="wrap">
+    <div class="case-head">
+      <div style="display:grid;gap:14px">
+        <div class="tagline"><span class="tag">Case 01</span><span class="tag alt">EdTech · digital product · KSA</span></div>
+        <h2>2.5x the monthly target for an online English-learning brand</h2>
+      </div>
+      <div class="ctx">
+        <p>Online English courses for Saudi families and adults, sold through a web checkout. The month stacked two seasons: back-to-school and Saudi National Day. Revenue target for the month: SAR 444,000.</p>
+        <p class="label">Window: one month</p>
+      </div>
+    </div>
+
+    <div class="target">
+      <div class="target-top">
+        <div class="big mono"><span class="cu">251%</span><small>of target</small></div>
+        <div style="display:grid;gap:4px;text-align:end">
+          <span class="label">Revenue vs target</span>
+          <span class="mono" style="font-size:18px">≈ <span class="cur" data-usd="$297.4K" data-sar="SAR 1.115M">$297.4K</span> <span style="color:var(--muted)">vs</span> <span class="cur" data-usd="$118.4K" data-sar="SAR 444K">$118.4K</span></span>
+        </div>
+      </div>
+      <div class="bar" role="img" aria-label="Revenue reached 251 percent of target">
+        <i style="width:100%"></i>
+        <span class="goal" style="inset-inline-start:39.8%"></span>
+      </div>
+      <div class="bar-legend"><span>Target <b>SAR 444,000</b> (white marker)</span><span>Delivered <b>≈ SAR 1.115M</b></span></div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><span class="v cur" data-usd="$66.2K" data-sar="SAR 248.3K">$66.2K</span><span class="k">Snapchat spend in one month, the main scaling channel</span></div>
+      <div class="kpi"><span class="v">4.49x</span><span class="k">Purchase ROAS held at that spend</span></div>
+      <div class="kpi"><span class="v">2,862</span><span class="k">Purchases from Snapchat in the window</span></div>
+      <div class="kpi"><span class="v cur" data-usd="$23.1" data-sar="SAR 86.8">$23.1</span><span class="k">Cost per purchase. 37% of add-to-baskets became orders</span></div>
+    </div>
+
+    <div class="scale-note">
+      <span class="sn-tag">TikTok, same account</span>
+      <p>Monthly spend went from <span class="cur" data-usd="$10.5K" data-sar="SAR 39.2K">$10.5K</span> to <span class="cur" data-usd="$22.3K" data-sar="SAR 83.6K">$22.3K</span>, 2.1x more, while ROAS rose from 4.47x to 4.82x and purchases doubled from 552 to 1,111.</p>
+    </div>
+
+    <details class="more">
+      <summary><span>Read the full case</span><i aria-hidden="true">+</i></summary>
+      <div class="more-body">
+    <div class="split">
+      <div class="panel">
+        <h3>ROAS turnaround by channel</h3>
+        <div class="steps">
+          <div class="step-row">
+            <div class="name"><span>Snapchat</span><span>purchase ROAS</span></div>
+            <div class="track">
+              <div class="seg first"><span class="x">1.88x</span><span class="when">Starting point</span><i class="fill" style="width:22%"></i></div>
+              <div class="seg"><span class="x">3.34x</span><span class="when">Month 2 · <span class="cur" data-usd="$41.7K" data-sar="SAR 156.5K">$41.7K</span></span><i class="fill" style="width:39%"></i></div>
+              <div class="seg"><span class="x">6.1x</span><span class="when">Peak month · <span class="cur" data-usd="$24.2K" data-sar="SAR 90.7K">$24.2K</span></span><i class="fill" style="width:71%"></i></div>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="name"><span>TikTok</span><span>purchase ROAS</span></div>
+            <div class="track">
+              <div class="seg first"><span class="x">1.69x</span><span class="when">Starting point</span><i class="fill" style="width:20%"></i></div>
+              <div class="seg"><span class="x">5.28x</span><span class="when">After restructure</span><i class="fill" style="width:62%"></i></div>
+              <div class="seg"><span class="x">8.58x</span><span class="when">Season launch, first 3 days</span><i class="fill" style="width:100%"></i></div>
+            </div>
+          </div>
+        </div>
+        <p class="note">Bars are drawn to scale from 0 to 8.6x. In the peak month the best Snapchat campaigns ran at 9.5x and the best Meta campaigns at 5.4–5.8x.</p>
+      </div>
+
+      <div class="panel">
+        <h3>Reading Google honestly</h3>
+        <div class="compare">
+          <div class="cmp flag"><span class="x">10.5x</span><span class="k">Blended account ROAS, inflated by brand searches that would have converted anyway.</span></div>
+          <div class="cmp true"><span class="x">3.2x</span><span class="k">Non-brand ROAS with brand protection removed. Budgets were set on this number.</span></div>
+        </div>
+        <p class="note"><b style="color:var(--fg)">74% of reported value</b> came from one brand-protection campaign on 16% of spend. I reported it separately so management could see what Google actually acquired, and ran competitor search (2.2x) on a capped budget.</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>What I did</h3>
+      <ul class="did">
+        <li><span><b>Split the month into two jobs.</b> The first half sold a "catch-up" angle to parents after the first school tests. The second half used National Day for reach, then converted that audience with retargeting.</span></li>
+        <li><span><b>Tested 33 creators as ad inventory.</b> One creator per ad set beside a standard-creative ad set, on ad-set budgets, so winners showed within days and losers were cut early.</span></li>
+        <li><span><b>Cleaned the audience map.</b> Prospecting, lookalike and retargeting audiences that don't overlap, with purchasers excluded, so ad sets stopped bidding against each other.</span></li>
+        <li><span><b>Fixed attribution first.</b> UTM gaps had pushed half of all revenue into "Direct". I rebuilt UTMs for every channel and creator link before raising spend.</span></li>
+        <li><span><b>Automated the lead side.</b> Snapchat lead forms feed a shared sheet and alert the call-center team in real time, with ads scheduled to call-center hours.</span></li>
+      </ul>
+    </div>
+      </div>
+    </details>
+
+    <a class="btn next-case" href="#fragrance">Next case: Fragrance <i>→</i></a>
+  </div>
+</section>
+
+<!-- CASE 2 -->
+<section class="case" id="fragrance">
+  <div class="wrap">
+    <div class="case-head">
+      <div style="display:grid;gap:14px">
+        <div class="tagline"><span class="tag">Case 02</span><span class="tag alt">Fragrance · e-commerce · KSA</span></div>
+        <h2>882 orders against a 500-order target, on <span class="cur" data-usd="$11.5K" data-sar="SAR 43.3K">$11.5K</span> of paid media</h2>
+      </div>
+      <div class="ctx">
+        <p>A Saudi perfume store. I rebuilt tracking from scratch (GTM, GA4, Snapchat and Meta pixels) before buying media, so every platform number could be checked against the store's own orders.</p>
+        <p class="label">Window: one month</p>
+      </div>
+    </div>
+
+    <div class="target">
+      <div class="target-top">
+        <div class="big mono"><span class="cu">176%</span><small>of order target</small></div>
+        <div style="display:grid;gap:4px;text-align:end">
+          <span class="label">Store backend</span>
+          <span class="mono" style="font-size:18px">882 <span style="color:var(--muted)">/</span> 500 orders</span>
+        </div>
+      </div>
+      <div class="bar" role="img" aria-label="Orders reached 176 percent of target">
+        <i style="width:100%"></i>
+        <span class="goal" style="inset-inline-start:56.7%"></span>
+      </div>
+      <div class="bar-legend"><span>Target <b>500 orders</b> (marker)</span><span>Store revenue <b>≈ <span class="cur" data-usd="$99.6K" data-sar="SAR 373.5K">$99.6K</span></b></span></div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><span class="v">8.6x</span><span class="k">MER: total store revenue ÷ total paid spend</span></div>
+      <div class="kpi"><span class="v">6.63x</span><span class="k">Snapchat ROAS · 591 purchases · <span class="cur" data-usd="$17.5" data-sar="SAR 65.7">$17.5</span> CPA</span></div>
+      <div class="kpi"><span class="v">12.38x</span><span class="k">Instagram campaign ROAS · 125 purchases · <span class="cur" data-usd="$9.4" data-sar="SAR 35.4">$9.4</span> CPA</span></div>
+      <div class="kpi"><span class="v">1.40%</span><span class="k">Store conversion rate on 64,970 visits</span></div>
+    </div>
+
+    <details class="more">
+      <summary><span>Read the full case</span><i aria-hidden="true">+</i></summary>
+      <div class="more-body">
+    <div class="split">
+      <div class="panel">
+        <h3>Where the month's revenue came from</h3>
+        <div class="mix">
+          <div class="mix-bar" role="img" aria-label="Snapchat attributed 69 percent, Meta 15 percent, other 16 percent of store revenue">
+            <div style="width:69%;background:var(--yellow);color:var(--ink)">Snapchat 69%</div>
+            <div style="width:15%;background:var(--fg);color:var(--bg)">Meta</div>
+            <div style="width:16%;background:var(--panel-2);color:var(--muted)">Other</div>
+          </div>
+          <div class="mix-legend">
+            <span><i style="background:var(--yellow)"></i>Snapchat <span class="cur" data-usd="$68.7K" data-sar="SAR 257.5K">$68.7K</span></span>
+            <span><i style="background:var(--fg)"></i>Meta <span class="cur" data-usd="$14.6K" data-sar="SAR 54.7K">$14.6K</span></span>
+            <span><i style="background:var(--panel-2)"></i>Organic, direct &amp; repeat <span class="cur" data-usd="$16.3K" data-sar="SAR 61.3K">$16.3K</span></span>
+          </div>
+        </div>
+        <p class="note">Platform-attributed revenue, checked against the store's total. Snapchat brought the volume and one Instagram campaign brought the efficiency.</p>
+      </div>
+      <div class="panel">
+        <h3>What I did</h3>
+        <ul class="did">
+          <li><span><b>Rebuilt tracking before spending.</b> Replaced a dead Universal Analytics setup with GA4 and clean purchase events on both ad platforms.</span></li>
+          <li><span><b>Made Snapchat the volume channel.</b> 4.77M impressions at about $2.2 CPM.</span></li>
+          <li><span><b>Kept Meta narrow.</b> One always-on Instagram sales campaign on a small budget returned 12.38x.</span></li>
+          <li><span><b>Reported on store orders, not platform claims.</b> The 500-order target was set in the store dashboard and tracked there.</span></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </details>
+
+    <a class="btn next-case" href="#leads">Next case: Lead generation <i>→</i></a>
+  </div>
+</section>
+
+<!-- CASE 3 -->
+<section class="case" id="leads">
+  <div class="wrap">
+    <div class="case-head">
+      <div style="display:grid;gap:14px">
+        <div class="tagline"><span class="tag">Case 03</span><span class="tag alt">B2B lead generation · Snapchat · KSA</span></div>
+        <h2>636 leads, 70% closed by sales, SAR 260K in revenue from <span class="cur" data-usd="$1.1K" data-sar="SAR 4.1K">$1.1K</span> in media</h2>
+      </div>
+      <div class="ctx">
+        <p>Snapchat lead-form campaigns feeding a sales team. Success was measured on deals closed in the CRM, not on lead volume or cost per lead.</p>
+        <p class="label">Window: one campaign cycle</p>
+      </div>
+    </div>
+
+    <div class="target">
+      <div class="target-top">
+        <div class="big mono"><span class="cu">70%</span><small>of leads closed</small></div>
+        <div style="display:grid;gap:4px;text-align:end">
+          <span class="label">CRM, closed deals</span>
+          <span class="mono" style="font-size:18px">≈ 445 <span style="color:var(--muted)">/</span> 636 leads</span>
+        </div>
+      </div>
+      <div class="bar" role="img" aria-label="70 percent of leads closed into sales">
+        <i style="width:70%"></i>
+      </div>
+      <div class="bar-legend"><span>Leads <b>636</b></span><span>Closed <b>≈ 445</b> · Revenue <b>SAR 260,000</b></span></div>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi"><span class="v">63x</span><span class="k">Closed revenue ÷ media spend</span></div>
+      <div class="kpi"><span class="v cur" data-usd="$1.73" data-sar="SAR 6.5">$1.73</span><span class="k">Average cost per lead across both campaigns</span></div>
+      <div class="kpi"><span class="v cur" data-usd="$2.47" data-sar="SAR 9.3">$2.47</span><span class="k">Media cost per closed deal</span></div>
+      <div class="kpi"><span class="v">−58%</span><span class="k">Cost per lead from the first campaign to the second</span></div>
+    </div>
+
+    <details class="more">
+      <summary><span>Read the full case</span><i aria-hidden="true">+</i></summary>
+      <div class="more-body">
+    <div class="split">
+      <div class="panel">
+        <h3>From impression to closed deal</h3>
+        <div class="funnel">
+          <div class="f-row"><span class="f-k">Impressions</span><span class="f-bar" style="--w:100%"></span><span class="f-v mono">329,756</span></div>
+          <div class="f-row"><span class="f-k">Leads</span><span class="f-bar" style="--w:62%"></span><span class="f-v mono">636</span></div>
+          <div class="f-row"><span class="f-k">Closed deals</span><span class="f-bar hi" style="--w:44%"></span><span class="f-v mono">≈ 445</span></div>
+          <div class="f-row"><span class="f-k">Revenue</span><span class="f-bar hi" style="--w:30%"></span><span class="f-v mono">SAR 260K</span></div>
+        </div>
+        <p class="note">Bars show funnel stages, not scale. Lead and spend figures from Snapchat Ads Manager; closed deals and revenue from the client's CRM.</p>
+      </div>
+      <div class="panel">
+        <h3>What I did</h3>
+        <ul class="did">
+          <li><span><b>Ran two campaigns and kept what worked.</b> Cost per lead fell from <span class="cur" data-usd="$2.73" data-sar="SAR 10.2">$2.73</span> in the first campaign to <span class="cur" data-usd="$1.14" data-sar="SAR 4.3">$1.14</span> in the second, on <span class="cur" data-usd="$1.1K" data-sar="SAR 4.1K">$1.1K</span> in total spend.</span></li>
+          <li><span><b>Used Snapchat's native lead forms.</b> Leads were captured inside the app, without sending people to a landing page first.</span></li>
+          <li><span><b>Judged the campaign on CRM closes.</b> 70% of leads became sales, so a cheap lead here was also a qualified one.</span></li>
+        </ul>
+      </div>
+    </div>
+      </div>
+    </details>
+
+    <a class="btn next-case" href="#proof">Next: Proof <i>→</i></a>
+  </div>
+</section>
+
+<section class="proof" id="proof">
+  <div class="wrap">
+    <div class="proof-head">
+      <div style="display:grid;gap:10px">
+        <span class="label">Proof</span>
+        <h2>Straight from the ad accounts</h2>
+      </div>
+      <span class="label">Drag or swipe · tap to enlarge</span>
+    </div>
+    <div class="filters" role="group" aria-label="Filter screenshots">
+      <button type="button" id="f-all" data-f="all" aria-pressed="true">All<b>24</b></button>
+      <button type="button" id="f-edtech" data-f="ind:edtech" aria-pressed="false">Education<b>6</b></button>
+      <button type="button" id="f-digital" data-f="ind:digital" aria-pressed="false">Digital product<b>5</b></button>
+      <button type="button" id="f-fragrance" data-f="ind:fragrance" aria-pressed="false">E-commerce<b>12</b></button>
+      <button type="button" id="f-leads" data-f="ind:leads" aria-pressed="false">B2B<b>1</b></button>
+      <span class="f-sep" aria-hidden="true"></span>
+      <button type="button" id="f-snap" data-f="pf:snapchat" aria-pressed="false">Snapchat<b>8</b></button>
+      <button type="button" id="f-tt" data-f="pf:tiktok" aria-pressed="false">TikTok<b>6</b></button>
+      <button type="button" id="f-meta" data-f="pf:meta" aria-pressed="false">Meta<b>4</b></button>
+      <button type="button" id="f-g" data-f="pf:google" aria-pressed="false">Google<b>6</b></button>
+    </div>
+    <div class="shots mq" dir="ltr" data-group="all">
+        <button class="shot" type="button" data-ind="edtech" data-pf="snapchat" data-src="img/edtech-snapchat-scale.jpg"><img src="img/edtech-snapchat-scale.jpg" alt="Snapchat Ads Manager: $66,211 spent, $297,382 purchase value, 4.49 ROAS, 2,862 purchases, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-snapchat">Snapchat</span><span class="ind">Education</span></span><span class="cap">4.49x ROAS on <span class="cur" data-usd="$66.2K" data-sar="SAR 248.3K">$66.2K</span> in one month</span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="meta" data-src="img/fragrance-meta.jpg"><img src="img/fragrance-meta.jpg" alt="Meta campaign: 125 purchases, SAR 4,419 spent, 12.38 ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-meta">Meta</span><span class="ind">E-commerce</span></span><span class="cap">12.38x ROAS, 125 purchases</span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="meta" data-src="img/ecom-meta-campaigns.jpg"><img src="img/ecom-meta-campaigns.jpg" alt="Meta campaign table: 407 campaigns, SAR 1,722,627 spent, 4.51 average purchase ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-meta">Meta</span><span class="ind">E-commerce</span></span><span class="cap">4.51x ROAS across 407 campaigns, <span class="cur" data-usd="$459K" data-sar="SAR 1.72M">$459K</span> spent</span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="meta" data-src="img/ecom-meta-adsets.jpg"><img src="img/ecom-meta-adsets.jpg" alt="Meta ad set table: 109 ad sets, SAR 53,628 spent, 3.99 average purchase ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-meta">Meta</span><span class="ind">E-commerce</span></span><span class="cap">3.99x ROAS across 109 ad sets on <span class="cur" data-usd="$14.3K" data-sar="SAR 53.6K">$14.3K</span></span></button>
+        <button class="shot" type="button" data-ind="leads" data-pf="snapchat" data-src="img/leads-snapchat.jpg"><img src="img/leads-snapchat.jpg" style="object-fit:contain;object-position:center;background:#fff" alt="Snapchat lead campaigns: 636 leads, $1,097.56 spent, $1.73 average cost per lead, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-snapchat">Snapchat</span><span class="ind">B2B</span></span><span class="cap">636 leads at <span class="cur" data-usd="$1.73" data-sar="SAR 6.5">$1.73</span> each, 70% closed</span></button>
+        <button class="shot" type="button" data-ind="digital" data-pf="tiktok" data-src="img/edtech-tiktok-peak.jpg"><img src="img/edtech-tiktok-peak.jpg" alt="TikTok Ads Manager, peak month: SAR 83,587 spent, 1,111 purchases, 4.818 ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-tiktok">TikTok</span><span class="ind">Digital product</span></span><span class="cap">4.82x ROAS on <span class="cur" data-usd="$22.3K" data-sar="SAR 83.6K">$22.3K</span>, 1,111 purchases</span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="snapchat" data-src="img/fragrance-snapchat.jpg"><img src="img/fragrance-snapchat.jpg" alt="Snapchat Ads: $10,356 spent, $68,658 value, 6.63 ROAS, 591 purchases, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-snapchat">Snapchat</span><span class="ind">E-commerce</span></span><span class="cap">6.63x ROAS, 591 purchases</span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="snapchat" data-src="img/ecom-snapchat-year.jpg"><img src="img/ecom-snapchat-year.jpg" alt="Snapchat Ads Manager: $438,855 spent, $2,259,466 purchase value, 5.15 ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-snapchat">Snapchat</span><span class="ind">E-commerce</span></span><span class="cap">5.15x ROAS, <span class="cur" data-usd="$2.26M" data-sar="SAR 8.47M">$2.26M</span> in sales on <span class="cur" data-usd="$439K" data-sar="SAR 1.65M">$439K</span></span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="snapchat" data-src="img/ecom-snapchat-conversions.jpg"><img src="img/ecom-snapchat-conversions.jpg" alt="Snapchat Ads Manager: $22,556 spent, $139,306 purchase value, 6.18 ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-snapchat">Snapchat</span><span class="ind">E-commerce</span></span><span class="cap">6.18x ROAS, <span class="cur" data-usd="$139K" data-sar="SAR 522K">$139K</span> in sales</span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="snapchat" data-src="img/ecom-snapchat-package.jpg"><img src="img/ecom-snapchat-package.jpg" alt="Snapchat single campaign: $39,151 spent, 1,586 purchases, 3.61 ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-snapchat">Snapchat</span><span class="ind">E-commerce</span></span><span class="cap">3.61x ROAS, 1,586 purchases from one campaign</span></button>
+        <button class="shot" type="button" data-ind="edtech" data-pf="snapchat" data-src="img/edtech-snapchat-september.jpg"><img src="img/edtech-snapchat-september.jpg" alt="Snapchat campaign table, peak month: $24,196 spent, $147,673 value, 6.1 ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-snapchat">Snapchat</span><span class="ind">Education</span></span><span class="cap">6.1x ROAS across peak-month campaigns</span></button>
+        <button class="shot" type="button" data-ind="digital" data-pf="tiktok" data-src="img/edtech-tiktok-m2.jpg"><img src="img/edtech-tiktok-m2.jpg" alt="TikTok Ads Manager, earlier month: SAR 39,200 spent, 552 purchases, 4.47 ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-tiktok">TikTok</span><span class="ind">Digital product</span></span><span class="cap">4.47x ROAS on <span class="cur" data-usd="$10.5K" data-sar="SAR 39.2K">$10.5K</span>, 552 purchases</span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="tiktok" data-src="img/ecom-tiktok-scale.jpg"><img src="img/ecom-tiktok-scale.jpg" alt="TikTok Ads Manager: SAR 266,111 spent, 4,629 purchases, 5.66 ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-tiktok">TikTok</span><span class="ind">E-commerce</span></span><span class="cap">5.66x ROAS, 4,629 purchases on <span class="cur" data-usd="$71K" data-sar="SAR 266K">$71K</span></span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="tiktok" data-src="img/ecom-tiktok-sales.jpg"><img src="img/ecom-tiktok-sales.jpg" alt="TikTok Ads Manager: SAR 79,041 spent, 1,765 purchases, 4.51 ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-tiktok">TikTok</span><span class="ind">E-commerce</span></span><span class="cap">4.51x ROAS, 1,765 purchases on <span class="cur" data-usd="$21.1K" data-sar="SAR 79K">$21.1K</span></span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="tiktok" data-src="img/ecom-tiktok-coffee.jpg"><img src="img/ecom-tiktok-coffee.jpg" alt="TikTok Ads Manager: SAR 65,964 spent, 1,519 purchases, 4.66 ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-tiktok">TikTok</span><span class="ind">E-commerce</span></span><span class="cap">4.66x ROAS, 1,519 purchases on <span class="cur" data-usd="$17.6K" data-sar="SAR 66K">$17.6K</span></span></button>
+        <button class="shot" type="button" data-ind="edtech" data-pf="google" data-src="img/edtech-google-brand-protection.jpg"><img src="img/edtech-google-brand-protection.jpg" alt="Google brand protection search campaign, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-google">Google</span><span class="ind">Education</span></span><span class="cap">Brand protection, excluded from true ROAS</span></button>
+        <button class="shot" type="button" data-ind="digital" data-pf="snapchat" data-src="img/edtech-snapchat-july.jpg"><img src="img/edtech-snapchat-july.jpg" alt="Snapchat, earlier month: $41,735 spent, $139,206 value, 3.34 ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-snapchat">Snapchat</span><span class="ind">Digital product</span></span><span class="cap">3.34x ROAS on <span class="cur" data-usd="$41.7K" data-sar="SAR 156.5K">$41.7K</span></span></button>
+        <button class="shot" type="button" data-ind="digital" data-pf="meta" data-src="img/edtech-meta-campaigns.jpg"><img src="img/edtech-meta-campaigns.jpg" alt="Meta campaign table with purchase ROAS up to 5.77, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-meta">Meta</span><span class="ind">Digital product</span></span><span class="cap">Campaign table, up to 5.77x ROAS</span></button>
+        <button class="shot" type="button" data-ind="edtech" data-pf="tiktok" data-src="img/edtech-tiktok-september.jpg"><img src="img/edtech-tiktok-september.jpg" alt="TikTok Ads Manager, season launch: 8.578 purchase ROAS, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-tiktok">TikTok</span><span class="ind">Education</span></span><span class="cap">8.58x ROAS in the first 3 days of the season</span></button>
+        <button class="shot" type="button" data-ind="digital" data-pf="google" data-src="img/edtech-google-competitors.jpg"><img src="img/edtech-google-competitors.jpg" alt="Google competitors search campaign, 2.23 conversion value per cost, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-google">Google</span><span class="ind">Digital product</span></span><span class="cap">Competitor search at 2.2x on a capped budget</span></button>
+        <button class="shot" type="button" data-ind="edtech" data-pf="google" data-src="img/edtech-google-account.jpg"><img src="img/edtech-google-account.jpg" alt="Google Ads account overview, 5 months, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-google">Google</span><span class="ind">Education</span></span><span class="cap">Account overview across 5 months</span></button>
+        <button class="shot" type="button" data-ind="edtech" data-pf="google" data-src="img/edtech-google-july.jpg"><img src="img/edtech-google-july.jpg" alt="Google Ads monthly overview, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-google">Google</span><span class="ind">Education</span></span><span class="cap">Single-month account view</span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="google" data-src="img/ecom-google-overview.jpg"><img src="img/ecom-google-overview.jpg" alt="Google Ads overview: 5.92M conversion value, 14.33 conversion value per cost, SAR 413K cost, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-google">Google</span><span class="ind">E-commerce</span></span><span class="cap">14.33 conv. value per cost, 5.92M in conversion value</span></button>
+        <button class="shot" type="button" data-ind="fragrance" data-pf="google" data-src="img/ecom-google-summer.jpg"><img src="img/ecom-google-summer.jpg" alt="Google Ads overview: 867K conversion value, 10.14 conversion value per cost, SAR 85.5K cost, names and dates hidden" loading="lazy"><span class="meta-row"><span class="pf pf-google">Google</span><span class="ind">E-commerce</span></span><span class="cap">10.14 conv. value per cost on <span class="cur" data-usd="$22.8K" data-sar="SAR 85.5K">$22.8K</span></span></button>
+    </div>
+    <p class="nda">🔒 Names and dates hidden under client NDAs. Figures unedited.</p>
+  </div>
+</section>
+
+<section class="career" id="career">
+  <div class="wrap">
+    <div style="display:grid;gap:10px">
+      <span class="label">Experience · 2020 – 2026</span>
+      <h2>Where the numbers came from</h2>
+    </div>
+    <div class="exp-teaser">
+      <ul class="exp-co"><li>EBAR Co</li><li>Freelance</li><li>Basmah · Azraq Group</li><li>Malameh</li><li>Hashtag Agency</li></ul>
+      <button type="button" class="btn exp-toggle" id="exp-toggle" aria-expanded="false" aria-controls="exp-body">Show experience &amp; impact <i>↓</i></button>
+    </div>
+    <div class="exp-body" id="exp-body" hidden>
+    <ol class="timeline">
+      <li><span class="when">2024 – Now</span><div><h3>EBAR Co <small>Senior Performance Marketer &amp; Media Buyer</small></h3><p>Performance agency, Egypt &amp; KSA. Full-funnel paid media for e-commerce, B2B software and pharma accounts. Rebuilt Search and PMax, unified tracking across 4 data sources, and traced a store's growth limit to a 0.12% site CVR.</p></div></li>
+      <li><span class="when">2023 – Now</span><div><h3>Freelance <small>Performance Marketer &amp; Media Buyer</small></h3><p>Remote media buying for Saudi e-commerce, education and B2B brands, including the EdTech and fragrance cases above and a B2B software client that closed $2.5M in deals from $400K in media. Also grew a consumer brand's TikTok and Reels accounts from zero to 6.4M+ views in 60 days.</p></div></li>
+      <li><span class="when">2024</span><div><h3>Basmah Agency, Azraq Group <small>Performance Marketer &amp; Media Buyer</small></h3><p>Paid lead generation for the agency's own sales pipeline, plus an n8n automation that routed every new lead in real time. Ran Snapchat and TikTok for selected client accounts.</p></div></li>
+      <li><span class="when">2022 – 2023</span><div><h3>Malameh <small>Performance Marketer &amp; Team Lead</small></h3><p>Fashion e-commerce. Led web, creative and warehouse teams through a full rebuild of messaging, page structure and checkout: EGP 16M+ in sales within 2 months, 8.5x ROAS.</p></div></li>
+      <li><span class="when">2020 – 2022</span><div><h3>Hashtag Agency <small>Social Media &amp; Ads Specialist</small></h3><p>Music and entertainment releases across Egypt and the GCC: 1B+ combined views for two releases in one month. Secured Meta verification for celebrity and brand accounts.</p></div></li>
+    </ol>
+
+    <div style="display:grid;gap:10px;margin-top:12px">
+      <span class="label">Selected impact</span>
+    </div>
+    <div class="grid-ledger">
+      <div><span class="n cur" data-usd="$2M+" data-sar="SAR 7.5M+">$2M+</span><span class="t">Total media managed across 4 platforms, $500K+ of it on Snapchat</span></div>
+      <div><span class="n">6.25x</span><span class="t">$2.5M in B2B deal value from $400K in media, Saudi software company, over 6 months</span></div>
+      <div><span class="n">EGP 16M+</span><span class="t">Sales within 2 months on a site that wasn't converting before the rebuild</span></div>
+      <div><span class="n">8.5x</span><span class="t">ROAS while cutting cost per result 15%, through full-funnel testing</span></div>
+      <div><span class="n">1B+</span><span class="t">Combined views for two music releases in one month, Egypt &amp; GCC</span></div>
+      <div><span class="n">+40%</span><span class="t">Video engagement on paid music-release and ticketing campaigns</span></div>
+    </div>
+    </div>
+
+    <div class="certs">
+      <div class="certs-head"><span class="label">Certified</span><span class="label">Drag or swipe</span></div>
+      <div class="mq certs-mq slow" dir="ltr">
+        <div class="cert cert-meta"><span class="c-badge" aria-hidden="true">M</span><span class="c-title">Meta Certified Digital Marketing Associate</span><span class="c-iss">Meta Blueprint</span><span class="c-area">Paid social · Meta Ads</span></div>
+        <div class="cert cert-google"><span class="c-badge" aria-hidden="true">G</span><span class="c-title">Google Ads Certification</span><span class="c-iss">Google Skillshop</span><span class="c-area">Search · Performance Max</span></div>
+        <div class="cert cert-linkedin"><span class="c-badge" aria-hidden="true">in</span><span class="c-title">Master Digital Marketing</span><span class="c-iss">LinkedIn Learning · 2025</span><span class="c-area">Full-funnel digital marketing</span></div>
+        <div class="cert cert-linkedin"><span class="c-badge" aria-hidden="true">in</span><span class="c-title">Social Media Strategy: TikTok &amp; Instagram Reels</span><span class="c-iss">LinkedIn Learning</span><span class="c-area">Short-form video strategy</span></div>
+        <div class="cert cert-semrush"><span class="c-badge" aria-hidden="true">S</span><span class="c-title">Social Media Marketing Crash Course</span><span class="c-iss">Semrush Academy</span><span class="c-area">Social media marketing</span></div>
+      </div>
+    </div>
+    <div class="tools">
+      <div class="tools-head">
+        <div style="display:grid;gap:8px"><span class="label">Stack</span><h3 class="tools-title">The tools behind the numbers</h3></div>
+        <div class="t-legend" aria-hidden="true"><span class="t-ads">Ad platforms</span><span class="t-track">Tracking</span><span class="t-auto">Automation</span><span class="t-shop">E-commerce</span><span class="t-create">Creative</span></div>
+      </div>
+      <div class="mq tools-mq slow" dir="ltr">
+        <div class="tool t-ads"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg></span><span class="t-txt"><span class="t-name">Meta</span><span class="t-cat">Ad platform</span></span></div><div class="tool t-ads"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg></span><span class="t-txt"><span class="t-name">Snapchat</span><span class="t-cat">Ad platform</span></span></div><div class="tool t-ads"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg></span><span class="t-txt"><span class="t-name">TikTok</span><span class="t-cat">Ad platform</span></span></div><div class="tool t-ads"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg></span><span class="t-txt"><span class="t-name">Google Ads</span><span class="t-cat">Ad platform</span></span></div><div class="tool t-ads"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg></span><span class="t-txt"><span class="t-name">LinkedIn Ads</span><span class="t-cat">Ad platform</span></span></div><div class="tool t-ads"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg></span><span class="t-txt"><span class="t-name">X Ads</span><span class="t-cat">Ad platform</span></span></div><div class="tool t-track"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-4 3 2 5-6"/></svg></span><span class="t-txt"><span class="t-name">GTM</span><span class="t-cat">Tracking</span></span></div><div class="tool t-track"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-4 3 2 5-6"/></svg></span><span class="t-txt"><span class="t-name">GA4</span><span class="t-cat">Tracking</span></span></div><div class="tool t-track"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-4 3 2 5-6"/></svg></span><span class="t-txt"><span class="t-name">Server-side tracking</span><span class="t-cat">Tracking</span></span></div><div class="tool t-track"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-4 3 2 5-6"/></svg></span><span class="t-txt"><span class="t-name">Meta Pixel</span><span class="t-cat">Tracking</span></span></div><div class="tool t-track"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-4 3 2 5-6"/></svg></span><span class="t-txt"><span class="t-name">Conversions API</span><span class="t-cat">Tracking</span></span></div><div class="tool t-track"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-4 3 2 5-6"/></svg></span><span class="t-txt"><span class="t-name">UTMs</span><span class="t-cat">Tracking</span></span></div>
+      </div>
+      <div class="mq tools-mq slow rev" dir="ltr">
+        <div class="tool t-auto"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="6" height="6" rx="1.5"/><rect x="15" y="14" width="6" height="6" rx="1.5"/><path d="M9 7h4a3 3 0 0 1 3 3v4"/><path d="M14 12l2 2 2-2"/></svg></span><span class="t-txt"><span class="t-name">n8n</span><span class="t-cat">Automation</span></span></div><div class="tool t-auto"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="6" height="6" rx="1.5"/><rect x="15" y="14" width="6" height="6" rx="1.5"/><path d="M9 7h4a3 3 0 0 1 3 3v4"/><path d="M14 12l2 2 2-2"/></svg></span><span class="t-txt"><span class="t-name">Make</span><span class="t-cat">Automation</span></span></div><div class="tool t-auto"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="6" height="6" rx="1.5"/><rect x="15" y="14" width="6" height="6" rx="1.5"/><path d="M9 7h4a3 3 0 0 1 3 3v4"/><path d="M14 12l2 2 2-2"/></svg></span><span class="t-txt"><span class="t-name">Zapier</span><span class="t-cat">Automation</span></span></div><div class="tool t-auto"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="6" height="6" rx="1.5"/><rect x="15" y="14" width="6" height="6" rx="1.5"/><path d="M9 7h4a3 3 0 0 1 3 3v4"/><path d="M14 12l2 2 2-2"/></svg></span><span class="t-txt"><span class="t-name">Telegram alerts</span><span class="t-cat">Automation</span></span></div><div class="tool t-shop"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg></span><span class="t-txt"><span class="t-name">Salla</span><span class="t-cat">E-commerce</span></span></div><div class="tool t-shop"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg></span><span class="t-txt"><span class="t-name">Zid</span><span class="t-cat">E-commerce</span></span></div><div class="tool t-shop"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V7a3 3 0 0 1 6 0v1"/></svg></span><span class="t-txt"><span class="t-name">Shopify</span><span class="t-cat">E-commerce</span></span></div><div class="tool t-create"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1L19 8a2.1 2.1 0 0 0-3-3L5 16l-1 4z"/><path d="M14 7l3 3"/></svg></span><span class="t-txt"><span class="t-name">Figma</span><span class="t-cat">Creative</span></span></div><div class="tool t-create"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1L19 8a2.1 2.1 0 0 0-3-3L5 16l-1 4z"/><path d="M14 7l3 3"/></svg></span><span class="t-txt"><span class="t-name">CapCut</span><span class="t-cat">Creative</span></span></div><div class="tool t-create"><span class="t-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1L19 8a2.1 2.1 0 0 0-3-3L5 16l-1 4z"/><path d="M14 7l3 3"/></svg></span><span class="t-txt"><span class="t-name">Canva</span><span class="t-cat">Creative</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="check" id="check">
+  <div class="wrap">
+    <div class="check-head">
+      <span class="label">Free · 60 seconds</span>
+      <h2>Check your ad account before you spend another riyal</h2>
+      <p>Seven questions I ask on every new account. Answer them and you get a score and the first three things I would fix.</p>
+      <button type="button" class="btn primary check-toggle" id="check-toggle" aria-expanded="false" aria-controls="check-body">Take the 60-second check <i>↓</i></button>
+    </div>
+    <div class="check-body" id="check-body" hidden>
+    <div class="check-grid">
+      <ol class="qs">
+        <li class="q" data-k="capi" data-fix-ar="فعّل Conversions API لتصل إلى المنصات بيانات المبيعات التي يحجبها نظام iOS ومانعات الإعلانات." data-label-ar="Conversions API" data-label="Conversions API" data-fix="Set up Conversions API so the platforms still see sales that iOS and ad blockers hide.">
+          <span class="qn mono">01</span><p>Are purchases or leads sent through Conversions API, not the pixel alone?</p>
+          <div class="ans" role="radiogroup" aria-label="Are purchases or leads sent through Conversions API, not the pixel alone?">
+            <button type="button" role="radio" aria-checked="false" data-v="2">Yes</button><button type="button" role="radio" aria-checked="false" data-v="1">Not sure</button><button type="button" role="radio" aria-checked="false" data-v="0">No</button>
+          </div>
+        </li>
+        <li class="q" data-k="match" data-fix-ar="طابِق مبيعات المنصات مع متجرك أو نظام إدارة العملاء قبل الاعتماد على أي رقم للعائد." data-label-ar="مطابقة المبيعات مع المتجر أو CRM" data-label="Platform revenue vs store/CRM" data-fix="Reconcile platform revenue with your store or CRM before you trust any ROAS number.">
+          <span class="qn mono">02</span><p>Does platform-reported revenue roughly match your store or CRM?</p>
+          <div class="ans" role="radiogroup" aria-label="Does platform-reported revenue roughly match your store or CRM?">
+            <button type="button" role="radio" aria-checked="false" data-v="2">Yes</button><button type="button" role="radio" aria-checked="false" data-v="1">Not sure</button><button type="button" role="radio" aria-checked="false" data-v="0">No</button>
+          </div>
+        </li>
+        <li class="q" data-k="utm" data-fix-ar="أضف معرّفات UTM لكل روابط الإعلانات وصنّاع المحتوى، حتى لا تُسجَّل مبيعاتك تحت بند &quot;Direct&quot;." data-label-ar="معرّفات UTM لكل الروابط" data-label="UTMs on every link" data-fix="Add UTMs to every ad and creator link so &quot;Direct&quot; stops swallowing your revenue.">
+          <span class="qn mono">03</span><p>Does every ad and creator link carry UTMs?</p>
+          <div class="ans" role="radiogroup" aria-label="Does every ad and creator link carry UTMs?">
+            <button type="button" role="radio" aria-checked="false" data-v="2">Yes</button><button type="button" role="radio" aria-checked="false" data-v="1">Not sure</button><button type="button" role="radio" aria-checked="false" data-v="0">No</button>
+          </div>
+        </li>
+        <li class="q" data-k="brand" data-fix-ar="افصل في جوجل بين البحث باسم علامتك وبقية عمليات البحث، فالعائد الإجمالي يُخفي ما تحققه فعليًا." data-label-ar="فصل بحث العلامة التجارية" data-label="Brand vs non-brand split" data-fix="Split brand from non-brand on Google. Blended ROAS hides what you actually acquire.">
+          <span class="qn mono">04</span><p>On Google, is brand search reported separately from non-brand?</p>
+          <div class="ans" role="radiogroup" aria-label="On Google, is brand search reported separately from non-brand?">
+            <button type="button" role="radio" aria-checked="false" data-v="2">Yes</button><button type="button" role="radio" aria-checked="false" data-v="1">Not sure</button><button type="button" role="radio" aria-checked="false" data-v="0">No</button>
+          </div>
+        </li>
+        <li class="q" data-k="creative" data-fix-ar="اختبر رسائل افتتاحية جديدة أسبوعيًا، فتشبّع الجمهور من الإعلان من أبرز أسباب تراجع العائد." data-label-ar="اختبار المحتوى أسبوعيًا" data-label="Weekly creative testing" data-fix="Test new hooks every week. Creative fatigue is a common reason ROAS slides.">
+          <span class="qn mono">05</span><p>Do you launch new creatives or hooks every week?</p>
+          <div class="ans" role="radiogroup" aria-label="Do you launch new creatives or hooks every week?">
+            <button type="button" role="radio" aria-checked="false" data-v="2">Yes</button><button type="button" role="radio" aria-checked="false" data-v="1">Not sure</button><button type="button" role="radio" aria-checked="false" data-v="0">No</button>
+          </div>
+        </li>
+        <li class="q" data-k="exclude" data-fix-ar="استبعد عملاءك الحاليين من الاستهداف الجديد، حتى لا تدفع للوصول إلى من اشترى منك بالفعل." data-label-ar="استبعاد العملاء الحاليين" data-label="Buyer exclusions" data-fix="Exclude existing buyers from prospecting, so you stop paying to reach customers you already have.">
+          <span class="qn mono">06</span><p>Are existing buyers excluded from prospecting audiences?</p>
+          <div class="ans" role="radiogroup" aria-label="Are existing buyers excluded from prospecting audiences?">
+            <button type="button" role="radio" aria-checked="false" data-v="2">Yes</button><button type="button" role="radio" aria-checked="false" data-v="1">Not sure</button><button type="button" role="radio" aria-checked="false" data-v="0">No</button>
+          </div>
+        </li>
+        <li class="q" data-k="speed" data-fix-ar="اجعل العميل المحتمل يصل إلى فريق المبيعات فورًا، ليتم التواصل معه وهو في ذروة اهتمامه." data-label-ar="سرعة وصول العميل لفريق المبيعات" data-label="Lead response speed" data-fix="Route new leads to your sales team instantly, so calls happen while interest is high.">
+          <span class="qn mono">07</span><p>Do new leads reach your sales team within minutes?</p>
+          <div class="ans" role="radiogroup" aria-label="Do new leads reach your sales team within minutes?">
+            <button type="button" role="radio" aria-checked="false" data-v="2">Yes</button><button type="button" role="radio" aria-checked="false" data-v="1">Not sure</button><button type="button" role="radio" aria-checked="false" data-v="0">No</button>
+          </div>
+        </li>
+      </ol>
+      <aside class="result" aria-live="polite">
+        <div class="ring-wrap">
+          <svg viewBox="0 0 120 120" class="ring" aria-hidden="true"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--panel-2)" stroke-width="10"/><circle id="ring-fg" cx="60" cy="60" r="52" fill="none" stroke="url(#rg)" stroke-width="10" stroke-linecap="round" pathLength="100" stroke-dasharray="0 100" transform="rotate(-90 60 60)"/><defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e3e6ff"/><stop offset="1" stop-color="#7c86f0"/></linearGradient></defs></svg>
+          <div class="ring-txt"><b id="score" class="mono">–</b><span>/ 100</span></div>
+        </div>
+        <div class="r-copy">
+          <span class="r-tag" id="r-tag">0 of 7 answered</span>
+          <h3 id="r-title">Answer the questions to see your score</h3>
+          <ol class="fixes" id="fixes"><li class="ph">Your top fixes will appear here.</li></ol>
+        </div>
+        <a class="btn primary" id="check-cta" href="https://wa.me/966530570632?text=Hi%20Ibrahem%2C%20I%27d%20like%20to%20book%20the%20free%2025-minute%20account%20audit%20for%20my%20brand." target="_blank" rel="noopener">Book the free 25-min audit <i>↗</i></a>
+        <small class="r-note">Your answers are added to the WhatsApp message, so the call starts where it matters.</small>
+      </aside>
+    </div>
+  </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="ct-card">
+      <div class="ct-left">
+        <span class="status"><i></i>15+ Saudi brands · taking on new ones</span>
+        <h2>Want numbers like these<br><span>for your brand?</span></h2>
+        <p class="contact-sub">Book a free 25-minute call. I review your ad accounts and tracking with you and tell you where I would start, at no cost.</p>
+        <div class="ctas"><a class="btn primary" href="https://wa.me/966530570632?text=Hi%20Ibrahem%2C%20I%27d%20like%20to%20book%20the%20free%2025-minute%20account%20audit%20for%20my%20brand." target="_blank" rel="noopener">Book the free audit on WhatsApp <i>↗</i></a><button class="btn ghost" type="button" data-cv>View CV <i>↗</i></button></div>
+      </div>
+      <div class="ct-right">
+        <div class="c-row"><span class="c-ic"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span><span class="c-txt"><span class="c-lab">Email</span><span class="val" id="c-email">ibrahem.work11@gmail.com</span></span><span class="row-act"><button type="button" class="ib" data-copy="c-email" aria-label="Copy email" title="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg></button></span></div>
+        <div class="c-row"><span class="c-ic"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span class="c-txt"><span class="c-lab">Phone &amp; WhatsApp</span><span class="val" id="c-phone">+966 53 057 0632</span></span><span class="row-act"><a class="ib wa" href="https://wa.me/966530570632" target="_blank" rel="noopener" aria-label="Open WhatsApp chat" title="WhatsApp"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.5-4A8 8 0 1 1 9 19.5L4 20z"/></svg></a><button type="button" class="ib" data-copy="c-phone" aria-label="Copy phone number" title="Copy"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg></button></span></div>
+        <div class="c-row"><span class="c-ic"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7"/><path d="M8 7v.01"/><path d="M12 17v-4a2 2 0 0 1 4 0v4"/><path d="M12 10v7"/></svg></span><span class="c-txt"><span class="c-lab">LinkedIn</span><span class="val">linkedin.com/in/r1io1</span></span><span class="row-act"><a class="ib" href="https://www.linkedin.com/in/r1io1" target="_blank" rel="noopener" aria-label="Open LinkedIn profile" title="Open"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg></a></span></div>
+        <div class="c-row"><span class="c-ic"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span class="c-txt"><span class="c-lab">Based in</span><span class="val plain">Riyadh, Saudi Arabia</span></span></div>
+      </div>
+    </div>
+
+    <div class="ways">
+      <div><span class="w-ic"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 15l3-4 3 2 5-6"/></svg></span><b>Monthly management</b><span>I run your paid media end to end and report against your target.</span></div>
+      <div class="free"><span class="w-ic"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span><b>Free account audit</b><span>A 25-minute call reviewing your ad accounts and tracking. No cost, no commitment.</span></div>
+      <div><span class="w-ic"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span><b>Full-time roles</b><span>Open to senior performance roles in KSA and the GCC.</span></div>
+    </div>
+
+    <footer class="foot">
+      <span class="f-name">© 2026 Ibrahem Muhamed</span>
+      <span class="f-lang">Arabic · English · Spanish</span>
+      <span class="f-note">Screenshots are watermarked and client names are removed. 1 USD = 3.75 SAR. Updated October 2026.</span>
+    </footer>
+  </div>
+</section>
+
+<a class="totop" id="totop" href="#top" aria-label="Back to top">↑</a>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="cvd" aria-label="CV">
+  <div class="bar-d"><span class="label">Ibrahem Muhamed · CV · 2 pages</span><button type="button" id="cv-close">Close</button></div>
+  <div class="cv-pages"><img src="img/cv-1.jpg" alt="CV page 1: summary, key achievements and experience" loading="lazy"><img src="img/cv-2.jpg" alt="CV page 2: education, certifications, skills and languages" loading="lazy"></div>
+</dialog>
+
+<dialog id="lb" aria-label="Screenshot">
+  <div class="bar-d"><span class="label" id="lb-cap"></span><button type="button" id="lb-close">Close</button></div>
+  <img id="lb-img" alt="">
+</dialog>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'),img=document.getElementById('lb-img'),cap=document.getElementById('lb-cap');
+  document.querySelectorAll('.shot').forEach(function(b){
+    b.addEventListener('click',function(){
+      img.src=b.dataset.src; img.alt=b.querySelector('img').alt; cap.textContent=[].map.call(b.querySelectorAll('.pf,.ind,.cap'),function(x){return x.textContent}).join(' · ');
+      if(lb.showModal) lb.showModal(); else lb.setAttribute('open','');
+    });
+  });
+
+  // name letters
+  var h=document.getElementById('name');
+  if(h && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    h.setAttribute('aria-label','Ibrahem Muhamed');
+    var txt='Ibrahem Muhamed',i=0,html='';
+    for(var c of txt){html+= c===' ' ? ' ' : '<span class="ch" aria-hidden="true" style="--i:'+(i++)+'">'+c+'</span>';}
+    h.innerHTML=html+'<span class="ch" aria-hidden="true" style="--i:'+i+';color:var(--dot)">.</span>';
+  }
+  // glow follows pointer
+  var hero=document.querySelector('.hero');
+  hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();hero.style.setProperty('--mx',(e.clientX-r.left)+'px');hero.style.setProperty('--my',(e.clientY-r.top)+'px');});
+  // count-ups and bars when they scroll into view
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function countUp(el){
+    var full=el.textContent, m=full.match(/[\d,]*\.?\d+/); if(!m||full.indexOf('→')>-1) return;
+    var raw=m[0], target=parseFloat(raw.replace(/,/g,'')), dec=(raw.split('.')[1]||'').length, comma=raw.indexOf(',')>-1;
+    var pre=full.slice(0,m.index), post=full.slice(m.index+raw.length), t0=null, dur=1100;
+    function fmt(v){var s=v.toFixed(dec); if(comma){var p=s.split('.');p[0]=p[0].replace(/\B(?=(\d{3})+(?!\d))/g,',');s=p.join('.')} return s}
+    function step(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/dur),e=1-Math.pow(1-k,3);el.textContent=pre+fmt(target*e)+post;if(k<1)requestAnimationFrame(step);else el.textContent=full;}
+    requestAnimationFrame(step);
+  }
+  if(!reduce && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;var el=en.target;io.unobserve(el);
+      if(el.classList.contains('bar')){el.classList.add('go')}else{countUp(el)}});},{threshold:.4});
+    document.querySelectorAll('.ledger .n,.kpi .v,.target .big .cu,.grid-ledger .n,.cmp .x,.seg .x,.bar').forEach(function(el){io.observe(el)});
+  }
+
+
+  // parallax on the cover
+  var frame=document.getElementById('frame'),layers=[].slice.call(document.querySelectorAll('#scene [data-depth]'));
+  if(frame && !reduce){frame.addEventListener('pointermove',function(e){var r=frame.getBoundingClientRect(),dx=(e.clientX-r.left)/r.width-.5,dy=(e.clientY-r.top)/r.height-.5;
+    layers.forEach(function(l){var d=+l.dataset.depth;l.style.translate=(-dx*d).toFixed(1)+'px '+(-dy*d).toFixed(1)+'px'})});
+    frame.addEventListener('pointerleave',function(){layers.forEach(function(l){l.style.translate='0px 0px'})});}
+
+  // ---- draggable marquees (screenshots + certificates) ----
+  document.querySelectorAll('.mq').forEach(function(box){
+    var track=document.createElement('div');track.className='mq-track';
+    [].slice.call(box.children).forEach(function(x){track.appendChild(x)});
+    box.appendChild(track);
+    var rev=box.classList.contains('rev');
+    var x=0,min=0,v=0,hover=false,drag=null,moved=0,last=performance.now(),idle=0,isStatic=false,dir=rev?1:-1,started=false;
+    var speed=box.classList.contains('slow')?28:38;
+    function measure(){var w=track.scrollWidth,bw=box.clientWidth;isStatic=w<=bw+2;track.classList.toggle('static',isStatic);
+      min=isStatic?0:bw-w;if(!started&&rev){x=min;}started=true;if(isStatic)x=0;else x=Math.max(min,Math.min(0,x));
+      box.classList.toggle('at-start',x>=-1);box.classList.toggle('at-end',x<=min+1);}
+    function rubber(d){return d*0.35}
+    function frame(t){var dt=Math.min(.05,(t-last)/1000);last=t;
+      if(!isStatic&&!drag){
+        if(x>0||x<min){var edge=x>0?0:min;x+=(edge-x)*Math.min(1,dt*10);if(Math.abs(edge-x)<.5)x=edge;v=0;}
+        else if(Math.abs(v)>5){x+=v*dt;v*=Math.pow(.04,dt);if(x>0){x=0;v=0}if(x<min){x=min;v=0}}
+        else{v=0;if(!hover&&!reduce&&t>idle){x+=dir*speed*dt;
+          if(x<=min){x=min;dir=1;idle=t+1800;}else if(x>=0){x=0;dir=-1;idle=t+1800;}}}
+        box.classList.toggle('at-start',x>=-1);box.classList.toggle('at-end',x<=min+1);}
+      track.style.transform='translate3d('+x.toFixed(2)+'px,0,0)';requestAnimationFrame(frame);}
+    function clampDrag(n){if(n>0)return rubber(n);if(n<min)return min+rubber(n-min);return n}
+    box.addEventListener('pointerdown',function(e){if(isStatic||e.button>0)return;drag={sx:e.clientX,sy:e.clientY,x0:x,lx:e.clientX,lt:performance.now(),id:e.pointerId,on:false};moved=0;v=0;});
+    box.addEventListener('pointermove',function(e){if(!drag||e.pointerId!==drag.id)return;var dx=e.clientX-drag.sx,dy=e.clientY-drag.sy;
+      if(!drag.on){if(Math.abs(dx)<6)return;if(Math.abs(dy)>Math.abs(dx)){drag=null;return;}drag.on=true;box.classList.add('dragging');try{box.setPointerCapture(e.pointerId)}catch(_){}}
+      var now=performance.now(),ddt=Math.max(1,now-drag.lt);v=(e.clientX-drag.lx)/ddt*1000;drag.lx=e.clientX;drag.lt=now;
+      x=clampDrag(drag.x0+dx);moved=Math.abs(dx);});
+    function end(){if(!drag)return;if(!drag.on)v=0;drag=null;box.classList.remove('dragging');idle=performance.now()+2500;if(v)dir=v<0?-1:1;}
+    box.addEventListener('pointerup',end);box.addEventListener('pointercancel',end);box.addEventListener('lostpointercapture',end);
+    box.addEventListener('click',function(e){if(moved>6){e.stopImmediatePropagation();e.preventDefault();moved=0;}},true);
+    box.addEventListener('mouseenter',function(){hover=true});box.addEventListener('mouseleave',function(){hover=false});
+    box.addEventListener('wheel',function(e){if(isStatic)return;if(Math.abs(e.deltaX)>Math.abs(e.deltaY)){var nx=Math.max(min,Math.min(0,x-e.deltaX));if(nx!==x)e.preventDefault();x=nx;idle=performance.now()+2500;}},{passive:false});
+    box._set=function(){v=0;measure();x=rev?min:0;dir=rev?1:-1;};
+    addEventListener('resize',measure);
+    if(document.readyState==='complete')measure();else addEventListener('load',measure);
+    measure();requestAnimationFrame(function(t){last=t;frame(t)});
+  });
+
+  // ---- account health check ----
+  (function(){
+    var qs=[].slice.call(document.querySelectorAll('.q'));if(!qs.length)return;
+    var scrolled=false,ans={},ring=document.getElementById('ring-fg'),sc=document.getElementById('score'),tag=document.getElementById('r-tag'),
+        ttl=document.getElementById('r-title'),fx=document.getElementById('fixes'),cta=document.getElementById('check-cta');
+    var base='https://wa.me/966530570632?text=';
+    function render(){
+      var n=Object.keys(ans).length,sum=0;Object.keys(ans).forEach(function(k){sum+=ans[k]});
+      var score=n?Math.round(sum/(n*2)*100):0;
+      ring.setAttribute('stroke-dasharray',(n?Math.max(score,1):0)+' 100');ring.style.opacity=n?1:0;sc.textContent=n?score:'–';
+      tag.className='r-tag';
+      if(!n){var AR0=window.__lang&&window.__lang()==='ar';tag.textContent=AR0?'أجبت عن 0 من 7':'0 of 7 answered';ttl.textContent=AR0?'أجب عن الأسئلة لتظهر نتيجتك':'Answer the questions to see your score';}
+      else{
+        var lvl=score>=80?'good':score>=50?'mid':'low';tag.classList.add(lvl);
+        var AR=window.__lang&&window.__lang()==='ar';tag.textContent=AR?((n<7?'أجبت عن '+n+' من 7 · ':'')+(lvl==='good'?'أساس متين':lvl==='mid'?'توجد ثغرات':'إنفاق دون رؤية واضحة')):((n<7?n+' of 7 answered · ':'')+(lvl==='good'?'Solid foundation':lvl==='mid'?'Leaks to fix':'Spending blind'));
+        ttl.textContent=AR?(lvl==='good'?'إعدادك في وضع جيد، وفرص النمو الآن في التوسّع وتطوير المحتوى.':lvl==='mid'?'جزء من ميزانيتك يعمل دون بيانات كافية تدعمه.':'جزء كبير من ميزانيتك يُنفق دون قياس واضح.'):(lvl==='good'?'Your setup is in good shape. The gains now come from scaling and creative.':lvl==='mid'?'Some of your budget is working without enough data behind it.':'A good part of your budget is being spent without clear measurement.');
+      }
+      var gaps=qs.filter(function(q){return ans[q.dataset.k]===0}).concat(qs.filter(function(q){return ans[q.dataset.k]===1}));
+      fx.innerHTML='';
+      if(!gaps.length){var li=document.createElement('li');li.className='ph';var ARp=window.__lang&&window.__lang()==='ar';li.textContent=n?(ARp?'لا توجد ثغرات واضحة. سنركّز في الاستشارة على التوسّع والمحتوى.':'No gaps flagged yet. On the call we look at scaling and creative.'):(ARp?'ستظهر هنا أهم أولويات التحسين.':'Your top fixes will appear here.');fx.appendChild(li);}
+      var ARf=window.__lang&&window.__lang()==='ar';gaps.slice(0,3).forEach(function(q){var li=document.createElement('li');li.textContent=ARf?q.dataset.fixAr:q.dataset.fix;fx.appendChild(li);});
+      var ARm=window.__lang&&window.__lang()==='ar';var msg=ARm?"مرحبًا إبراهيم، أرغب في حجز الاستشارة المجانية (25 دقيقة) لحساب علامتي التجارية.":"Hi Ibrahem, I'd like to book the free 25-minute account audit for my brand.";
+      if(n){msg+=ARm?('\n\nنتيجة فحص الحساب: '+score+'/100 (أجبت عن '+n+' من 7).'):('\n\nMy account check: '+score+'/100 ('+n+' of 7 answered).');
+        var g=gaps.slice(0,3).map(function(q){return '- '+(ARm?q.dataset.labelAr+(ans[q.dataset.k]===0?' (لا)':' (لست متأكدًا)'):q.dataset.label+(ans[q.dataset.k]===0?' (no)':' (not sure)'))});if(g.length)msg+=(ARm?'\nالثغرات:\n':'\nGaps:\n')+g.join('\n');}
+      cta.href=base+encodeURIComponent(msg);
+    }
+    qs.forEach(function(q){q.querySelectorAll('.ans button').forEach(function(b){b.addEventListener('click',function(){
+      q.querySelectorAll('.ans button').forEach(function(x){x.setAttribute('aria-checked',x===b)});
+      ans[q.dataset.k]=+b.dataset.v;q.classList.add('done');render();
+      if(Object.keys(ans).length===qs.length&&!scrolled&&innerWidth<900){scrolled=true;setTimeout(function(){document.querySelector('.result').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})},250)}});});});
+    window.__checkRender=render;render();
+  })();
+
+  // ---- collapsible check ----
+  (function(){var tg=document.getElementById('check-toggle'),body=document.getElementById('check-body');if(!tg||!body)return;
+    function open(v){body.hidden=!v;tg.setAttribute('aria-expanded',v);}
+    tg.addEventListener('click',function(){open(body.hidden);if(!body.hidden)setTimeout(function(){body.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})},60)});
+    document.querySelectorAll('a[href="#check"]').forEach(function(a){a.addEventListener('click',function(){open(true)})});
+  })();
+
+  // ---- collapsible experience ----
+  (function(){var tg=document.getElementById('exp-toggle'),body=document.getElementById('exp-body');if(!tg||!body)return;
+    tg.addEventListener('click',function(){var v=body.hidden;body.hidden=!v;tg.setAttribute('aria-expanded',v);});
+  })();
+  // ---- interactions ----
+  var toast=document.getElementById('toast'),tt;
+  function say(m){toast.textContent=m;toast.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},1800)}
+  var top=document.querySelector('.top'),prog=document.getElementById('prog'),totop=document.getElementById('totop');
+  function onScroll(){var h=document.documentElement,max=h.scrollHeight-h.clientHeight,y=h.scrollTop||document.body.scrollTop;
+    prog.parentNode.style.setProperty('--p',max>0?(y/max).toFixed(4):0);top.classList.toggle('scrolled',y>10);totop.classList.toggle('show',y>700);}
+  addEventListener('scroll',onScroll,{passive:true});onScroll();
+  // currency
+  document.querySelectorAll('[data-cur]').forEach(function(b){b.addEventListener('click',function(){
+    var c=b.dataset.cur;document.querySelectorAll('[data-cur]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    document.querySelectorAll('.cur').forEach(function(el){el.textContent=el.dataset[c]});
+    try{localStorage.setItem('cur',c)}catch(e){}
+    var A=window.__lang&&window.__lang()==='ar';say(c==='sar'?(A?'الأسعار معروضة بالريال السعودي':'Showing Saudi riyals'):(A?'الأسعار معروضة بالدولار الأمريكي':'Showing US dollars'));});});
+  try{if(localStorage.getItem('cur')==='sar'){document.getElementById('cur-sar').click();toast.classList.remove('show')}}catch(e){}
+  // filters
+  document.querySelectorAll('.filters button').forEach(function(b){b.addEventListener('click',function(){
+    var f=b.dataset.f;b.parentNode.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+    var kv=f.split(':');
+    document.querySelectorAll('.shots .shot').forEach(function(sh){var on=f==='all'||(kv[0]==='ind'?sh.dataset.ind===kv[1]:sh.dataset.pf===kv[1]);sh.classList.toggle('hide',!on)});
+    var tr=document.querySelector('.shots');if(tr&&tr._set)tr._set();});});
+  // active nav
+  var links={};document.querySelectorAll('.top nav a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
+  if('IntersectionObserver' in window){
+    var nio=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){for(var k in links)links[k].classList.toggle('on',k===en.target.id)}})},{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(links).forEach(function(id){var el=document.getElementById(id);if(el)nio.observe(el)});
+  }
+  // reveal + highlighter draw (only for things below the first screen)
+  if(!reduce && 'IntersectionObserver' in window){
+    var vh=innerHeight;
+    var rio=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIntersecting)return;var el=en.target;rio.unobserve(el);
+      if(el.classList.contains('hl-anim'))setTimeout(function(){el.classList.add('on')},250);else el.classList.remove('pre');})},{threshold:.15});
+    document.querySelectorAll('.case-head,.target,.kpis,.shots,.grid-ledger,.steps5,.timeline,.certs,.about-grid,.services,.ways,details.more,.check-grid,.tools-head,.ct-card,.proof-head').forEach(function(el,i){
+      if(el.getBoundingClientRect().top>vh){el.classList.add('rv','pre');rio.observe(el)}});
+    document.querySelectorAll('.ledger .n,.kpi .v,.target .big .cu,.grid-ledger .n,.cmp.true .x').forEach(function(el){
+      if(el.getBoundingClientRect().top>vh){el.classList.add('hl-anim');rio.observe(el)}});
+  }
+
+  var cvd=document.getElementById('cvd');
+  document.querySelectorAll('[data-cv]').forEach(function(b){b.addEventListener('click',function(){if(cvd.showModal)cvd.showModal();else cvd.setAttribute('open','')})});
+  document.getElementById('cv-close').addEventListener('click',function(){cvd.close()});
+  cvd.addEventListener('click',function(e){if(e.target===cvd)cvd.close()});
+  document.getElementById('lb-close').addEventListener('click',function(){lb.close()});
+  lb.addEventListener('click',function(e){if(e.target===lb) lb.close()});
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var el=document.getElementById(btn.dataset.copy),t=el.textContent;
+      var done=function(){say((window.__lang&&window.__lang()==='ar'?'تم النسخ: ':'Copied: ')+t)};
+      var fallback=function(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);say('Selected, press Ctrl+C to copy');};
+      try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+    });
+  });
+
+  // ---- language (EN / AR) ----
+  var I18N_AR={"About": "نبذة", "Services": "الخدمات", "Free check": "فحص مجاني", "Process": "منهجية العمل", "Results": "النتائج", "Proof": "الإثباتات", "Experience": "الخبرات", "Contact": "تواصل معي", "Free audit": "استشارة مجانية", "15+ Saudi brands · taking on new ones": "أكثر من <bdi>15</bdi> علامة تجارية سعودية · متاح لعملاء جدد", "I run paid ads for Saudi and Gulf brands and measure them against one thing: your revenue target.": "أدير الحملات الإعلانية للعلامات التجارية في السعودية والخليج، وأقيس نجاحها بمعيار واحد: تحقيق مستهدف المبيعات.", "Trusted by 15+ Saudi brands. Senior performance marketer and media buyer. 6+ years and $2M+ in media on Snapchat, Meta, TikTok and Google, for e-commerce, digital-product and lead-gen brands across KSA, the GCC and Egypt.": "<b class=\"trust\">أكثر من <bdi>15</bdi> علامة تجارية سعودية منحتني ثقتها.</b> متخصص أول في التسويق بالأداء وشراء الوسائط الإعلانية، بخبرة تتجاوز <bdi>6</bdi> سنوات وميزانيات تخطّت <span class=\"cur\" data-usd=\"$2M+\" data-sar=\"SAR 7.5M+\"><bdi>$2M+</bdi></span> على سناب شات وميتا وتيك توك وجوجل، لمتاجر إلكترونية ومنتجات رقمية وشركات تعتمد على توليد العملاء في السعودية والخليج ومصر.", "Book a free 25-min audit ↗": "احجز استشارة مجانية (25 دقيقة) <i>↖</i>", "See the results ↓": "استعرض النتائج <i class=\"down\">↓</i>", "View CV ↗": "السيرة الذاتية <i>↖</i>", "of the monthly revenue target, EdTech": "من مستهدف المبيعات الشهري · قطاع التعليم", "of the monthly order target, fragrance store": "من مستهدف الطلبات الشهري · متجر عطور", "Saudi brands have trusted me with their ad accounts": "علامة تجارية سعودية أوكلت إليّ إدارة حساباتها الإعلانية", "in media managed across 4 ad platforms since 2020": "ميزانيات إعلانية أدرتها على <bdi>4</bdi> منصات منذ <bdi>2020</bdi>", "251% of revenue target": "<bdi>251%</bdi> من مستهدف المبيعات", "882 orders vs 500 target": "<bdi>882</bdi> طلبًا مقابل مستهدف <bdi>500</bdi>", "12.38x on Instagram": "<bdi>12.38x</bdi> على إنستغرام", "6.63x on Snapchat": "<bdi>6.63x</bdi> على سناب شات", "8.58x TikTok launch week": "<bdi>8.58x</bdi> في انطلاقة تيك توك", "4.49x on $66.2K in one month": "<bdi>4.49x</bdi> بإنفاق <span class=\"cur\" data-usd=\"$66.2K\" data-sar=\"SAR 248.3K\"><bdi>$66.2K</bdi></span> خلال شهر", "15+ Saudi brands": "<bdi>+15</bdi> علامة تجارية سعودية", "8.6x MER": "<bdi>8.6x</bdi> MER", "TikTok: 2.1x the spend, ROAS up to 4.82x": "تيك توك: ضعف الإنفاق وعائد أعلى بلغ <bdi>4.82x</bdi>", "70% of leads closed": "<bdi>70%</bdi> من العملاء المحتملين أتمّوا الشراء", "SAR 260K from $1.1K in lead ads": "<bdi>260</bdi> ألف ريال مبيعات من إعلانات بقيمة <span class=\"cur\" data-usd=\"$1.1K\" data-sar=\"SAR 4.1K\"><bdi>$1.1K</bdi></span>", "6.4M views in 60 days": "<bdi>6.4</bdi> مليون مشاهدة خلال <bdi>60</bdi> يومًا", "$2M+ media managed": "<span class=\"cur\" data-usd=\"$2M+\" data-sar=\"SAR 7.5M+\"><bdi>$2M+</bdi></span> ميزانيات إعلانية مُدارة", "Riyadh · KSA": "الرياض · السعودية", "I treat your ad budget like it's my own money.": "أُدير ميزانيتك الإعلانية بحرص من يُنفق من ماله.", "I'm Ibrahem, a performance marketer based in Riyadh. For more than six years I've run paid media for Saudi, Gulf and Egyptian brands, from the first campaign to $66K a month on a single channel. I set up the tracking myself, brief Saudi-dialect creative, and report on what reaches your account, not on clicks.": "أنا إبراهيم، متخصص في التسويق بالأداء ومقيم في الرياض. على مدى أكثر من ست سنوات أدرت الحملات الإعلانية لعلامات تجارية سعودية وخليجية ومصرية، بدءًا من الحملة الأولى ووصولًا إلى إنفاق شهري يبلغ <span class=\"cur\" data-usd=\"$66K\" data-sar=\"SAR 248K\"><bdi>$66K</bdi></span> على منصة واحدة. أتولّى إعداد أنظمة التتبع بنفسي، وأوجّه المحتوى الإعلاني باللهجة السعودية، وأقيس الأداء بما يدخل حسابك من مبيعات، لا بعدد النقرات.", "Revenue, not vanity metrics. Every report is checked against your store sales or CRM.": "<b>المبيعات قبل المؤشرات الشكلية.</b> كل تقرير يُطابَق مع مبيعات متجرك أو نظام إدارة العملاء لديك.", "Tracking before spending. GTM, GA4, pixels and Conversions API, so every riyal is measured.": "<b>التتبع قبل الإنفاق.</b> إعداد GTM وGA4 والبكسل وConversions API، ليكون كل ريال قابلًا للقياس.", "Built for the Saudi market. Arabic hooks and offers based on real customer objections.": "<b>فهم عميق للسوق السعودي.</b> رسائل وعروض عربية مبنية على تساؤلات العملاء واعتراضاتهم الفعلية.", "Industries": "القطاعات", "E-commerce · EdTech · Fragrance · Fashion · Home & air care · B2B software · Pharma · Entertainment": "التجارة الإلكترونية · التعليم الإلكتروني · العطور · الأزياء · المنزل وتنقية الهواء · البرمجيات للشركات · الأدوية · الترفيه", "Paid media management": "إدارة الحملات الإعلانية", "Snapchat, Meta, TikTok and Google run as one plan, with budget moved to whatever is selling.": "سناب شات وميتا وتيك توك وجوجل ضمن خطة واحدة، تتوجّه فيها الميزانية إلى القناة الأعلى مبيعًا.", "Tracking & attribution": "التتبع وقياس التحويلات", "GTM, GA4, pixels, CAPI and UTMs, set up so platform numbers match your real orders.": "إعداد GTM وGA4 والبكسل وCAPI وروابط UTM، لتتطابق أرقام المنصات مع طلباتك الفعلية.", "Creative strategy": "استراتيجية المحتوى الإعلاني", "Hooks, briefs and creator testing, with weak ads cut within days and winners scaled.": "صياغة الرسائل الافتتاحية وكتابة الموجّهات واختبار صنّاع المحتوى، مع إيقاف الإعلانات الضعيفة خلال أيام وتوسيع الناجحة.", "Lead-gen systems": "أنظمة توليد العملاء المحتملين", "Lead forms connected to your sheet or CRM, with instant alerts so your sales team calls fast.": "نماذج تسجيل مرتبطة بجداولك أو بنظام إدارة العملاء، مع تنبيهات فورية تتيح لفريق المبيعات التواصل دون تأخير.", "Free · 60 seconds": "مجاني ·<bdi> 60</bdi> ثانية", "Check your ad account before you spend another riyal": "افحص حسابك الإعلاني قبل أن تُنفق ريالًا إضافيًا", "Seven questions I ask on every new account. Answer them and you get a score and the first three things I would fix.": "سبعة أسئلة أطرحها عند استلام أي حساب جديد. أجب عنها لتحصل على تقييم فوري وأهم ثلاث أولويات للتحسين.", "Are purchases or leads sent through Conversions API, not the pixel alone?": "هل تُرسَل بيانات المشتريات أو العملاء المحتملين عبر Conversions API، لا عبر البكسل وحده؟", "Yes": "نعم", "Not sure": "لست متأكدًا", "No": "لا", "Does platform-reported revenue roughly match your store or CRM?": "هل تتقارب المبيعات المسجّلة في المنصات مع مبيعات متجرك أو نظام إدارة العملاء؟", "Does every ad and creator link carry UTMs?": "هل تحمل جميع روابط الإعلانات وصنّاع المحتوى معرّفات UTM؟", "On Google, is brand search reported separately from non-brand?": "هل تفصل في جوجل بين نتائج البحث باسم علامتك التجارية وبقية عمليات البحث؟", "Do you launch new creatives or hooks every week?": "هل تُطلق إعلانات أو رسائل افتتاحية جديدة كل أسبوع؟", "Are existing buyers excluded from prospecting audiences?": "هل تستبعد عملاءك الحاليين من حملات استهداف الجمهور الجديد؟", "Do new leads reach your sales team within minutes?": "هل يصل العميل المحتمل إلى فريق المبيعات خلال دقائق؟", "Your top fixes will appear here.": "ستظهر هنا أهم أولويات التحسين.", "Book the free 25-min audit ↗": "احجز الاستشارة المجانية (25 دقيقة) <i>↖</i>", "Your answers are added to the WhatsApp message, so the call starts where it matters.": "تُرفق إجاباتك تلقائيًا برسالة واتساب، لتبدأ الاستشارة من النقاط الأهم.", "How I would run your account": "كيف سأدير حسابك الإعلاني", "The same five steps on every account. Budget grows only after the step before it holds, and the results below show each step in practice.": "خمس مراحل ثابتة أطبّقها على كل حساب، ولا تُرفع الميزانية إلا بعد استقرار المرحلة السابقة. والنتائج أدناه توضّح كل مرحلة على أرض الواقع.", "Audit": "التقييم", "Read the account against the store backend. Find where platform numbers and real orders disagree.": "مراجعة الحساب مقارنةً بلوحة تحكم المتجر، وتحديد مواطن الاختلاف بين أرقام المنصة والطلبات الفعلية.", "Found that a 0.12% site CVR, not ad spend, was the real limit.": "تبيّن أن معدل تحويل الموقع (<bdi>0.12%</bdi>) هو العائق الحقيقي، وليس حجم الإنفاق.", "Track": "التتبع", "GTM, GA4, pixels and Conversions API, with UTMs on every channel and creator link.": "إعداد GTM وGA4 والبكسل وConversions API، مع معرّفات UTM لكل قناة ورابط.", "Unified attribution across 4 data sources before scaling.": "توحيد قياس التحويلات عبر <bdi>4</bdi> مصادر بيانات قبل التوسّع.", "Structure": "الهيكلة", "Separate prospecting, lookalike and retargeting audiences with buyers excluded, so ad sets stop competing.": "فصل جماهير الاستهداف الجديد والجماهير المشابهة وإعادة الاستهداف مع استبعاد المشترين، لمنع تنافس المجموعات الإعلانية فيما بينها.", "Snapchat 1.88x → 3.34x after restructuring.": "ارتفع العائد على سناب شات من <bdi>1.88x</bdi> إلى <bdi>3.34x</bdi> بعد إعادة الهيكلة.", "Test creative": "اختبار المحتوى", "Saudi-dialect hooks built on real customer objections. One creator per ad set, losers cut within days.": "رسائل باللهجة السعودية مبنية على اعتراضات العملاء، وصانع محتوى واحد لكل مجموعة إعلانية، مع إيقاف الأضعف خلال أيام.", "33 creators tested as ad inventory in one month.": "اختبار <bdi>33</bdi> صانع محتوى خلال شهر واحد.", "Scale": "التوسّع", "Raise budget only on audiences and messages that beat the control. Report against the business target, not platform ROAS.": "رفع الميزانية فقط على الجماهير والرسائل التي تتفوّق على المجموعة المرجعية، وقياس النتائج مقابل مستهدف العمل لا عائد المنصة.", "$66.2K in one month at 4.49x, 251% of target.": "إنفاق <span class=\"cur\" data-usd=\"$66.2K\" data-sar=\"SAR 248.3K\"><bdi>$66.2K</bdi></span> في شهر بعائد <bdi>4.49x</bdi>، وتحقيق <bdi>251%</bdi> من المستهدف.", "Case 01": "الحالة <bdi>01</bdi>", "EdTech · digital product · KSA": "تعليم إلكتروني · منتج رقمي · السعودية", "2.5x the monthly target for an online English-learning brand": "مبيعات تفوق المستهدف الشهري بمرتين ونصف لمنصة تعليم إنجليزي عبر الإنترنت", "Online English courses for Saudi families and adults, sold through a web checkout. The month stacked two seasons: back-to-school and Saudi National Day. Revenue target for the month: SAR 444,000.": "دورات لتعليم اللغة الإنجليزية عبر الإنترنت للأسر والبالغين في السعودية، تُباع عبر صفحة دفع إلكترونية. تزامن الشهر مع موسمين: العودة إلى المدارس واليوم الوطني، وكان مستهدف المبيعات <bdi>444,000</bdi> ريال.", "Window: one month": "المدة: شهر واحد", "of target": "من المستهدف", "Revenue vs target": "المبيعات مقابل المستهدف", "≈ $297.4K vs $118.4K": "≈ <span class=\"cur\" data-usd=\"$297.4K\" data-sar=\"SAR 1.115M\"><bdi>$297.4K</bdi></span> <span style=\"color:var(--muted)\">مقابل</span> <span class=\"cur\" data-usd=\"$118.4K\" data-sar=\"SAR 444K\"><bdi>$118.4K</bdi></span>", "Target SAR 444,000 (white marker)": "المستهدف <b><bdi>444,000</bdi> ريال</b> (العلامة البيضاء)", "Delivered ≈ SAR 1.115M": "المُحقَّق <b><bdi>≈ 1.115</bdi> مليون ريال</b>", "Snapchat spend in one month, the main scaling channel": "الإنفاق على سناب شات خلال شهر، وهي القناة الرئيسية للتوسّع", "Purchase ROAS held at that spend": "عائد على الإنفاق الإعلاني حافظ على مستواه عند هذا الإنفاق", "Purchases from Snapchat in the window": "عملية شراء من سناب شات خلال الفترة", "Cost per purchase. 37% of add-to-baskets became orders": "تكلفة عملية الشراء، وتحوّل <bdi>37%</bdi> من الإضافات إلى السلة إلى طلبات", "TikTok, same account": "تيك توك · الحساب نفسه", "Monthly spend went from $10.5K to $22.3K, 2.1x more, while ROAS rose from 4.47x to 4.82x and purchases doubled from 552 to 1,111.": "ارتفع الإنفاق الشهري من <span class=\"cur\" data-usd=\"$10.5K\" data-sar=\"SAR 39.2K\"><bdi>$10.5K</bdi></span> إلى <span class=\"cur\" data-usd=\"$22.3K\" data-sar=\"SAR 83.6K\"><bdi>$22.3K</bdi></span>، أي بأكثر من الضعف، وفي الوقت نفسه ارتفع العائد من <bdi>4.47x</bdi> إلى <bdi>4.82x</bdi> وتضاعفت المشتريات من <bdi>552</bdi> إلى <bdi>1,111.</bdi>", "Read the full case": "اقرأ تفاصيل الحالة", "ROAS turnaround by channel": "تطوّر العائد حسب القناة", "purchase ROAS": "عائد المشتريات", "Starting point": "نقطة البداية", "Month 2 · $41.7K": "الشهر الثاني · <span class=\"cur\" data-usd=\"$41.7K\" data-sar=\"SAR 156.5K\"><bdi>$41.7K</bdi></span>", "Peak month · $24.2K": "شهر الذروة · <span class=\"cur\" data-usd=\"$24.2K\" data-sar=\"SAR 90.7K\"><bdi>$24.2K</bdi></span>", "After restructure": "بعد إعادة الهيكلة", "Season launch, first 3 days": "انطلاقة الموسم · أول <bdi>3</bdi> أيام", "Bars are drawn to scale from 0 to 8.6x. In the peak month the best Snapchat campaigns ran at 9.5x and the best Meta campaigns at 5.4–5.8x.": "الأشرطة مرسومة وفق مقياس من <bdi>0</bdi> إلى <bdi>8.6x</bdi>. وفي شهر الذروة بلغ عائد أفضل حملات سناب شات <bdi>9.5x</bdi>، وأفضل حملات ميتا بين <bdi>5.4x</bdi> و5.<bdi>8x</bdi>.", "Reading Google honestly": "قراءة أرقام جوجل بموضوعية", "Blended account ROAS, inflated by brand searches that would have converted anyway.": "العائد الإجمالي للحساب، وهو مُضخَّم بعمليات البحث باسم العلامة التجارية التي كانت ستتحوّل في كل الأحوال.", "Non-brand ROAS with brand protection removed. Budgets were set on this number.": "العائد الفعلي بعد استبعاد حملة حماية العلامة التجارية، وعليه بُنيت الميزانيات.", "74% of reported value came from one brand-protection campaign on 16% of spend. I reported it separately so management could see what Google actually acquired, and ran competitor search (2.2x) on a capped budget.": "<b style=\"color:var(--fg)\"><bdi>74%</bdi> من القيمة المسجّلة</b> جاءت من حملة واحدة لحماية العلامة التجارية لم تتجاوز <bdi>16%</bdi> من الإنفاق. فصلتها في التقارير لتتضح للإدارة القيمة الحقيقية التي يجلبها جوجل، وشغّلت حملة البحث عن المنافسين (<bdi>2.2x</bdi>) بميزانية محدودة.", "What I did": "ما الذي قمت به", "Split the month into two jobs. The first half sold a \"catch-up\" angle to parents after the first school tests. The second half used National Day for reach, then converted that audience with retargeting.": "<b>قسّمت الشهر إلى مرحلتين.</b> ركّز النصف الأول على رسالة \"تدارك المستوى\" الموجّهة لأولياء الأمور بعد الاختبارات الأولى، واستُثمر النصف الثاني في اليوم الوطني لتوسيع الوصول، ثم تحويل هذا الجمهور عبر إعادة الاستهداف.", "Tested 33 creators as ad inventory. One creator per ad set beside a standard-creative ad set, on ad-set budgets, so winners showed within days and losers were cut early.": "<b>اختبرت <bdi>33</bdi> صانع محتوى.</b> خُصّصت مجموعة إعلانية لكل صانع محتوى إلى جانب مجموعة بالمحتوى المعتاد، وبميزانية مستقلة لكل مجموعة، فظهرت الإعلانات الرابحة خلال أيام وأُوقفت الأضعف مبكرًا.", "Cleaned the audience map. Prospecting, lookalike and retargeting audiences that don't overlap, with purchasers excluded, so ad sets stopped bidding against each other.": "<b>أعدت تنظيم الجماهير.</b> جماهير غير متداخلة للاستهداف الجديد والجماهير المشابهة وإعادة الاستهداف، مع استبعاد المشترين، فتوقّفت المجموعات الإعلانية عن المزايدة على بعضها.", "Fixed attribution first. UTM gaps had pushed half of all revenue into \"Direct\". I rebuilt UTMs for every channel and creator link before raising spend.": "<b>بدأت بإصلاح قياس التحويلات.</b> كان غياب معرّفات UTM يُسجّل نصف المبيعات تحت بند \"Direct\"، فأعدت بناءها لكل قناة ورابط قبل رفع الإنفاق.", "Automated the lead side. Snapchat lead forms feed a shared sheet and alert the call-center team in real time, with ads scheduled to call-center hours.": "<b>أتمتة استقبال العملاء المحتملين.</b> تصل بيانات نماذج سناب شات إلى جدول مشترك ويتلقى مركز الاتصال تنبيهًا فوريًا، مع جدولة الإعلانات وفق ساعات عمل المركز.", "Next case: Fragrance →": "الحالة التالية: العطور <i>←</i>", "Case 02": "الحالة <bdi>02</bdi>", "Fragrance · e-commerce · KSA": "عطور · تجارة إلكترونية · السعودية", "882 orders against a 500-order target, on $11.5K of paid media": "<bdi>882</bdi> طلبًا مقابل مستهدف <bdi>500</bdi> طلب، بإنفاق إعلاني قدره <span class=\"cur\" data-usd=\"$11.5K\" data-sar=\"SAR 43.3K\"><bdi>$11.5K</bdi></span>", "A Saudi perfume store. I rebuilt tracking from scratch (GTM, GA4, Snapchat and Meta pixels) before buying media, so every platform number could be checked against the store's own orders.": "متجر عطور سعودي. أعدت بناء منظومة التتبع من الصفر (GTM وGA4 وبكسل سناب شات وميتا) قبل بدء الإنفاق، لتكون كل أرقام المنصات قابلة للمطابقة مع طلبات المتجر الفعلية.", "of order target": "من مستهدف الطلبات", "Store backend": "لوحة تحكم المتجر", "882 / 500 orders": "<bdi>882 <span style=\"color:var(--muted)\">/</span> 500</bdi> طلب", "Target 500 orders (marker)": "المستهدف <b><bdi>500</bdi> طلب</b> (العلامة)", "Store revenue ≈ $99.6K": "مبيعات المتجر <b>≈ <span class=\"cur\" data-usd=\"$99.6K\" data-sar=\"SAR 373.5K\"><bdi>$99.6K</bdi></span></b>", "MER: total store revenue ÷ total paid spend": "MER: إجمالي مبيعات المتجر ÷ إجمالي الإنفاق الإعلاني", "Snapchat ROAS · 591 purchases · $17.5 CPA": "عائد سناب شات ·<bdi> 591</bdi> عملية شراء · تكلفة الشراء <span class=\"cur\" data-usd=\"$17.5\" data-sar=\"SAR 65.7\"><bdi>$17.5</bdi></span>", "Instagram campaign ROAS · 125 purchases · $9.4 CPA": "عائد حملة إنستغرام ·<bdi> 125</bdi> عملية شراء · تكلفة الشراء <span class=\"cur\" data-usd=\"$9.4\" data-sar=\"SAR 35.4\"><bdi>$9.4</bdi></span>", "Store conversion rate on 64,970 visits": "معدل التحويل في المتجر من أصل <bdi>64,970</bdi> زيارة", "Where the month's revenue came from": "مصادر مبيعات الشهر", "Snapchat 69%": "سناب شات <bdi>69%</bdi>", "Meta": "ميتا", "Other": "أخرى", "Snapchat $68.7K": "<i style=\"background:var(--yellow)\"></i>سناب شات <span class=\"cur\" data-usd=\"$68.7K\" data-sar=\"SAR 257.5K\"><bdi>$68.7K</bdi></span>", "Meta $14.6K": "<i style=\"background:var(--fg)\"></i>ميتا <span class=\"cur\" data-usd=\"$14.6K\" data-sar=\"SAR 54.7K\"><bdi>$14.6K</bdi></span>", "Organic, direct & repeat $16.3K": "<i style=\"background:var(--panel-2)\"></i>زيارات مباشرة وعضوية وعملاء متكررون <span class=\"cur\" data-usd=\"$16.3K\" data-sar=\"SAR 61.3K\"><bdi>$16.3K</bdi></span>", "Platform-attributed revenue, checked against the store's total. Snapchat brought the volume and one Instagram campaign brought the efficiency.": "مبيعات منسوبة إلى المنصات ومطابَقة مع إجمالي مبيعات المتجر. حقّق سناب شات حجم المبيعات، بينما حقّقت حملة واحدة على إنستغرام أعلى كفاءة.", "Rebuilt tracking before spending. Replaced a dead Universal Analytics setup with GA4 and clean purchase events on both ad platforms.": "<b>أعدت بناء التتبع قبل الإنفاق.</b> استبدلت إعداد Universal Analytics المتوقف بـ GA4، مع أحداث شراء دقيقة على المنصتين.", "Made Snapchat the volume channel. 4.77M impressions at about $2.2 CPM.": "<b>جعلت سناب شات قناة الحجم.</b><bdi> 4.77</bdi> مليون ظهور بتكلفة تقارب <bdi>$2.2</bdi> لكل ألف ظهور.", "Kept Meta narrow. One always-on Instagram sales campaign on a small budget returned 12.38x.": "<b>تركيز محدود على ميتا.</b> حملة مبيعات دائمة على إنستغرام بميزانية صغيرة حقّقت عائدًا بلغ <bdi>12.38x</bdi>.", "Reported on store orders, not platform claims. The 500-order target was set in the store dashboard and tracked there.": "<b>القياس بطلبات المتجر لا بأرقام المنصات.</b> حُدّد مستهدف الـ500 طلب في لوحة تحكم المتجر وتمت متابعته من خلالها.", "Next case: Lead generation →": "الحالة التالية: توليد العملاء المحتملين <i>←</i>", "Case 03": "الحالة <bdi>03</bdi>", "Lead generation · Snapchat · KSA": "توليد عملاء محتملين · سناب شات · السعودية", "636 leads, 70% closed by sales, SAR 260K in revenue from $1.1K in media": "<bdi>636</bdi> عميلًا محتملًا، أغلق فريق المبيعات <bdi>70%</bdi> منهم، بمبيعات بلغت <bdi>260</bdi> ألف ريال من إنفاق إعلاني قدره <span class=\"cur\" data-usd=\"$1.1K\" data-sar=\"SAR 4.1K\"><bdi>$1.1K</bdi></span>", "Snapchat lead-form campaigns feeding a sales team. Success was measured on deals closed in the CRM, not on lead volume or cost per lead.": "حملات نماذج تسجيل على سناب شات تغذّي فريق المبيعات مباشرة. وكان معيار النجاح عدد الصفقات المُغلقة في نظام إدارة العملاء، لا عدد العملاء المحتملين ولا تكلفتهم.", "Window: one campaign cycle": "المدة: دورة حملة واحدة", "of leads closed": "من العملاء المحتملين أتمّوا الشراء", "CRM, closed deals": "نظام إدارة العملاء · الصفقات المُغلقة", "≈ 445 / 636 leads": "<bdi>≈ 445 <span style=\"color:var(--muted)\">/</span> 636</bdi> عميلًا", "Leads 636": "العملاء المحتملون <b><bdi>636</bdi></b>", "Closed ≈ 445 · Revenue SAR 260,000": "الصفقات المُغلقة <b><bdi>≈ 445</bdi></b> · المبيعات <b><bdi>260,000</bdi> ريال</b>", "Closed revenue ÷ media spend": "المبيعات المُغلقة ÷ الإنفاق الإعلاني", "Average cost per lead across both campaigns": "متوسط تكلفة العميل المحتمل في الحملتين", "Media cost per closed deal": "التكلفة الإعلانية لكل صفقة مُغلقة", "Cost per lead from the first campaign to the second": "انخفاض تكلفة العميل المحتمل بين الحملة الأولى والثانية", "From impression to closed deal": "من الظهور إلى إغلاق الصفقة", "Impressions": "مرات الظهور", "Leads": "العملاء المحتملون", "Closed deals": "الصفقات المُغلقة", "Revenue": "المبيعات", "SAR 260K": "<bdi>260</bdi> ألف ريال", "Bars show funnel stages, not scale. Lead and spend figures from Snapchat Ads Manager; closed deals and revenue from the client's CRM.": "الأشرطة توضّح مراحل مسار التحويل وليست وفق مقياس. أرقام العملاء المحتملين والإنفاق من مدير إعلانات سناب شات، والصفقات والمبيعات من نظام إدارة العملاء لدى العميل.", "Ran two campaigns and kept what worked. Cost per lead fell from $2.73 in the first campaign to $1.14 in the second, on $1.1K in total spend.": "<b>شغّلت حملتين واعتمدت الأفضل أداءً.</b> انخفضت تكلفة العميل المحتمل من <span class=\"cur\" data-usd=\"$2.73\" data-sar=\"SAR 10.2\"><bdi>$2.73</bdi></span> في الحملة الأولى إلى <span class=\"cur\" data-usd=\"$1.14\" data-sar=\"SAR 4.3\"><bdi>$1.14</bdi></span> في الثانية، بإنفاق إجمالي قدره <span class=\"cur\" data-usd=\"$1.1K\" data-sar=\"SAR 4.1K\"><bdi>$1.1K</bdi></span>.", "Used Snapchat's native lead forms. Leads were captured inside the app, without sending people to a landing page first.": "<b>اعتمدت نماذج التسجيل المدمجة في سناب شات.</b> يسجّل العميل بياناته داخل التطبيق مباشرة دون الحاجة إلى صفحة هبوط.", "Judged the campaign on CRM closes. 70% of leads became sales, so a cheap lead here was also a qualified one.": "<b>قيّمت الحملة بالصفقات المُغلقة.</b> تحوّل <bdi>70%</bdi> من العملاء المحتملين إلى مبيعات، ما يؤكد أن انخفاض التكلفة جاء مع جودة عالية.", "Next: Proof →": "التالي: الإثباتات <i>←</i>", "Straight from the ad accounts": "مباشرة من الحسابات الإعلانية", "Hover to pause · tap to enlarge": "مرّر المؤشر للإيقاف · اضغط للتكبير", "EdTech11": "تعليم إلكتروني<b><bdi>11</bdi></b>", "Fragrance2": "عطور<b><bdi>2</bdi></b>", "Lead gen1": "توليد عملاء<b><bdi>1</bdi></b>", "EdTech": "تعليم إلكتروني", "Fragrance": "عطور", "Lead gen": "توليد عملاء", "4.49x ROAS on $66.2K in one month": "عائد <bdi>4.49x</bdi> بإنفاق <span class=\"cur\" data-usd=\"$66.2K\" data-sar=\"SAR 248.3K\"><bdi>$66.2K</bdi></span> خلال شهر", "12.38x ROAS, 125 purchases": "عائد <bdi>12.38x</bdi> ·<bdi> 125</bdi> عملية شراء", "636 leads at $1.73 each, 70% closed": "<bdi>636</bdi> عميلًا محتملًا بتكلفة <span class=\"cur\" data-usd=\"$1.73\" data-sar=\"SAR 6.5\"><bdi>$1.73</bdi></span> للعميل · إغلاق <bdi>70%</bdi>", "4.82x ROAS on $22.3K, 1,111 purchases": "عائد <bdi>4.82x</bdi> بإنفاق <span class=\"cur\" data-usd=\"$22.3K\" data-sar=\"SAR 83.6K\"><bdi>$22.3K</bdi></span> ·<bdi> 1,111</bdi> عملية شراء", "6.63x ROAS, 591 purchases": "عائد <bdi>6.63x</bdi> ·<bdi> 591</bdi> عملية شراء", "6.1x ROAS across peak-month campaigns": "عائد <bdi>6.1x</bdi> لحملات شهر الذروة", "4.47x ROAS on $10.5K, 552 purchases": "عائد <bdi>4.47x</bdi> بإنفاق <span class=\"cur\" data-usd=\"$10.5K\" data-sar=\"SAR 39.2K\"><bdi>$10.5K</bdi></span> ·<bdi> 552</bdi> عملية شراء", "Brand protection, excluded from true ROAS": "حماية العلامة التجارية · مستبعدة من العائد الفعلي", "3.34x ROAS on $41.7K": "عائد <bdi>3.34x</bdi> بإنفاق <span class=\"cur\" data-usd=\"$41.7K\" data-sar=\"SAR 156.5K\"><bdi>$41.7K</bdi></span>", "Campaign table, up to 5.77x ROAS": "جدول الحملات · عائد يصل إلى <bdi>5.77x</bdi>", "8.58x ROAS in the first 3 days of the season": "عائد <bdi>8.58x</bdi> في أول <bdi>3</bdi> أيام من الموسم", "Competitor search at 2.2x on a capped budget": "البحث عن المنافسين بعائد <bdi>2.2x</bdi> وميزانية محدودة", "Account overview across 5 months": "نظرة عامة على الحساب لمدة <bdi>5</bdi> أشهر", "Single-month account view": "أداء الحساب خلال شهر واحد", "🔒 Names and dates hidden under client NDAs. Figures unedited.": "🔒 الأسماء والتواريخ مخفية التزامًا باتفاقيات السرية مع العملاء، والأرقام دون أي تعديل.", "Experience · 2020 – 2026": "الخبرات ·<bdi> 2020 – 2026</bdi>", "Where the numbers came from": "مصدر هذه النتائج", "2024 – Now": "<bdi>2024</bdi> – حتى الآن", "2023 – Now": "<bdi>2023</bdi> – حتى الآن", "EBAR Co Senior Performance Marketer & Media Buyer": "EBAR Co <small>متخصص أول في التسويق بالأداء وشراء الوسائط</small>", "Performance agency, Egypt & KSA. Full-funnel paid media for e-commerce, B2B software and pharma accounts. Rebuilt Search and PMax, unified tracking across 4 data sources, and traced a store's growth limit to a 0.12% site CVR.": "وكالة تسويق بالأداء في مصر والسعودية. إدارة حملات تغطي مسار التحويل كاملًا لحسابات في التجارة الإلكترونية والبرمجيات للشركات والأدوية. أعدت بناء حملات البحث وPerformance Max، ووحّدت التتبع عبر <bdi>4</bdi> مصادر بيانات، وحدّدت معدل تحويل الموقع (<bdi>0.12%</bdi>) عائقًا رئيسيًا أمام نمو أحد المتاجر.", "Freelance Performance Marketer & Media Buyer": "عمل مستقل <small>متخصص في التسويق بالأداء وشراء الوسائط</small>", "Remote media buying for Saudi e-commerce, education and B2B brands, including the EdTech and fragrance cases above and a B2B software client that closed $2.5M in deals from $400K in media. Also grew a consumer brand's TikTok and Reels accounts from zero to 6.4M+ views in 60 days.": "إدارة حملات إعلانية عن بُعد لعلامات سعودية في التجارة الإلكترونية والتعليم وخدمات الشركات، ومنها حالتا التعليم والعطور أعلاه، وعميل في مجال البرمجيات أغلق صفقات بقيمة <bdi>$2.5M</bdi> من إنفاق إعلاني قدره <bdi>$400K</bdi>. كما نمّيت حسابات تيك توك وريلز لعلامة استهلاكية من الصفر إلى أكثر من <bdi>6.4</bdi> مليون مشاهدة خلال <bdi>60</bdi> يومًا.", "Basmah Agency, Azraq Group Performance Marketer & Media Buyer": "Basmah Agency، Azraq Group <small>متخصص في التسويق بالأداء وشراء الوسائط</small>", "Paid lead generation for the agency's own sales pipeline, plus an n8n automation that routed every new lead in real time. Ran Snapchat and TikTok for selected client accounts.": "حملات توليد عملاء محتملين لصالح فريق مبيعات الوكالة، مع أتمتة عبر n8n توزّع كل عميل جديد فور تسجيله، إضافة إلى إدارة حملات سناب شات وتيك توك لعدد من العملاء.", "Malameh Performance Marketer & Team Lead": "Malameh <small>متخصص في التسويق بالأداء وقائد فريق</small>", "Fashion e-commerce. Led web, creative and warehouse teams through a full rebuild of messaging, page structure and checkout: EGP 16M+ in sales within 2 months, 8.5x ROAS.": "متجر أزياء إلكتروني. قدت فرق الموقع والمحتوى والمستودع في إعادة بناء شاملة للرسائل التسويقية وهيكل الصفحات ومسار الدفع، فتجاوزت المبيعات <bdi>16</bdi> مليون جنيه خلال شهرين بعائد <bdi>8.5x</bdi>.", "Hashtag Agency Social Media & Ads Specialist": "Hashtag Agency <small>أخصائي تواصل اجتماعي وإعلانات</small>", "Music and entertainment releases across Egypt and the GCC: 1B+ combined views for two releases in one month. Secured Meta verification for celebrity and brand accounts.": "إطلاقات موسيقية وترفيهية في مصر والخليج حقّقت أكثر من مليار مشاهدة لإصدارين خلال شهر واحد، إلى جانب توثيق حسابات مشاهير وعلامات تجارية على منصات ميتا.", "Selected impact": "أبرز الإنجازات", "Total media managed across 4 platforms, $500K+ of it on Snapchat": "إجمالي الميزانيات المُدارة على <bdi>4</bdi> منصات، منها أكثر من <bdi>$500K</bdi> على سناب شات", "$2.5M in B2B deal value from $400K in media, Saudi software company, over 6 months": "صفقات بقيمة <bdi>$2.5M</bdi> من إنفاق <bdi>$400K</bdi> لشركة برمجيات سعودية خلال <bdi>6</bdi> أشهر", "Sales within 2 months on a site that wasn't converting before the rebuild": "مبيعات خلال شهرين لموقع لم يكن يحقق تحويلات قبل إعادة بنائه", "ROAS while cutting cost per result 15%, through full-funnel testing": "عائد على الإنفاق مع خفض تكلفة النتيجة <bdi>15%</bdi> عبر اختبار مسار التحويل كاملًا", "Combined views for two music releases in one month, Egypt & GCC": "مشاهدة لإصدارين موسيقيين خلال شهر واحد في مصر والخليج", "Video engagement on paid music-release and ticketing campaigns": "زيادة في التفاعل مع الفيديو في حملات الإصدارات الموسيقية والتذاكر", "Certified": "الشهادات", "Stack": "الأدوات", "Want numbers like thesefor your brand?": "هل تطمح لنتائج مماثلة<br><span>لعلامتك التجارية؟</span>", "Book a free 25-minute call. I review your ad accounts and tracking with you and tell you where I would start, at no cost.": "احجز استشارة مجانية مدتها <bdi>25</bdi> دقيقة، نراجع خلالها حساباتك الإعلانية ومنظومة التتبع، وأحدد لك نقطة البداية الأنسب، دون أي تكلفة.", "Monthly management": "إدارة شهرية", "I run your paid media end to end and report against your target.": "إدارة متكاملة لحملاتك الإعلانية، مع تقارير دورية مقابل مستهدفاتك.", "Free account audit": "تقييم مجاني للحساب", "A 25-minute call reviewing your ad accounts and tracking. No cost, no commitment.": "مكالمة مدتها <bdi>25</bdi> دقيقة لمراجعة حساباتك الإعلانية والتتبع، دون تكلفة أو التزام.", "Full-time roles": "فرص التوظيف", "Open to senior performance roles in KSA and the GCC.": "منفتح على الوظائف القيادية في التسويق بالأداء في السعودية والخليج.", "Copy": "نسخ", "WhatsApp ↗": "واتساب ↖", "Open LinkedIn ↗": "لينكدإن ↖", "Book the free audit on WhatsApp ↗": "احجز الاستشارة المجانية عبر واتساب <i>↖</i>", "LinkedIn ↗": "لينكدإن <i>↖</i>", "© 2026 Ibrahem Muhamed · Riyadh, Saudi Arabia · Arabic (native), English (professional), Spanish (conversational)Screenshots are watermarked and client names are removed. Currency shown at 3.75 SAR to 1 USD. Updated October 2026.": "©<bdi> 2026</bdi> إبراهيم محمد · الرياض، المملكة العربية السعودية · العربية (اللغة الأم)، الإنجليزية (مستوى احترافي)، الإسبانية (مستوى محادثة)<br>جميع اللقطات تحمل علامة مائية وأسماء العملاء محذوفة. سعر الصرف المعتمد <bdi>3.75</bdi> ريال للدولار. آخر تحديث: أكتوبر <bdi>2026.</bdi>", "Ibrahem Muhamed · CV · 2 pages": "إبراهيم محمد · السيرة الذاتية · صفحتان", "Close": "إغلاق", "Drag or swipe · tap to enlarge": "اسحب للتصفّح · اضغط للتكبير", "Drag or swipe": "اسحب للتصفّح", "Paid social · Meta Ads": "إعلانات التواصل الاجتماعي · Meta", "Search · Performance Max": "البحث · Performance Max", "Full-funnel digital marketing": "التسويق الرقمي بمسار تحويل متكامل", "Short-form video strategy": "استراتيجية الفيديو القصير", "Social media marketing": "التسويق عبر وسائل التواصل", "Tools I use every week": "أدوات أستخدمها أسبوعيًا", "Ad platforms": "المنصات الإعلانية", "Tracking & analytics": "التتبع والتحليلات", "Automation": "الأتمتة", "E-commerce": "تجارة إلكترونية", "Creative": "التصميم", "Tools I use every week · drag or swipe": "أدوات أستخدمها أسبوعيًا · اسحب للتصفّح", "The tools behind the numbers": "الأدوات وراء هذه الأرقام", "Ad platform": "منصة إعلانية", "Tracking": "التتبع", "Email": "البريد الإلكتروني", "Phone & WhatsApp": "الهاتف وواتساب", "LinkedIn": "لينكدإن", "Based in": "المقر", "Riyadh, Saudi Arabia": "الرياض، المملكة العربية السعودية", "Open ↗": "فتح ↖", "© 2026 Ibrahem Muhamed": "© 2026 إبراهيم محمد", "Arabic · English · Spanish": "العربية · الإنجليزية · الإسبانية", "Screenshots are watermarked and client names are removed. 1 USD = 3.75 SAR. Updated October 2026.": "جميع اللقطات تحمل علامة مائية وأسماء العملاء محذوفة. الدولار = 3.75 ريال. آخر تحديث: أكتوبر 2026.", "Take the 60-second check ↓": "ابدأ الفحص خلال 60 ثانية <i>↓</i>", "Show experience & impact ↓": "عرض الخبرات والإنجازات <i>↓</i>", "Education": "تعليمي", "B2B": "B2B", "Education11": "تعليمي<b>11</b>", "B2B1": "B2B<b>1</b>", "B2B lead generation · Snapchat · KSA": "توليد عملاء B2B · سناب شات · السعودية", "Digital product": "منتج رقمي", "Education6": "تعليمي<b>6</b>", "Digital product5": "منتج رقمي<b>5</b>", "All24": "الكل<b><bdi>24</bdi></b>", "E-commerce12": "تجارة إلكترونية<b>12</b>", "4.51x ROAS across 407 campaigns, $459K spent": "عائد <bdi>4.51x</bdi> عبر <bdi>407</bdi> حملة بإنفاق <span class=\"cur\" data-usd=\"$459K\" data-sar=\"SAR 1.72M\"><bdi>$459K</bdi></span>", "3.99x ROAS across 109 ad sets on $14.3K": "عائد <bdi>3.99x</bdi> عبر <bdi>109</bdi> مجموعة إعلانية بإنفاق <span class=\"cur\" data-usd=\"$14.3K\" data-sar=\"SAR 53.6K\"><bdi>$14.3K</bdi></span>", "5.15x ROAS, $2.26M in sales on $439K": "عائد <bdi>5.15x</bdi> ومبيعات <span class=\"cur\" data-usd=\"$2.26M\" data-sar=\"SAR 8.47M\"><bdi>$2.26M</bdi></span> بإنفاق <span class=\"cur\" data-usd=\"$439K\" data-sar=\"SAR 1.65M\"><bdi>$439K</bdi></span>", "6.18x ROAS, $139K in sales": "عائد <bdi>6.18x</bdi> ومبيعات <span class=\"cur\" data-usd=\"$139K\" data-sar=\"SAR 522K\"><bdi>$139K</bdi></span>", "3.61x ROAS, 1,586 purchases from one campaign": "عائد <bdi>3.61x</bdi> و<bdi>1,586</bdi> عملية شراء من حملة واحدة", "5.66x ROAS, 4,629 purchases on $71K": "عائد <bdi>5.66x</bdi> و<bdi>4,629</bdi> عملية شراء بإنفاق <span class=\"cur\" data-usd=\"$71K\" data-sar=\"SAR 266K\"><bdi>$71K</bdi></span>", "4.51x ROAS, 1,765 purchases on $21.1K": "عائد <bdi>4.51x</bdi> و<bdi>1,765</bdi> عملية شراء بإنفاق <span class=\"cur\" data-usd=\"$21.1K\" data-sar=\"SAR 79K\"><bdi>$21.1K</bdi></span>", "4.66x ROAS, 1,519 purchases on $17.6K": "عائد <bdi>4.66x</bdi> و<bdi>1,519</bdi> عملية شراء بإنفاق <span class=\"cur\" data-usd=\"$17.6K\" data-sar=\"SAR 66K\"><bdi>$17.6K</bdi></span>", "14.33 conv. value per cost, 5.92M in conversion value": "قيمة تحويل <bdi>14.33</bdi> لكل ريال، وإجمالي <bdi>5.92M</bdi>", "10.14 conv. value per cost on $22.8K": "قيمة تحويل <bdi>10.14</bdi> لكل ريال بإنفاق <span class=\"cur\" data-usd=\"$22.8K\" data-sar=\"SAR 85.5K\"><bdi>$22.8K</bdi></span>"};
+  var CAND='.top nav a,.btn,.status,.role,.sub,.ledger .t,.ticker-track>div>span,.me-loc,.label,.about-copy h2,.about-copy>p,.why li,.inds p,.svc h3,.svc p,.check-head h2,.check-head p,.q p,.ans button,.fixes .ph,.r-note,.method-head h2,.method-head p,.steps5 h3,.steps5 p,.steps5 em,.tag,.case-head h2,.ctx p,.target-top small,.target-top span.mono,.bar-legend>span,.kpi .k,details.more summary span,.panel h3,.step-row .name span,.seg .when,.note,.cmp .k,ul.did li>span,.shots-head h3,.filters button,.shot>span,.nda,.mix-bar div,.mix-legend>span,.f-k,.f-v,.timeline .when,.timeline h3,.timeline p,.grid-ledger .t,.certs li,.tools p,.career h2,.contact h2,.scale-note p,.sn-tag,.tools-title,.t-cat,.t-legend span,.c-area,.proof-head h2,.shot .cap,.shot .ind,.contact-sub,.ways b,.ways span,.c-row button,.c-row a,.c-lab,.c-row .val.plain,.ct-left .status,.ways div>span:not(.w-ic),.foot span,#cv-close,#lb-close';
+  var LANG='en';
+  window.__lang=function(){return LANG};
+  function keyOf(el){var c=el.cloneNode(true);c.querySelectorAll('.cur').forEach(function(x){x.textContent=x.dataset.usd});return c.textContent.replace(/\s+/g,' ').trim()}
+  function applyCur(){var c=(document.querySelector('[data-cur][aria-pressed="true"]')||{}).dataset;c=c?c.cur:'usd';document.querySelectorAll('.cur').forEach(function(el){el.textContent=el.dataset[c]})}
+  function setLang(l){
+    if(l===LANG)return;
+    document.querySelectorAll(CAND).forEach(function(el){
+      if(el.classList.contains('cur'))return;
+      if(l==='ar'){var k=keyOf(el);var t=I18N_AR[k];if(t!==undefined&&el.__en===undefined){el.__en=el.innerHTML;el.innerHTML=t;}}
+      else if(el.__en!==undefined){el.innerHTML=el.__en;el.__en=undefined;}
+    });
+    LANG=l;
+    document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';
+    document.querySelectorAll('[data-lang]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l)});
+    applyCur();
+    var wa=l==='ar'?"https://wa.me/966530570632?text="+encodeURIComponent("مرحبًا إبراهيم، أرغب في حجز الاستشارة المجانية (25 دقيقة) لحساب علامتي التجارية."):"https://wa.me/966530570632?text="+encodeURIComponent("Hi Ibrahem, I'd like to book the free 25-minute account audit for my brand.");
+    document.querySelectorAll('a[href^="https://wa.me/966530570632?text="]').forEach(function(a){if(a.id!=='check-cta')a.href=wa});
+    if(window.__checkRender)window.__checkRender();
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  document.querySelectorAll('[data-lang]').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.lang)})});
+
+  (function(){var l=null;try{l=localStorage.getItem('lang')}catch(e){}
+    if(!l&&(navigator.language||'').toLowerCase().indexOf('ar')===0)l='ar';
+    if(l==='ar')setLang('ar');})();
+})();
+</script>

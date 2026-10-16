@@ -1,0 +1,93 @@
+# Writing panel for ibrahem-mediabuyer.com  (open https://ibrahem-mediabuyer.com/admin/)
+# Repository: github.com/r1io1-MA/ibrahem-mediabuyer-site
+backend:
+  name: github
+  repo: r1io1-MA/ibrahem-mediabuyer-site
+  branch: main
+
+site_url: https://ibrahem-mediabuyer.com
+display_url: https://ibrahem-mediabuyer.com
+logo:
+  src: /assets/icon-192.png
+
+# images you add inside an article
+media_folder: static/img/uploads
+public_folder: /img/uploads
+
+i18n:
+  structure: multiple_folders   # content/articles/ar/<slug>.md and content/articles/en/<slug>.md
+  locales: [ar, en]
+  default_locale: ar
+
+collections:
+  - name: articles
+    label: "المقالات · Articles"
+    label_singular: "مقال · Article"
+    description: "كل مقال له نسخة عربي ونسخة إنجليزي. لو كتبت لغة واحدة بس، هتتنشر لوحدها."
+    folder: content/articles
+    extension: md
+    format: frontmatter
+    create: true
+    i18n: true
+    identifier_field: title
+    slug: "{{fields.url}}"
+    summary: "{{title}} · {{date}}"
+    sortable_fields: [date, title]
+    fields:
+      - label: "العنوان · Title"
+        name: title
+        widget: string
+        i18n: true
+      - label: "رابط المقال · URL"
+        name: url
+        widget: string
+        i18n: duplicate
+        hint: "حروف إنجليزي صغيرة وأرقام وشرطات فقط، مثل: ramadan-ads-guide"
+        pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', "English lowercase letters, numbers and dashes only"]
+      - label: "ملخص الكارت · Card summary"
+        name: card
+        widget: string
+        i18n: true
+        hint: "سطر واحد يظهر تحت العنوان في كروت المقالات"
+      - label: "وصف جوجل · Description for Google"
+        name: description
+        widget: text
+        i18n: true
+        hint: "جملة أو جملتين (حوالي 150 حرف) تظهر تحت العنوان في نتائج البحث"
+      - label: "عنوان جوجل (اختياري) · SEO title"
+        name: meta_title
+        widget: string
+        i18n: true
+        required: false
+        hint: "لو سبته فاضي هيتكتب: العنوان | إبراهيم محمد"
+      - label: "التاريخ · Date"
+        name: date
+        widget: datetime
+        i18n: duplicate
+        format: "YYYY-MM-DD"
+        time_format: false
+      - label: "وقت القراءة بالدقائق · Reading time"
+        name: read
+        widget: number
+        value_type: int
+        i18n: duplicate
+        required: false
+        hint: "اختياري، لو سبته فاضي هيتحسب لوحده"
+      - label: "أسئلة شائعة · FAQ"
+        name: faq
+        widget: list
+        i18n: true
+        required: false
+        fields:
+          - { label: "السؤال · Question", name: q, widget: string }
+          - { label: "الإجابة · Answer", name: a, widget: text }
+      - label: "مسودة (مش هتتنشر) · Draft"
+        name: draft
+        widget: boolean
+        default: false
+        i18n: duplicate
+        required: false
+      - label: "المقال · Body"
+        name: body
+        widget: markdown
+        i18n: true
